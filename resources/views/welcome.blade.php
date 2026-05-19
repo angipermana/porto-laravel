@@ -308,59 +308,67 @@
                 </h2>
             </div>
 
-            <!-- Timeline -->
             <div class="block relative">
                 <!-- Garis vertikal tengah -->
                 <div class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0" style="width:2px; background:#334155;"></div>
 
-                <!-- 2004 - Kiri -->
+                <!-- 2010 - Kiri -->
                 <div class="flex items-start mb-16 relative">
                     <div class="w-1/2 pr-16 text-right" data-aos="fade-right">
-                        <div class="text-indigo-400 font-bold text-base mb-1">2004</div>
+                        <div class="text-indigo-400 font-bold text-base mb-1">2010</div>
                         <h3 class="text-xl font-bold text-white mb-1">
-                            <span x-show="lang === 'en'">Early Career</span>
+                            <span x-show="lang === 'en'">Early Journey</span>
                             <span x-show="lang === 'id'" x-cloak>Awal Perjalanan</span>
                         </h3>
-                        <div class="text-slate-500 text-xs mb-2 uppercase tracking-widest">Perusahaan / Instansi</div>
+                        <div class="text-slate-500 text-xs mb-2 uppercase tracking-widest">
+                            <span x-show="lang === 'en'">Local Business & Blogging</span>
+                            <span x-show="lang === 'id'" x-cloak>Bisnis Lokal & Blogging</span>
+                        </div>
                         <p class="text-slate-400 text-sm leading-relaxed">
-                            <span x-show="lang === 'en'">Describe your role and key achievements here.</span>
-                            <span x-show="lang === 'id'" x-cloak>Jelaskan peran dan pencapaian utama Anda di sini.</span>
+                            <span x-show="lang === 'en'">Started my journey by managing local businesses and joining blogger communities, starting from scratch to managing over 20+ websites.</span>
+                            <span x-show="lang === 'id'" x-cloak>Awal perjalanan mengelola bisnis lokal dan bergabung dengan komunitas blogger, start dari nol hingga mengelola lebih dari 20+ web.</span>
                         </p>
                     </div>
                     <div class="absolute left-1/2 -translate-x-1/2 top-1 z-10 w-5 h-5 rounded-full bg-indigo-500 border-4 border-slate-900 shadow-[0_0_18px_rgba(99,102,241,0.8)]" data-aos="zoom-in"></div>
                     <div class="w-1/2 pl-16"></div>
                 </div>
 
-                <!-- 2018 - Kanan -->
+                <!-- 2021 - Kanan -->
                 <div class="flex items-start mb-16 relative">
                     <div class="w-1/2 pr-16"></div>
                     <div class="absolute left-1/2 -translate-x-1/2 top-1 z-10 w-5 h-5 rounded-full bg-cyan-500 border-4 border-slate-900 shadow-[0_0_18px_rgba(6,182,212,0.8)]" data-aos="zoom-in"></div>
                     <div class="w-1/2 pl-16 text-left" data-aos="fade-left">
-                        <div class="text-cyan-400 font-bold text-base mb-1">2018</div>
-                        <h3 class="text-xl font-bold text-white mb-1">
-                            <span x-show="lang === 'en'">Key Milestone</span>
-                            <span x-show="lang === 'id'" x-cloak>Pencapaian Penting</span>
-                        </h3>
-                        <div class="text-slate-500 text-xs mb-2 uppercase tracking-widest">Perusahaan / Instansi</div>
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            <span x-show="lang === 'en'">Describe your role and key achievements here.</span>
-                            <span x-show="lang === 'id'" x-cloak>Jelaskan peran dan pencapaian utama Anda di sini.</span>
-                        </p>
-                    </div>
-                </div>
-
-                <!-- 2022 - Kiri -->
-                <div class="flex items-start mb-16 relative">
-                    <div class="w-1/2 pr-16 text-right" data-aos="fade-right">
-                        <div class="text-purple-400 font-bold text-base mb-1">2022</div>
+                        <div class="text-cyan-400 font-bold text-base mb-1">2021</div>
                         <h3 class="text-xl font-bold text-white mb-1">
                             <span x-show="lang === 'en'">Career Transition</span>
                             <span x-show="lang === 'id'" x-cloak>Transisi Karir</span>
                         </h3>
-                        <div class="text-slate-500 text-xs mb-2 uppercase tracking-widest">Perusahaan / Instansi</div>
+                        <div class="text-slate-500 text-xs mb-2 uppercase tracking-widest">
+                            <span x-show="lang === 'en'">Solopreneur & Developer</span>
+                            <span x-show="lang === 'id'" x-cloak>Solopreneur & Desainer</span>
+                        </div>
                         <p class="text-slate-400 text-sm leading-relaxed">
-                            <span x-show="lang === 'en'">Describe your role and key achievements here.</span>
-                            <span x-show="lang === 'id'" x-cloak>Jelaskan peran dan pencapaian utama Anda di sini.</span>
+                            <span x-show="lang === 'en'">Transitioned into a full-time blogger, solopreneur, web designer, and began acquiring clients for Google and Meta Ads advertising.</span>
+                            <span x-show="lang === 'id'" x-cloak>Transisi karir menjadi solopreneur, full blogger, web desain, dan mulai mendapatkan klien untuk beriklan di Google dan Meta.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2024 - Kiri -->
+                <div class="flex items-start mb-16 relative">
+                    <div class="w-1/2 pr-16 text-right" data-aos="fade-right">
+                        <div class="text-purple-400 font-bold text-base mb-1">2024</div>
+                        <h3 class="text-xl font-bold text-white mb-1">
+                            <span x-show="lang === 'en'">Key Milestone</span>
+                            <span x-show="lang === 'id'" x-cloak>Pencapaian Penting</span>
+                        </h3>
+                        <div class="text-slate-500 text-xs mb-2 uppercase tracking-widest">
+                            <span x-show="lang === 'en'">Scaling & Growth</span>
+                            <span x-show="lang === 'id'" x-cloak>Skala & Pertumbuhan</span>
+                        </div>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            <span x-show="lang === 'en'">Managed multiple clients from various business sectors and government services. Handled over 100+ websites and received an award from a travel business client.</span>
+                            <span x-show="lang === 'id'" x-cloak>Mengelola beberapa klien dari beragam sektor bisnis dan layanan pemerintah. Sempat mengelola 100+ website serta mendapatkan penghargaan dari salah satu klien di bisnis travel.</span>
                         </p>
                     </div>
                     <div class="absolute left-1/2 -translate-x-1/2 top-1 z-10 w-5 h-5 rounded-full bg-purple-500 border-4 border-slate-900 shadow-[0_0_18px_rgba(168,85,247,0.8)]" data-aos="zoom-in"></div>
@@ -377,10 +385,13 @@
                             <span x-show="lang === 'en'">Current Position</span>
                             <span x-show="lang === 'id'" x-cloak>Posisi Saat Ini</span>
                         </h3>
-                        <div class="text-slate-500 text-xs mb-2 uppercase tracking-widest">Freelance / Contract</div>
+                        <div class="text-slate-500 text-xs mb-2 uppercase tracking-widest">
+                            <span x-show="lang === 'en'">Agency Founder & AI Solutions</span>
+                            <span x-show="lang === 'id'" x-cloak>Pendiri Agensi & Solusi AI</span>
+                        </div>
                         <p class="text-slate-400 text-sm leading-relaxed">
-                            <span x-show="lang === 'en'">Describe your role and key achievements here.</span>
-                            <span x-show="lang === 'id'" x-cloak>Jelaskan peran dan pencapaian utama Anda di sini.</span>
+                            <span x-show="lang === 'en'">Running my own digital marketing agency, developing WordPress plugins, and managing AI and automation-driven businesses and clients.</span>
+                            <span x-show="lang === 'id'" x-cloak>Memiliki agensi digital marketing sendiri, mulai membuat WP plugin, mengelola bisnis dan klien berbasis AI dan otomatisasi.</span>
                         </p>
                     </div>
                 </div>

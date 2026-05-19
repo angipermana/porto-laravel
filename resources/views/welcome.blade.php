@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Angi Permana | Web & Digital Marketing Expert</title>
     <meta name="description" content="Portfolio of Angi Permana - Google Ads Manager, WordPress Developer, and Conversion-focused Web Analyst.">
     <!-- Google Fonts -->
@@ -425,6 +426,194 @@
             </div>
         </div>
     </footer>
+
+    <!-- Chatbot Widget -->
+    <div x-data="chatbot()" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+        <!-- Chat Window -->
+        <div x-show="open" 
+             x-transition:enter="transition ease-out duration-300 transform"
+             x-transition:enter-start="opacity-0 translate-y-12 scale-95"
+             x-transition:enter-end="opacity-100 translate-y-0 scale-100"
+             x-transition:leave="transition ease-in duration-200 transform"
+             x-transition:leave-start="opacity-100 translate-y-0 scale-100"
+             x-transition:leave-end="opacity-0 translate-y-12 scale-95"
+             class="w-[320px] sm:w-[380px] h-[480px] bg-slate-900/95 backdrop-blur-md border border-slate-800 rounded-2xl shadow-2xl flex flex-col overflow-hidden mb-4"
+             x-cloak>
+            
+            <!-- Header -->
+            <div class="p-4 bg-slate-950/80 border-b border-slate-800 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="relative w-8 h-8 rounded-full bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center">
+                        <svg class="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+                        </svg>
+                        <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-slate-900 rounded-full"></span>
+                    </div>
+                    <div>
+                        <div class="text-sm font-bold text-white">Angi AI Assistant</div>
+                        <div class="text-[10px] text-slate-500 flex items-center gap-1">
+                            <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                            <span x-show="lang === 'en'">Online & Ready</span>
+                            <span x-show="lang === 'id'" x-cloak>Online & Aktif</span>
+                        </div>
+                    </div>
+                </div>
+                <button @click="open = false" class="text-slate-400 hover:text-white transition">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Messages Container -->
+            <div x-ref="msgContainer" class="flex-1 p-4 overflow-y-auto space-y-4">
+                <template x-for="(msg, index) in messages" :key="index">
+                    <div class="flex" :class="msg.role === 'user' ? 'justify-end' : 'justify-start'">
+                        <div class="max-w-[85%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed"
+                             :class="msg.role === 'user' 
+                                ? 'bg-indigo-600 text-white rounded-br-none' 
+                                : 'bg-slate-800 text-slate-200 rounded-bl-none border border-slate-700/50'">
+                            <p x-text="msg.content"></p>
+                        </div>
+                    </div>
+                </template>
+                <!-- Loading Indicator -->
+                <div x-show="loading" class="flex justify-start" x-cloak>
+                    <div class="bg-slate-800 text-slate-400 rounded-2xl rounded-bl-none px-4 py-2.5 border border-slate-700/50 flex items-center gap-1.5">
+                        <span class="w-1.5 h-1.5 bg-indigo-400 rounded-full animate-bounce" style="animation-delay: 0ms"></span>
+                        <span class="w-1.5 h-1.5 bg-indigo-400 rounded-full animate-bounce" style="animation-delay: 150ms"></span>
+                        <span class="w-1.5 h-1.5 bg-indigo-400 rounded-full animate-bounce" style="animation-delay: 300ms"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Box -->
+            <form @submit.prevent="sendMessage()" class="p-3 bg-slate-950/80 border-t border-slate-800 flex gap-2">
+                <input type="text" 
+                       x-model="input" 
+                       :placeholder="lang === 'en' ? 'Ask a question...' : 'Tanyakan sesuatu...'"
+                       class="flex-1 bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-indigo-500 placeholder-slate-500 transition"
+                       :disabled="loading">
+                <button type="submit" 
+                        class="bg-indigo-600 hover:bg-indigo-500 text-white p-2.5 rounded-xl transition flex items-center justify-center disabled:opacity-50"
+                        :disabled="!input.trim() || loading">
+                    <svg class="w-5 h-5 transform rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                    </svg>
+                </button>
+            </form>
+        </div>
+
+        <!-- Chat Toggle Button -->
+        <button @click="toggleChat()" 
+                class="w-14 h-14 bg-indigo-600 hover:bg-indigo-500 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-indigo-500/30 transition duration-300 hover:scale-105 relative group">
+            <!-- Ripple Effect -->
+            <span class="absolute inset-0 rounded-full bg-indigo-600/30 animate-ping group-hover:hidden"></span>
+            
+            <!-- Chat Icon (Visible when closed) -->
+            <svg x-show="!open" class="w-6 h-6 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+            </svg>
+            <!-- Close Icon (Visible when open) -->
+            <svg x-show="open" class="w-6 h-6 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" x-cloak>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+    </div>
+
+    <script>
+        function chatbot() {
+            return {
+                open: false,
+                messages: [],
+                input: '',
+                loading: false,
+                initialized: false,
+                
+                toggleChat() {
+                    this.open = !this.open;
+                    if (this.open && !this.initialized) {
+                        this.initChat();
+                    }
+                },
+                
+                initChat() {
+                    this.initialized = true;
+                    // Greeting text in proper language
+                    const welcomeMsg = this.lang === 'en' 
+                        ? "Hello! I am Angi's AI assistant. Ask me anything about his skills, projects, or work history!" 
+                        : "Halo! Saya asisten AI Angi. Tanyakan apa saja mengenai keahlian, proyek, atau histori karirnya!";
+                    
+                    this.messages.push({
+                        role: 'assistant',
+                        content: welcomeMsg
+                    });
+                },
+                
+                sendMessage() {
+                    if (!this.input.trim() || this.loading) return;
+                    
+                    const userText = this.input.trim();
+                    this.messages.push({
+                        role: 'user',
+                        content: userText
+                    });
+                    this.input = '';
+                    this.loading = true;
+                    
+                    this.scrollToBottom();
+                    
+                    // Prepare conversation history (exclude first greeting)
+                    const historyData = this.messages.slice(1, -1);
+                    
+                    fetch('/api/chat', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                        },
+                        body: JSON.stringify({
+                            message: userText,
+                            history: historyData
+                        })
+                    })
+                    .then(response => {
+                        if (!response.ok) throw new Error('API Error');
+                        return response.json();
+                    })
+                    .then(data => {
+                        this.messages.push({
+                            role: 'assistant',
+                            content: data.reply
+                        });
+                    })
+                    .catch(error => {
+                        const errorMsg = this.lang === 'en'
+                            ? "Sorry, I am having trouble connecting to the server. Please contact Angi at admin@buatwebsitepro.id."
+                            : "Maaf, terjadi gangguan saat menghubungi server. Silakan hubungi Angi di admin@buatwebsitepro.id.";
+                        
+                        this.messages.push({
+                            role: 'assistant',
+                            content: errorMsg
+                        });
+                    })
+                    .finally(() => {
+                        this.loading = false;
+                        this.scrollToBottom();
+                    });
+                },
+                
+                scrollToBottom() {
+                    this.$nextTick(() => {
+                        const container = this.$refs.msgContainer;
+                        if (container) {
+                            container.scrollTop = container.scrollHeight;
+                        }
+                    });
+                }
+            }
+        }
+    </script>
 
     <!-- Initialize AOS Animation -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

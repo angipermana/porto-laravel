@@ -212,8 +212,8 @@
                 </p>
             </div>
 
-            <!-- Grid: 2 cols on mobile, 3 cols on desktop -->
-            <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            <!-- Grid: 1 col on mobile, 2 cols on tablet, 3 cols on desktop -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Card 1: Jasa SEO (Indigo) -->
                 <div data-aos="fade-up" data-aos-delay="100" class="bg-slate-900/60 backdrop-blur-sm border border-slate-800 p-5 md:p-8 rounded-2xl hover:border-indigo-500/50 hover:shadow-lg hover:shadow-indigo-500/10 transition duration-300 flex flex-col justify-between group">
                     <div>
@@ -232,7 +232,7 @@
                             <span x-show="lang === 'en'">Improve your organic rank and gain recurring profit-making visitors on search engines.</span>
                             <span x-show="lang === 'id'" x-cloak>Tingkatkan peringkat organik dan datangkan pengunjung potensial secara gratis dari Google.</span>
                         </p>
-                        <ul class="text-xs md:text-sm text-slate-500 space-y-2 mb-6 hidden sm:block">
+                        <ul class="text-xs md:text-sm text-slate-500 space-y-2 mb-6">
                             <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <span x-show="lang === 'en'">Keyword Research</span><span x-show="lang === 'id'" x-cloak>Riset Kata Kunci</span></li>
                             <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <span x-show="lang === 'en'">On-Page & Technical SEO</span><span x-show="lang === 'id'" x-cloak>SEO On-Page & Teknis</span></li>
                             <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <span x-show="lang === 'en'">Local Link Building</span><span x-show="lang === 'id'" x-cloak>Link Building Lokal</span></li>
@@ -262,7 +262,7 @@
                             <span x-show="lang === 'en'">Get high conversion potential traffic to your site with optimized ad spend.</span>
                             <span x-show="lang === 'id'" x-cloak>Hadirkan prospek bisnis instan dengan target iklan yang presisi dan budget efisien.</span>
                         </p>
-                        <ul class="text-xs md:text-sm text-slate-500 space-y-2 mb-6 hidden sm:block">
+                        <ul class="text-xs md:text-sm text-slate-500 space-y-2 mb-6">
                             <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <span x-show="lang === 'en'">Search & Performance Max</span><span x-show="lang === 'id'" x-cloak>Iklan Search & PMax</span></li>
                             <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <span x-show="lang === 'en'">Conversion Rate Optimization</span><span x-show="lang === 'id'" x-cloak>Optimasi Landing Page</span></li>
                             <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <span x-show="lang === 'en'">Weekly Optimization Reports</span><span x-show="lang === 'id'" x-cloak>Laporan & Analisa Mingguan</span></li>
@@ -292,7 +292,7 @@
                             <span x-show="lang === 'en'">Speedy, gorgeous, and SEO-optimized business websites or landing pages.</span>
                             <span x-show="lang === 'id'" x-cloak>Jasa pembuatan website/landing page premium yang responsif, kencang, & SEO-friendly.</span>
                         </p>
-                        <ul class="text-xs md:text-sm text-slate-500 space-y-2 mb-6 hidden sm:block">
+                        <ul class="text-xs md:text-sm text-slate-500 space-y-2 mb-6">
                             <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <span x-show="lang === 'en'">High-converting UX/UI</span><span x-show="lang === 'id'" x-cloak>Desain UI/UX Konversi Tinggi</span></li>
                             <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <span x-show="lang === 'en'">Mobile-First Layouts</span><span x-show="lang === 'id'" x-cloak>Layout Mobile-First Fast</span></li>
                             <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <span x-show="lang === 'en'">Speed Optimized (90+)</span><span x-show="lang === 'id'" x-cloak>Optimasi Pagespeed (Skor 90+)</span></li>
@@ -322,7 +322,7 @@
                             <span x-show="lang === 'en'">Rank your business higher on local Google Maps listings to draw nearby customers.</span>
                             <span x-show="lang === 'id'" x-cloak>Optimalkan Google Maps & Google Bisnisku Anda agar mudah ditemukan pelanggan sekitar.</span>
                         </p>
-                        <ul class="text-xs md:text-sm text-slate-500 space-y-2 mb-6 hidden sm:block">
+                        <ul class="text-xs md:text-sm text-slate-500 space-y-2 mb-6">
                             <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <span x-show="lang === 'en'">Local Pack Search Rank</span><span x-show="lang === 'id'" x-cloak>Ranking Peta di Penelusuran</span></li>
                             <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <span x-show="lang === 'en'">Review Strategy Setup</span><span x-show="lang === 'id'" x-cloak>Strategi Manajemen Ulasan</span></li>
                             <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <span x-show="lang === 'en'">Listing Audit & Optimization</span><span x-show="lang === 'id'" x-cloak>Audit & Posting Rutin Profil</span></li>
@@ -352,7 +352,7 @@
                             <span x-show="lang === 'en'">Setup precise conversion tracking with GA4 & GTM to make solid business actions.</span>
                             <span x-show="lang === 'id'" x-cloak>Setup integrasi Google Analytics 4, Tag Manager & Pixel Iklan dengan data 100% presisi.</span>
                         </p>
-                        <ul class="text-xs md:text-sm text-slate-500 space-y-2 mb-6 hidden sm:block">
+                        <ul class="text-xs md:text-sm text-slate-500 space-y-2 mb-6">
                             <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <span x-show="lang === 'en'">GA4 E-commerce Tracking</span><span x-show="lang === 'id'" x-cloak>Tracking Penjualan E-commerce</span></li>
                             <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <span x-show="lang === 'en'">Google Tag Manager Setup</span><span x-show="lang === 'id'" x-cloak>Setup Google Tag Manager</span></li>
                             <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <span x-show="lang === 'en'">Pixel & API Conversions</span><span x-show="lang === 'id'" x-cloak>Pixel & Conversion API (Meta/Ads)</span></li>
@@ -382,7 +382,7 @@
                             <span x-show="lang === 'en'">Ready-to-use WordPress and WhatsApp tools to automate and scale your daily operations.</span>
                             <span x-show="lang === 'id'" x-cloak>Plugin WordPress premium & solusi rotator / integrasi WhatsApp otomatis siap pakai.</span>
                         </p>
-                        <ul class="text-xs md:text-sm text-slate-500 space-y-2 mb-6 hidden sm:block">
+                        <ul class="text-xs md:text-sm text-slate-500 space-y-2 mb-6">
                             <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <span x-show="lang === 'en'">WhatsApp Rotator System</span><span x-show="lang === 'id'" x-cloak>Sistem Rotator WhatsApp</span></li>
                             <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <span x-show="lang === 'en'">Conversion Form Integrations</span><span x-show="lang === 'id'" x-cloak>Integrasi Form Ke WhatsApp</span></li>
                             <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <span x-show="lang === 'en'">License & Lifetime Updates</span><span x-show="lang === 'id'" x-cloak>Lisensi & Update Lifetime</span></li>

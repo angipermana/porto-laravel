@@ -49,7 +49,7 @@
                     <div class="px-3 py-1.5 relative z-10 transition-colors" :class="lang === 'en' ? 'text-white' : 'text-slate-400'">EN</div>
                     <div class="px-3 py-1.5 relative z-10 transition-colors" :class="lang === 'id' ? 'text-white' : 'text-slate-400'">ID</div>
                 </div>
-                <a href="#contact" class="hidden sm:inline-block bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition shadow-lg shadow-indigo-500/30">
+                <a href="#email-me-now" class="hidden sm:inline-block bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition shadow-lg shadow-indigo-500/30">
                     <span x-show="lang === 'en'">Hire Me</span>
                     <span x-show="lang === 'id'" x-cloak>Rekrut Saya</span>
                 </a>
@@ -86,7 +86,7 @@
                         <span x-show="lang === 'en'">View My Expertise</span>
                         <span x-show="lang === 'id'" x-cloak>Lihat Keahlian Saya</span>
                     </a>
-                    <a href="#contact" class="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 text-white px-8 py-4 rounded-full font-semibold transition border border-slate-700 text-center hover:scale-105">
+                    <a href="#email-me-now" class="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 text-white px-8 py-4 rounded-full font-semibold transition border border-slate-700 text-center hover:scale-105">
                         <span x-show="lang === 'en'">Contact Me</span>
                         <span x-show="lang === 'id'" x-cloak>Hubungi Saya</span>
                     </a>
@@ -412,7 +412,7 @@
                 <span x-show="lang === 'en'">Let's discuss how I can help your team achieve marketing goals through solid web foundations and accurate data.</span>
                 <span x-show="lang === 'id'" x-cloak>Mari berdiskusi tentang bagaimana saya bisa membantu tim Anda mencapai target pemasaran melalui web yang solid dan data yang akurat.</span>
             </p>
-            <a href="mailto:emailanda@example.com"
+            <a id="email-me-now" href="mailto:admin@buatwebsitepro.id"
                class="inline-flex items-center gap-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-12 py-5 rounded-full font-bold text-xl shadow-lg hover:shadow-[0_0_35px_rgba(99,102,241,0.6)] transition-all duration-300 hover:-translate-y-1">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>

@@ -9,7 +9,7 @@
   "routes": [
     {
       "src": "/build/(.*)",
-      "dest": "/build/$1"
+      "dest": "/public/build/$1"
     },
     {
       "src": "/favicon.ico",
@@ -21,7 +21,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/api/index.php"
+      "dest": "/public/index.php"
     }
   ],
   "env": {
@@ -36,6 +36,9 @@
     "CACHE_STORE": "array",
     "CACHE_DRIVER": "array",
     "LOG_CHANNEL": "stderr",
-    "SESSION_DRIVER": "cookie"
+    "SESSION_DRIVER": "cookie",
+    "OPENAI_API_URL": "https://api.openai.com/v1",
+    "OPENAI_API_KEY": "YOUR_OPENAI_API_KEY",
+    "OPENAI_MODEL": "gpt-4o-mini"
   }
 }

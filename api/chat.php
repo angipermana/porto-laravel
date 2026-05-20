@@ -58,7 +58,7 @@ $systemPrompt = "You are an AI assistant for Angi Permana's portfolio website. "
     . "\n\nGuidelines:\n- Be professional, polite, and helpful.\n"
     . "- Keep your answers concise (1-3 sentences maximum).\n"
     . "- Answer in the same language as the user's message (Indonesian or English).\n"
-    . "- IMPORTANT LEAD CAPTURE: If the user shows interest in hiring Angi, asking for pricing, or using his services, politely ask for their Name, Email, and WhatsApp number so Angi can contact them. Once they provide ALL THREE (Name, Email, and WhatsApp number), you MUST use the `save_lead_to_notion` tool to save their data.";
+    . "- IMPORTANT LEAD CAPTURE: If the user shows interest in hiring Angi, asking for pricing, or using his services, politely ask for their Name, WhatsApp number, and optionally Email so Angi can contact them. Once they provide at least their Name and WhatsApp number, you MUST use the `save_lead_to_notion` tool to save their data.";
 
 $apiKey  = getenv('OPENAI_API_KEY')  ?: ($_SERVER['OPENAI_API_KEY']  ?? '');
 $model   = getenv('OPENAI_MODEL')    ?: ($_SERVER['OPENAI_MODEL']    ?? 'gpt-4o-mini');
@@ -89,16 +89,16 @@ if (!empty($notionApiKey) && !empty($notionDbId)) {
             'type' => 'function',
             'function' => [
                 'name' => 'save_lead_to_notion',
-                'description' => 'Save lead information to Notion CRM. Call this ONLY when user has explicitly provided ALL THREE: their name, email, and WhatsApp number.',
+                'description' => 'Save lead information to Notion CRM. Call this ONLY when user has explicitly provided at least their name and WhatsApp number.',
                 'parameters' => [
                     'type' => 'object',
                     'properties' => [
                         'name' => ['type' => 'string', 'description' => 'The name of the lead.'],
-                        'email' => ['type' => 'string', 'description' => 'The email address of the lead.'],
+                        'email' => ['type' => 'string', 'description' => 'The email address of the lead (optional).'],
                         'whatsapp' => ['type' => 'string', 'description' => 'The WhatsApp number of the lead.'],
                         'message' => ['type' => 'string', 'description' => 'Short summary of what the lead is interested in.']
                     ],
-                    'required' => ['name', 'email', 'whatsapp', 'message']
+                    'required' => ['name', 'whatsapp', 'message']
                 ]
             ]
         ]

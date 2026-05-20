@@ -522,6 +522,9 @@
     </div>
 
     <script>
+        const CHAT_STORAGE_KEY = 'angi_chat_session';
+        const CHAT_EXPIRY_MS   = 30 * 60 * 1000; // 30 minutes
+
         function chatbot() {
             return {
                 open: false,
@@ -529,91 +532,111 @@
                 input: '',
                 loading: false,
                 initialized: false,
-                
+
                 toggleChat() {
                     this.open = !this.open;
                     if (this.open && !this.initialized) {
                         this.initChat();
                     }
                 },
-                
+
                 initChat() {
                     this.initialized = true;
-                    // Greeting text in proper language
-                    const welcomeMsg = this.lang === 'en' 
-                        ? "Hello! I am Angi's AI assistant. Ask me anything about his skills, projects, or work history!" 
+
+                    // Try to restore session from localStorage
+                    const saved = this.loadSession();
+                    if (saved && saved.messages && saved.messages.length > 0) {
+                        this.messages = saved.messages;
+                        this.$nextTick(() => this.scrollToBottom());
+                        return;
+                    }
+
+                    // No saved session → show welcome message
+                    const welcomeMsg = this.lang === 'en'
+                        ? "Hello! I am Angi's AI assistant. Ask me anything about his skills, projects, or work history!"
                         : "Halo! Saya asisten AI Angi. Tanyakan apa saja mengenai keahlian, proyek, atau histori karirnya!";
-                    
-                    this.messages.push({
-                        role: 'assistant',
-                        content: welcomeMsg
-                    });
+
+                    this.messages.push({ role: 'assistant', content: welcomeMsg });
+                    this.saveSession();
                 },
-                
+
+                saveSession() {
+                    try {
+                        localStorage.setItem(CHAT_STORAGE_KEY, JSON.stringify({
+                            messages:  this.messages,
+                            expiresAt: Date.now() + CHAT_EXPIRY_MS
+                        }));
+                    } catch(e) {}
+                },
+
+                loadSession() {
+                    try {
+                        const raw = localStorage.getItem(CHAT_STORAGE_KEY);
+                        if (!raw) return null;
+                        const data = JSON.parse(raw);
+                        if (!data.expiresAt || Date.now() > data.expiresAt) {
+                            localStorage.removeItem(CHAT_STORAGE_KEY);
+                            return null;
+                        }
+                        return data;
+                    } catch(e) {
+                        return null;
+                    }
+                },
+
                 sendMessage() {
                     if (!this.input.trim() || this.loading) return;
-                    
+
                     const userText = this.input.trim();
-                    this.messages.push({
-                        role: 'user',
-                        content: userText
-                    });
-                    this.input = '';
+                    this.messages.push({ role: 'user', content: userText });
+                    this.input   = '';
                     this.loading = true;
-                    
+                    this.saveSession();
                     this.scrollToBottom();
-                    
-                    // Prepare conversation history (exclude first greeting)
+
+                    // Send full history (excluding the greeting)
                     const historyData = this.messages.slice(1, -1);
-                    
+
                     fetch('/api/chat', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
                             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
                         },
-                        body: JSON.stringify({
-                            message: userText,
-                            history: historyData
-                        })
+                        body: JSON.stringify({ message: userText, history: historyData })
                     })
                     .then(response => {
                         return response.text().then(text => {
                             try {
                                 const data = JSON.parse(text);
-                                if (!response.ok) throw new Error('HTTP ' + response.status + ': ' + (data.reply || text.substring(0, 200)));
+                                if (!response.ok) throw new Error(data.reply || 'Server error');
                                 return data;
                             } catch(e) {
-                                // Strip HTML tags to show readable PHP error
-                                const stripped = text.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().substring(0, 300);
-                                throw new Error('PHP: ' + stripped);
+                                throw new Error('Maaf, terjadi gangguan saat menghubungi server.');
                             }
                         });
                     })
                     .then(data => {
-                        this.messages.push({
-                            role: 'assistant',
-                            content: data.reply
-                        });
+                        this.messages.push({ role: 'assistant', content: data.reply });
+                        this.saveSession();
                     })
                     .catch(error => {
-                        this.messages.push({
-                            role: 'assistant',
-                            content: '[DEBUG] ' + (error.message || 'Unknown error')
-                        });
+                        const errMsg = this.lang === 'en'
+                            ? "Sorry, I'm having trouble connecting. Please contact Angi at admin@buatwebsitepro.id."
+                            : "Maaf, terjadi gangguan saat menghubungi server. Hubungi Angi di admin@buatwebsitepro.id.";
+                        this.messages.push({ role: 'assistant', content: errMsg });
+                        this.saveSession();
                     })
                     .finally(() => {
                         this.loading = false;
                         this.scrollToBottom();
                     });
                 },
-                
+
                 scrollToBottom() {
                     this.$nextTick(() => {
                         const container = this.$refs.msgContainer;
-                        if (container) {
-                            container.scrollTop = container.scrollHeight;
-                        }
+                        if (container) container.scrollTop = container.scrollHeight;
                     });
                 }
             }

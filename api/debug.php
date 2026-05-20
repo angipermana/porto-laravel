@@ -1,11 +1,14 @@
 <?php
-// Debug endpoint - REMOVE AFTER DEBUGGING
 header('Content-Type: application/json');
+
+$apiKey = getenv('OPENAI_API_KEY') ?: ($_SERVER['OPENAI_API_KEY'] ?? '');
+
 echo json_encode([
-    'REQUEST_URI'    => $_SERVER['REQUEST_URI']    ?? 'NOT SET',
-    'REQUEST_METHOD' => $_SERVER['REQUEST_METHOD'] ?? 'NOT SET',
-    'PATH_INFO'      => $_SERVER['PATH_INFO']      ?? 'NOT SET',
-    'SCRIPT_NAME'    => $_SERVER['SCRIPT_NAME']    ?? 'NOT SET',
-    'HTTP_HOST'      => $_SERVER['HTTP_HOST']      ?? 'NOT SET',
-    'QUERY_STRING'   => $_SERVER['QUERY_STRING']   ?? 'NOT SET',
+    'php_version'      => PHP_VERSION,
+    'curl_available'   => function_exists('curl_init'),
+    'openssl_available'=> function_exists('openssl_encrypt'),
+    'OPENAI_API_KEY'   => !empty($apiKey) ? 'SET (' . strlen($apiKey) . ' chars)' : 'NOT SET',
+    'OPENAI_MODEL'     => getenv('OPENAI_MODEL') ?: 'NOT SET',
+    'REQUEST_URI'      => $_SERVER['REQUEST_URI'] ?? 'NOT SET',
+    'REQUEST_METHOD'   => $_SERVER['REQUEST_METHOD'] ?? 'NOT SET',
 ], JSON_PRETTY_PRINT);

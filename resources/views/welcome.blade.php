@@ -578,7 +578,11 @@
                         })
                     })
                     .then(response => {
-                        if (!response.ok) throw new Error('API Error');
+                        if (!response.ok) {
+                            return response.text().then(text => {
+                                throw new Error('HTTP ' + response.status + ': ' + text.substring(0, 100));
+                            });
+                        }
                         return response.json();
                     })
                     .then(data => {
@@ -588,13 +592,9 @@
                         });
                     })
                     .catch(error => {
-                        const errorMsg = this.lang === 'en'
-                            ? "Sorry, I am having trouble connecting to the server. Please contact Angi at admin@buatwebsitepro.id."
-                            : "Maaf, terjadi gangguan saat menghubungi server. Silakan hubungi Angi di admin@buatwebsitepro.id.";
-                        
                         this.messages.push({
                             role: 'assistant',
-                            content: errorMsg
+                            content: '[DEBUG] ' + (error.message || 'Unknown error')
                         });
                     })
                     .finally(() => {

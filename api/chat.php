@@ -78,26 +78,32 @@ $payload = json_encode([
     'temperature' => 0.7,
 ]);
 
-$ch = curl_init($apiUrl);
-curl_setopt_array($ch, [
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_POST           => true,
-    CURLOPT_POSTFIELDS     => $payload,
-    CURLOPT_TIMEOUT        => 15,
-    CURLOPT_HTTPHEADER     => [
-        'Content-Type: application/json',
-        'Authorization: Bearer ' . $apiKey,
+$options = [
+    'http' => [
+        'method'        => 'POST',
+        'header'        => implode("\r\n", [
+            'Content-Type: application/json',
+            'Authorization: Bearer ' . $apiKey,
+        ]),
+        'content'       => $payload,
+        'timeout'       => 15,
+        'ignore_errors' => true,
     ],
-]);
+];
 
-$response = curl_exec($ch);
-$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-$curlError = curl_error($ch);
-curl_close($ch);
+$context  = stream_context_create($options);
+$response = @file_get_contents($apiUrl, false, $context);
 
-if ($curlError || $response === false) {
+// Get HTTP status from response headers
+$httpCode = 0;
+if (isset($http_response_header[0])) {
+    preg_match('/HTTP\/\d\.\d\s+(\d+)/', $http_response_header[0], $m);
+    $httpCode = (int)($m[1] ?? 0);
+}
+
+if ($response === false) {
     http_response_code(500);
-    echo json_encode(['reply' => 'Gagal menghubungi server AI. Error: ' . $curlError]);
+    echo json_encode(['reply' => 'Gagal menghubungi server AI. Periksa koneksi atau coba lagi.']);
     exit;
 }
 

@@ -158,14 +158,23 @@ if (isset($data['choices'][0]['message']['tool_calls'])) {
                     'Nama' => [
                         'title' => [['text' => ['content' => $args['name'] ?? '-']]]
                     ],
-                    'WhatsApp' => [
+                    'No telp' => [
                         'phone_number' => $args['whatsapp'] ?? '-'
                     ],
-                    'Pesan' => [
-                        'rich_text' => [['text' => ['content' => $args['message'] ?? '-']]]
+                    'Stats' => [
+                        'status' => ['name' => 'Not started']
                     ],
-                    'Status' => [
-                        'select' => ['name' => 'New Lead']
+                    'Tanggal masuk' => [
+                        'date' => ['start' => date('c')]
+                    ]
+                ],
+                'children' => [
+                    [
+                        'object' => 'block',
+                        'type' => 'paragraph',
+                        'paragraph' => [
+                            'rich_text' => [['type' => 'text', 'text' => ['content' => 'Ringkasan Chat/Pesan: ' . ($args['message'] ?? '-')]]]
+                        ]
                     ]
                 ]
             ];

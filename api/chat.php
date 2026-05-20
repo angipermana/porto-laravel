@@ -156,10 +156,13 @@ if (isset($data['choices'][0]['message']['tool_calls'])) {
             $notionData = [
                 'parent' => ['database_id' => $notionDbId],
                 'properties' => [
-                    'Nama' => [
-                        'title' => [['text' => ['content' => $args['name'] ?? '-']]]
+                    'Tanggal Masuk' => [
+                        'title' => [['text' => ['content' => date('Y-m-d H:i:s')]]]
                     ],
-                    'No WhtasApp' => [
+                    'Nama' => [
+                        'rich_text' => [['text' => ['content' => $args['name'] ?? '-']]]
+                    ],
+                    'No WhatsApp' => [
                         'phone_number' => $args['whatsapp'] ?? '-'
                     ],
                     'Email' => [
@@ -167,9 +170,6 @@ if (isset($data['choices'][0]['message']['tool_calls'])) {
                     ],
                     'Stats' => [
                         'status' => ['name' => 'Not started']
-                    ],
-                    'Tanggal masuk' => [
-                        'date' => ['start' => date('c')]
                     ]
                 ],
                 'children' => [

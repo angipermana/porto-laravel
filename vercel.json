@@ -21,7 +21,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/public/index.php"
+      "dest": "/api/index.php"
     }
   ],
   "env": {
@@ -38,7 +38,7 @@
     "LOG_CHANNEL": "stderr",
     "SESSION_DRIVER": "cookie",
     "OPENAI_API_URL": "https://api.openai.com/v1",
-    "OPENAI_API_KEY": "YOUR_OPENAI_API_KEY",
+    "OPENAI_API_KEY": "",
     "OPENAI_MODEL": "gpt-4o-mini"
   }
 }

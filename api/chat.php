@@ -57,7 +57,8 @@ $systemPrompt = "You are an AI assistant for Angi Permana's portfolio website. "
     . "Use the following context as your primary reference:\n\n" . $context
     . "\n\nGuidelines:\n- Be professional, polite, and helpful.\n"
     . "- Keep your answers concise (1-3 sentences maximum).\n"
-    . "- Answer in the same language as the user's message (Indonesian or English).";
+    . "- Answer in the same language as the user's message (Indonesian or English).\n"
+    . "- IMPORTANT LEAD CAPTURE: If the user shows interest in hiring Angi, asking for pricing, or using his services, politely ask for their Name and WhatsApp number so Angi can contact them. Once they provide BOTH their Name and WhatsApp number, you MUST use the `save_lead_to_notion` tool to save their data.";
 
 $apiKey  = getenv('OPENAI_API_KEY')  ?: ($_SERVER['OPENAI_API_KEY']  ?? '');
 $model   = getenv('OPENAI_MODEL')    ?: ($_SERVER['OPENAI_MODEL']    ?? 'gpt-4o-mini');
@@ -72,11 +73,39 @@ foreach ($history as $chat) {
 }
 $messages[] = ['role' => 'user', 'content' => $message];
 
-$payload = json_encode([
+$notionApiKey = getenv('NOTION_API_KEY') ?: ($_SERVER['NOTION_API_KEY'] ?? '');
+$notionDbId   = getenv('NOTION_DATABASE_ID') ?: ($_SERVER['NOTION_DATABASE_ID'] ?? '');
+
+$payloadData = [
     'model'       => $model,
     'messages'    => $messages,
     'temperature' => 0.7,
-]);
+];
+
+// Add tool only if Notion is configured
+if (!empty($notionApiKey) && !empty($notionDbId)) {
+    $payloadData['tools'] = [
+        [
+            'type' => 'function',
+            'function' => [
+                'name' => 'save_lead_to_notion',
+                'description' => 'Save lead information to Notion CRM. Call this ONLY when user has explicitly provided BOTH their name and WhatsApp number.',
+                'parameters' => [
+                    'type' => 'object',
+                    'properties' => [
+                        'name' => ['type' => 'string', 'description' => 'The name of the lead.'],
+                        'whatsapp' => ['type' => 'string', 'description' => 'The WhatsApp number of the lead.'],
+                        'message' => ['type' => 'string', 'description' => 'Short summary of what the lead is interested in.']
+                    ],
+                    'required' => ['name', 'whatsapp', 'message']
+                ]
+            ]
+        ]
+    ];
+    $payloadData['tool_choice'] = 'auto';
+}
+
+$payload = json_encode($payloadData);
 
 $options = [
     'http' => [
@@ -114,6 +143,55 @@ if ($httpCode !== 200) {
 }
 
 $data  = json_decode($response, true);
+
+// Handle Function Calling (Tool Calls)
+if (isset($data['choices'][0]['message']['tool_calls'])) {
+    $toolCalls = $data['choices'][0]['message']['tool_calls'];
+    foreach ($toolCalls as $toolCall) {
+        if ($toolCall['function']['name'] === 'save_lead_to_notion') {
+            $args = json_decode($toolCall['function']['arguments'], true);
+            
+            // Send to Notion API
+            $notionData = [
+                'parent' => ['database_id' => $notionDbId],
+                'properties' => [
+                    'Nama' => [
+                        'title' => [['text' => ['content' => $args['name'] ?? '-']]]
+                    ],
+                    'WhatsApp' => [
+                        'phone_number' => $args['whatsapp'] ?? '-'
+                    ],
+                    'Pesan' => [
+                        'rich_text' => [['text' => ['content' => $args['message'] ?? '-']]]
+                    ],
+                    'Status' => [
+                        'select' => ['name' => 'New Lead']
+                    ]
+                ]
+            ];
+            
+            $notionOptions = [
+                'http' => [
+                    'method' => 'POST',
+                    'header' => implode("\r\n", [
+                        'Authorization: Bearer ' . $notionApiKey,
+                        'Content-Type: application/json',
+                        'Notion-Version: 2022-06-28'
+                    ]),
+                    'content' => json_encode($notionData),
+                    'ignore_errors' => true,
+                ]
+            ];
+            $notionContext = stream_context_create($notionOptions);
+            @file_get_contents('https://api.notion.com/v1/pages', false, $notionContext);
+            
+            $replyMsg = "Terima kasih, {$args['name']}! Data Anda sudah saya simpan. Angi akan segera menghubungi Anda via WhatsApp di nomor {$args['whatsapp']}. Ada lagi yang ingin ditanyakan?";
+            echo json_encode(['reply' => $replyMsg]);
+            exit;
+        }
+    }
+}
+
 $reply = $data['choices'][0]['message']['content'] ?? 'Tidak ada respon dari chatbot.';
 
 echo json_encode(['reply' => $reply]);

@@ -578,12 +578,17 @@
                         })
                     })
                     .then(response => {
-                        if (!response.ok) {
-                            return response.text().then(text => {
-                                throw new Error('HTTP ' + response.status + ': ' + text.substring(0, 100));
-                            });
-                        }
-                        return response.json();
+                        return response.text().then(text => {
+                            try {
+                                const data = JSON.parse(text);
+                                if (!response.ok) throw new Error('HTTP ' + response.status + ': ' + (data.reply || text.substring(0, 200)));
+                                return data;
+                            } catch(e) {
+                                // Strip HTML tags to show readable PHP error
+                                const stripped = text.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().substring(0, 300);
+                                throw new Error('PHP: ' + stripped);
+                            }
+                        });
                     })
                     .then(data => {
                         this.messages.push({

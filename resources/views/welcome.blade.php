@@ -15,12 +15,89 @@
     <!-- AOS Animation CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <!-- Apply theme before render to prevent flash -->
+    <script>
+        if (localStorage.getItem('portfolio-theme') === 'light') {
+            document.documentElement.classList.add('light');
+        }
+    </script>
     <style>
         body { font-family: 'Outfit', sans-serif; overflow-x: hidden; }
         [x-cloak] { display: none !important; }
+
+        /* ===================== LIGHT THEME ===================== */
+        html.light { color-scheme: light; }
+        html.light body {
+            background-color: #F1F5F9 !important;
+            color: #0F172A !important;
+        }
+        /* Backgrounds */
+        html.light .bg-slate-950  { background-color: #F1F5F9 !important; }
+        html.light .bg-slate-900  { background-color: #FFFFFF !important; }
+        html.light .bg-slate-800  { background-color: #F8FAFC !important; }
+        html.light .bg-slate-700  { background-color: #E2E8F0 !important; }
+        /* Backgrounds with opacity */
+        html.light .bg-slate-950\/80 { background-color: rgba(241,245,249,0.92) !important; }
+        html.light .bg-slate-950\/30 { background-color: rgba(241,245,249,0.3) !important; }
+        html.light .bg-slate-900\/80 { background-color: rgba(255,255,255,0.85) !important; }
+        html.light .bg-slate-900\/50 { background-color: rgba(255,255,255,0.5) !important; }
+        html.light .bg-slate-900\/95 { background-color: rgba(255,255,255,0.97) !important; }
+        html.light .bg-slate-800\/50 { background-color: rgba(248,250,252,0.7) !important; }
+        html.light .bg-slate-800\/30 { background-color: rgba(248,250,252,0.4) !important; }
+        /* Text */
+        html.light .text-white      { color: #0F172A !important; }
+        html.light .text-slate-200  { color: #1E293B !important; }
+        html.light .text-slate-300  { color: #334155 !important; }
+        html.light .text-slate-400  { color: #64748B !important; }
+        html.light .text-slate-500  { color: #94A3B8 !important; }
+        html.light .text-slate-600  { color: #CBD5E1 !important; }
+        html.light .text-indigo-400 { color: #6D28D9 !important; }
+        html.light .text-indigo-300 { color: #7C3AED !important; }
+        /* Borders */
+        html.light .border-slate-900 { border-color: #E2E8F0 !important; }
+        html.light .border-slate-800 { border-color: #E2E8F0 !important; }
+        html.light .border-slate-700 { border-color: #CBD5E1 !important; }
+        html.light .border-slate-700\/50 { border-color: rgba(203,213,225,0.5) !important; }
+        /* Navbar */
+        html.light nav {
+            background-color: rgba(241,245,249,0.92) !important;
+            border-color: #E2E8F0 !important;
+        }
+        /* Lang toggle bg */
+        html.light .bg-slate-900.border.border-slate-700.rounded-full {
+            background-color: #F1F5F9 !important;
+            border-color: #CBD5E1 !important;
+        }
+        /* Hero gradient */
+        html.light header .absolute.inset-0 {
+            background: radial-gradient(ellipse at top right, rgba(139,92,246,0.12), #F1F5F9, #F1F5F9) !important;
+        }
+        /* Cards - add soft shadow in light mode */
+        html.light .rounded-2xl,
+        html.light .rounded-xl {
+            box-shadow: 0 1px 8px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+        }
+        /* Chatbot input area */
+        html.light input[type="text"] {
+            background-color: #F8FAFC !important;
+            color: #0F172A !important;
+            border-color: #E2E8F0 !important;
+        }
+        html.light input[type="text"]::placeholder { color: #94A3B8 !important; }
+        /* Selection */
+        html.light ::selection { background-color: #8B5CF6; color: white; }
+        /* Scrollbar */
+        html.light ::-webkit-scrollbar-track { background: #F1F5F9; }
+        html.light ::-webkit-scrollbar-thumb { background: #CBD5E1; }
+        /* ====================================================== */
     </style>
 </head>
-<body class="bg-slate-950 text-slate-200 antialiased selection:bg-indigo-500 selection:text-white" x-data="{ lang: 'en' }">
+<body class="bg-slate-950 text-slate-200 antialiased selection:bg-indigo-500 selection:text-white"
+    x-data="{ lang: 'en', theme: localStorage.getItem('portfolio-theme') || 'dark' }"
+    x-init="$watch('theme', val => {
+        document.documentElement.classList.toggle('light', val === 'light');
+        localStorage.setItem('portfolio-theme', val);
+    })">
 
     <!-- Navbar -->
     <nav class="fixed w-full z-50 top-0 border-b border-slate-800 bg-slate-950/80 backdrop-blur-md" data-aos="fade-down" data-aos-duration="800">
@@ -44,7 +121,21 @@
                 </a>
             </div>
 
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-3">
+                <!-- Theme Toggle -->
+                <button @click="theme = theme === 'dark' ? 'light' : 'dark'"
+                    class="w-10 h-10 rounded-full border border-slate-700 bg-slate-900 flex items-center justify-center hover:border-indigo-500 transition-all duration-300"
+                    :title="theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'">
+                    <!-- Sun icon (show in dark mode) -->
+                    <svg x-show="theme === 'dark'" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+                    </svg>
+                    <!-- Moon icon (show in light mode) -->
+                    <svg x-show="theme === 'light'" x-cloak xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z" />
+                    </svg>
+                </button>
+                <!-- Language Toggle -->
                 <div class="bg-slate-900 border border-slate-700 rounded-full p-1 flex items-center text-xs font-bold cursor-pointer relative" @click="lang = lang === 'en' ? 'id' : 'en'">
                     <div class="absolute w-1/2 h-full top-0 bg-indigo-600 rounded-full transition-transform duration-300 ease-in-out" :class="lang === 'en' ? 'translate-x-0 left-0' : 'translate-x-full left-0'"></div>
                     <div class="px-3 py-1.5 relative z-10 transition-colors" :class="lang === 'en' ? 'text-white' : 'text-slate-400'">EN</div>

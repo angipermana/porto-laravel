@@ -402,12 +402,12 @@
 
             <div class="block relative">
                 <!-- Garis vertikal tengah -->
-                <div class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0" style="width:2px; background:#334155;"></div>
+                <div class="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0" style="width:2px; background:#334155;"></div>
 
                 <!-- 2010 - Kiri -->
-                <div class="flex items-start mb-16 relative">
-                    <div class="w-1/2 pr-16 text-right" data-aos="fade-right">
-                        <div class="text-indigo-400 font-bold text-base mb-1">2010</div>
+                <div class="flex flex-col md:flex-row items-center md:items-start mb-16 relative">
+                    <div class="w-full md:w-1/2 md:pr-16 text-center md:text-right" data-aos="fade-right">
+                        <div class="text-indigo-400 font-bold text-2xl md:text-base mb-2 md:mb-1">2010</div>
                         <h3 class="text-xl font-bold text-white mb-1">
                             <span x-show="lang === 'en'">Early Journey</span>
                             <span x-show="lang === 'id'" x-cloak>Awal Perjalanan</span>
@@ -421,16 +421,16 @@
                             <span x-show="lang === 'id'" x-cloak>Awal perjalanan mengelola bisnis lokal dan bergabung dengan komunitas blogger, start dari nol hingga mengelola lebih dari 20+ web.</span>
                         </p>
                     </div>
-                    <div class="absolute left-1/2 -translate-x-1/2 top-1 z-10 w-5 h-5 rounded-full bg-indigo-500 border-4 border-slate-900 shadow-[0_0_18px_rgba(99,102,241,0.8)]" data-aos="zoom-in"></div>
-                    <div class="w-1/2 pl-16"></div>
+                    <div class="hidden md:block absolute left-1/2 -translate-x-1/2 top-1 z-10 w-5 h-5 rounded-full bg-indigo-500 border-4 border-slate-900 shadow-[0_0_18px_rgba(99,102,241,0.8)]" data-aos="zoom-in"></div>
+                    <div class="hidden md:block w-1/2 pl-16"></div>
                 </div>
 
                 <!-- 2021 - Kanan -->
-                <div class="flex items-start mb-16 relative">
-                    <div class="w-1/2 pr-16"></div>
-                    <div class="absolute left-1/2 -translate-x-1/2 top-1 z-10 w-5 h-5 rounded-full bg-cyan-500 border-4 border-slate-900 shadow-[0_0_18px_rgba(6,182,212,0.8)]" data-aos="zoom-in"></div>
-                    <div class="w-1/2 pl-16 text-left" data-aos="fade-left">
-                        <div class="text-cyan-400 font-bold text-base mb-1">2021</div>
+                <div class="flex flex-col md:flex-row items-center md:items-start mb-16 relative">
+                    <div class="hidden md:block w-1/2 pr-16"></div>
+                    <div class="hidden md:block absolute left-1/2 -translate-x-1/2 top-1 z-10 w-5 h-5 rounded-full bg-cyan-500 border-4 border-slate-900 shadow-[0_0_18px_rgba(6,182,212,0.8)]" data-aos="zoom-in"></div>
+                    <div class="w-full md:w-1/2 md:pl-16 text-center md:text-left" data-aos="fade-left">
+                        <div class="text-cyan-400 font-bold text-2xl md:text-base mb-2 md:mb-1">2021</div>
                         <h3 class="text-xl font-bold text-white mb-1">
                             <span x-show="lang === 'en'">Career Transition</span>
                             <span x-show="lang === 'id'" x-cloak>Transisi Karir</span>
@@ -447,9 +447,9 @@
                 </div>
 
                 <!-- 2024 - Kiri -->
-                <div class="flex items-start mb-16 relative">
-                    <div class="w-1/2 pr-16 text-right" data-aos="fade-right">
-                        <div class="text-purple-400 font-bold text-base mb-1">2024</div>
+                <div class="flex flex-col md:flex-row items-center md:items-start mb-16 relative">
+                    <div class="w-full md:w-1/2 md:pr-16 text-center md:text-right" data-aos="fade-right">
+                        <div class="text-purple-400 font-bold text-2xl md:text-base mb-2 md:mb-1">2024</div>
                         <h3 class="text-xl font-bold text-white mb-1">
                             <span x-show="lang === 'en'">Key Milestone</span>
                             <span x-show="lang === 'id'" x-cloak>Pencapaian Penting</span>
@@ -463,16 +463,16 @@
                             <span x-show="lang === 'id'" x-cloak>Mengelola beberapa klien dari beragam sektor bisnis dan layanan pemerintah. Sempat mengelola 100+ website serta mendapatkan penghargaan dari salah satu klien di bisnis travel.</span>
                         </p>
                     </div>
-                    <div class="absolute left-1/2 -translate-x-1/2 top-1 z-10 w-5 h-5 rounded-full bg-purple-500 border-4 border-slate-900 shadow-[0_0_18px_rgba(168,85,247,0.8)]" data-aos="zoom-in"></div>
-                    <div class="w-1/2 pl-16"></div>
+                    <div class="hidden md:block absolute left-1/2 -translate-x-1/2 top-1 z-10 w-5 h-5 rounded-full bg-purple-500 border-4 border-slate-900 shadow-[0_0_18px_rgba(168,85,247,0.8)]" data-aos="zoom-in"></div>
+                    <div class="hidden md:block w-1/2 pl-16"></div>
                 </div>
 
                 <!-- 2026 - Kanan -->
-                <div class="flex items-start relative">
-                    <div class="w-1/2 pr-16"></div>
-                    <div class="absolute left-1/2 -translate-x-1/2 top-1 z-10 w-5 h-5 rounded-full bg-green-500 border-4 border-slate-900 shadow-[0_0_18px_rgba(34,197,94,0.8)]" data-aos="zoom-in"></div>
-                    <div class="w-1/2 pl-16 text-left" data-aos="fade-left">
-                        <div class="text-green-400 font-bold text-base mb-1">2026</div>
+                <div class="flex flex-col md:flex-row items-center md:items-start relative">
+                    <div class="hidden md:block w-1/2 pr-16"></div>
+                    <div class="hidden md:block absolute left-1/2 -translate-x-1/2 top-1 z-10 w-5 h-5 rounded-full bg-green-500 border-4 border-slate-900 shadow-[0_0_18px_rgba(34,197,94,0.8)]" data-aos="zoom-in"></div>
+                    <div class="w-full md:w-1/2 md:pl-16 text-center md:text-left" data-aos="fade-left">
+                        <div class="text-green-400 font-bold text-2xl md:text-base mb-2 md:mb-1">2026</div>
                         <h3 class="text-xl font-bold text-white mb-1">
                             <span x-show="lang === 'en'">Current Position</span>
                             <span x-show="lang === 'id'" x-cloak>Posisi Saat Ini</span>

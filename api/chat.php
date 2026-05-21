@@ -1,6 +1,6 @@
 <?php
 ini_set('display_errors', 0);
-error_reporting(E_ALL);
+error_reporting(E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED);
 
 // Catch fatal errors and return as JSON
 register_shutdown_function(function () {
@@ -16,6 +16,9 @@ register_shutdown_function(function () {
 
 // Catch regular errors
 set_error_handler(function ($errno, $errstr, $errfile, $errline) {
+    if (!(error_reporting() & $errno)) {
+        return;
+    }
     if (!headers_sent()) {
         header('Content-Type: application/json');
         http_response_code(500);
@@ -121,7 +124,6 @@ curl_setopt($ch, CURLOPT_TIMEOUT, 50);
 $response = curl_exec($ch);
 $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 $curlError = curl_error($ch);
-curl_close($ch);
 
 if ($response === false) {
     http_response_code(500);

@@ -108,38 +108,32 @@ if (!empty($notionApiKey) && !empty($notionDbId)) {
 
 $payload = json_encode($payloadData);
 
-$options = [
-    'http' => [
-        'method'        => 'POST',
-        'header'        => implode("\r\n", [
-            'Content-Type: application/json',
-            'Authorization: Bearer ' . $apiKey,
-        ]),
-        'content'       => $payload,
-        'timeout'       => 15,
-        'ignore_errors' => true,
-    ],
-];
+$ch = curl_init($apiUrl);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+curl_setopt($ch, CURLOPT_HTTPHEADER, [
+    'Content-Type: application/json',
+    'Authorization: Bearer ' . $apiKey,
+]);
+curl_setopt($ch, CURLOPT_TIMEOUT, 15);
 
-$context  = stream_context_create($options);
-$response = @file_get_contents($apiUrl, false, $context);
-
-// Get HTTP status from response headers
-$httpCode = 0;
-if (isset($http_response_header[0])) {
-    preg_match('/HTTP\/\d\.\d\s+(\d+)/', $http_response_header[0], $m);
-    $httpCode = (int)($m[1] ?? 0);
-}
+$response = curl_exec($ch);
+$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+$curlError = curl_error($ch);
+curl_close($ch);
 
 if ($response === false) {
     http_response_code(500);
-    echo json_encode(['reply' => 'Gagal menghubungi server AI. Periksa koneksi atau coba lagi.']);
+    echo json_encode(['reply' => 'Gagal menghubungi server AI. Error: ' . $curlError]);
     exit;
 }
 
 if ($httpCode !== 200) {
     http_response_code(500);
-    echo json_encode(['reply' => 'API Error ' . $httpCode . ': ' . substr($response, 0, 200)]);
+    $errorData = json_decode($response, true);
+    $errorMsg = $errorData['error']['message'] ?? substr($response, 0, 200);
+    echo json_encode(['reply' => 'API Error ' . $httpCode . ': ' . $errorMsg]);
     exit;
 }
 

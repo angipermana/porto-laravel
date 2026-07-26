@@ -127,6 +127,8 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
 curl_setopt($ch, CURLOPT_HTTPHEADER, [
     'Content-Type: application/json',
     'Authorization: Bearer ' . $apiKey,
+    'HTTP-Referer: https://portofolio-angipermana-6179s-projects.vercel.app/',
+    'X-Title: Angi Permana Portfolio',
 ]);
 curl_setopt($ch, CURLOPT_TIMEOUT, 50);
 

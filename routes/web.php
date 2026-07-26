@@ -46,7 +46,9 @@ Route::post('/api/chat', function (Request $request) {
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $apiKey,
             'Content-Type' => 'application/json',
-        ])->timeout(12)->post($apiUrl . '/chat/completions', [
+            'HTTP-Referer' => 'https://portofolio-angipermana-6179s-projects.vercel.app/',
+            'X-Title' => 'Angi Permana Portfolio',
+        ])->timeout(15)->post($apiUrl . '/chat/completions', [
             'model' => $model,
             'messages' => $messages,
             'temperature' => 0.7,

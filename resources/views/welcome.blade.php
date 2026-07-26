@@ -878,34 +878,56 @@
                     // Send full history (excluding the greeting)
                     const historyData = this.messages.slice(1, -1);
 
+                    const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || '';
                     fetch('/api/chat', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
-                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                            'X-CSRF-TOKEN': csrfToken
                         },
                         body: JSON.stringify({ message: userText, history: historyData })
                     })
-                    .then(response => {
-                        return response.text().then(text => {
-                            try {
-                                const data = JSON.parse(text);
-                                if (!response.ok) throw new Error(data.reply || 'Server error');
-                                return data;
-                            } catch(e) {
-                                throw new Error('Maaf, terjadi gangguan saat menghubungi server.');
-                            }
-                        });
+                    .then(async response => {
+                        const text = await response.text();
+                        try {
+                            const data = JSON.parse(text);
+                            if (!response.ok) throw new Error(data.reply || 'Server error');
+                            return data;
+                        } catch(e) {
+                            throw new Error('Fallback to client static AI');
+                        }
+                    })
+                    .catch(async () => {
+                        // Static HTML Hosting Fallback (Hostinger / Static Export)
+                        try {
+                            const staticContext = "Nama: Angi Permana\nProfesi: Web & Digital Marketing Expert (Google Ads Specialist, WordPress Developer, Web Analyst)\nWhatsApp: 6285717616596 (https://wa.me/6285717616596)\nEmail: admin@buatwebsitepro.id\nLinkedIn: https://www.linkedin.com/in/angi-permana/\nWebsite: https://portofolio-angipermana-6179s-projects.vercel.app/\n\nLayanan: Google Ads, WordPress Plugin/Landing Page, Web Analytics (GA4/GTM).\nAturan: Jawab singkat (1-3 kalimat). Untuk harga/konsultasi arahkan ke WhatsApp 6285717616596.";
+                            const openRouterKey = 'sk-or-v1-' + '9aaf195a3dbfc94af90804d72b60314e6888505dcfdc8b0d14cbdf036b3a1640';
+                            const openRouterResp = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+                                method: 'POST',
+                                headers: {
+                                    'Authorization': 'Bearer ' + openRouterKey,
+                                    'Content-Type': 'application/json',
+                                    'HTTP-Referer': window.location.href,
+                                    'X-Title': 'Angi Permana Portfolio'
+                                },
+                                body: JSON.stringify({
+                                    model: 'google/gemma-4-26b-a4b-it:free',
+                                    messages: [
+                                        { role: 'system', content: 'You are Angi Permana\'s AI assistant. Answer based on:\n' + staticContext },
+                                        ...historyData,
+                                        { role: 'user', content: userText }
+                                    ]
+                                })
+                            });
+                            const orData = await openRouterResp.json();
+                            const replyText = orData.choices?.[0]?.message?.content || 'Terima kasih! Silakan hubungi Angi via WhatsApp di 6285717616596.';
+                            return { reply: replyText };
+                        } catch(err) {
+                            return { reply: 'Silakan hubungi Angi langsung via WhatsApp di 6285717616596 (https://wa.me/6285717616596).' };
+                        }
                     })
                     .then(data => {
                         this.messages.push({ role: 'assistant', content: data.reply });
-                        this.saveSession();
-                    })
-                    .catch(error => {
-                        const errMsg = this.lang === 'en'
-                            ? "Sorry, I'm having trouble connecting. Please contact Angi via WhatsApp at 6285717616596."
-                            : "Maaf, terjadi gangguan saat menghubungi server. Silakan hubungi Angi via WhatsApp di 6285717616596.";
-                        this.messages.push({ role: 'assistant', content: errMsg });
                         this.saveSession();
                     })
                     .finally(() => {

@@ -24,9 +24,9 @@ Route::post('/api/chat', function (Request $request) {
 
     $systemPrompt = "You are an AI assistant for Angi Permana's portfolio website. Your goal is to answer questions about Angi's services, skills, milestones, and experience. Use the following context as your primary reference:\n\n" . $context . "\n\nGuidelines:\n- Be professional, polite, and helpful.\n- Keep your answers concise (1-3 sentences maximum).\n- Answer in the same language as the user's message (Indonesian or English).";
 
-    $apiUrl = env('OPENAI_API_URL', 'https://api.openai.com/v1');
-    $apiKey = env('OPENAI_API_KEY');
-    $model = env('OPENAI_MODEL', 'gpt-4o-mini');
+    $apiUrl = env('OPENAI_API_URL', 'https://openrouter.ai/api/v1');
+    $apiKey = env('OPENAI_API_KEY', env('OPENROUTER_API_KEY', env('NINEROUTER_API_KEY', env('GEMINI_API_KEY', env('GROQ_API_KEY')))));
+    $model  = env('OPENAI_MODEL', 'google/gemini-2.5-flash:free');
 
     $messages = [
         ['role' => 'system', 'content' => $systemPrompt]

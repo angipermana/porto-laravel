@@ -66,9 +66,15 @@ $systemPrompt = "You are an AI assistant for Angi Permana's portfolio website. "
     . "- IMPORTANT PRICING RULE: If the user asks about price, cost, or \"berapa?\", DO NOT call the notion tool. Instead, you MUST reply EXACTLY with: \"Untuk harga silahkan berkomunikasi dengan Angi via email (admin@buatwebsitepro.id) atau telepon/whatsapp 084717616596.\"\n"
     . "- DO NOT call the `save_lead_to_notion` tool more than once per user session.";
 
-$apiKey  = getenv('OPENAI_API_KEY')  ?: ($_SERVER['OPENAI_API_KEY']  ?? '');
-$model   = getenv('OPENAI_MODEL')    ?: ($_SERVER['OPENAI_MODEL']    ?? 'gpt-4o-mini');
-$baseUrl = getenv('OPENAI_API_URL')  ?: ($_SERVER['OPENAI_API_URL']  ?? 'https://api.openai.com/v1');
+$apiKey  = getenv('OPENAI_API_KEY')
+    ?: (getenv('OPENROUTER_API_KEY')
+    ?: (getenv('NINEROUTER_API_KEY')
+    ?: (getenv('GEMINI_API_KEY')
+    ?: (getenv('GROQ_API_KEY')
+    ?: ($_SERVER['OPENAI_API_KEY'] ?? ($_SERVER['NINEROUTER_API_KEY'] ?? ''))))));
+
+$baseUrl = getenv('OPENAI_API_URL') ?: ($_SERVER['OPENAI_API_URL'] ?? 'https://openrouter.ai/api/v1');
+$model   = getenv('OPENAI_MODEL')   ?: ($_SERVER['OPENAI_MODEL']   ?? 'google/gemini-2.5-flash:free');
 $apiUrl  = rtrim($baseUrl, '/') . '/chat/completions';
 
 $messages = [['role' => 'system', 'content' => $systemPrompt]];

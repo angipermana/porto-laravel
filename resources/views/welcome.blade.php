@@ -17,7 +17,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <!-- Apply theme before render to prevent flash -->
     <script>
-        if (localStorage.getItem('portfolio-theme') === 'light') {
+        if ((localStorage.getItem('portfolio-theme') || 'light') === 'light') {
             document.documentElement.classList.add('light');
         }
     </script>
@@ -93,11 +93,11 @@
     </style>
 </head>
 <body class="bg-slate-950 text-slate-200 antialiased selection:bg-indigo-500 selection:text-white"
-    x-data="{ lang: 'en', theme: localStorage.getItem('portfolio-theme') || 'dark' }"
+    x-data="{ lang: localStorage.getItem('portfolio-lang') || 'id', theme: localStorage.getItem('portfolio-theme') || 'light' }"
     x-init="$watch('theme', val => {
         document.documentElement.classList.toggle('light', val === 'light');
         localStorage.setItem('portfolio-theme', val);
-    })">
+    }); $watch('lang', val => localStorage.setItem('portfolio-lang', val))">
 
     <!-- Navbar -->
     <nav class="fixed w-full z-50 top-0 border-b border-slate-800 bg-slate-950/80 backdrop-blur-md" data-aos="fade-down" data-aos-duration="800">

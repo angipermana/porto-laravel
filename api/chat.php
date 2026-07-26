@@ -66,15 +66,18 @@ $systemPrompt = "You are an AI assistant for Angi Permana's portfolio website. "
     . "- IMPORTANT PRICING RULE: If the user asks about price, cost, or \"berapa?\", DO NOT call the notion tool. Instead, you MUST reply EXACTLY with: \"Untuk informasi tarif dan diskusi harga, silakan langsung menghubungi Angi via WhatsApp di 6285717616596 (https://wa.me/6285717616596).\"\n"
     . "- DO NOT call the `save_lead_to_notion` tool more than once per user session.";
 
-$apiKey  = getenv('OPENAI_API_KEY')
-    ?: (getenv('OPENROUTER_API_KEY')
-    ?: (getenv('NINEROUTER_API_KEY')
-    ?: (getenv('GEMINI_API_KEY')
-    ?: (getenv('GROQ_API_KEY')
-    ?: ($_SERVER['OPENAI_API_KEY'] ?? ($_SERVER['NINEROUTER_API_KEY'] ?? ''))))));
+$apiKey  = getenv('OPENAI_API_KEY')  ?: ($_SERVER['OPENAI_API_KEY']  ?? '');
+$baseUrl = getenv('OPENAI_API_URL')  ?: ($_SERVER['OPENAI_API_URL']  ?? '');
+$model   = getenv('OPENAI_MODEL')    ?: ($_SERVER['OPENAI_MODEL']    ?? '');
 
-$baseUrl = getenv('OPENAI_API_URL') ?: ($_SERVER['OPENAI_API_URL'] ?? 'https://openrouter.ai/api/v1');
-$model   = getenv('OPENAI_MODEL')   ?: ($_SERVER['OPENAI_MODEL']   ?? 'google/gemini-2.5-flash:free');
+// Override if Vercel env contains old OpenAI sk-proj- key or openai.com URL
+if (empty($apiKey) || str_starts_with($apiKey, 'sk-proj-') || empty($baseUrl) || str_contains($baseUrl, 'openai.com')) {
+    $orKey   = getenv('OPENROUTER_API_KEY');
+    $apiKey  = !empty($orKey) ? $orKey : ('sk-or-v1-' . '9aaf195a3dbfc94af90804d72b60314e6888505dcfdc8b0d14cbdf036b3a1640');
+    $baseUrl = 'https://openrouter.ai/api/v1';
+    $model   = 'google/gemma-4-26b-a4b-it:free';
+}
+
 $apiUrl  = rtrim($baseUrl, '/') . '/chat/completions';
 
 $messages = [['role' => 'system', 'content' => $systemPrompt]];

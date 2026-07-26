@@ -903,8 +903,8 @@
                     })
                     .catch(error => {
                         const errMsg = this.lang === 'en'
-                            ? "Sorry, I'm having trouble connecting. Please contact Angi at admin@buatwebsitepro.id."
-                            : "Maaf, terjadi gangguan saat menghubungi server. Hubungi Angi di admin@buatwebsitepro.id.";
+                            ? "Sorry, I'm having trouble connecting. Please contact Angi via WhatsApp at 6285717616596."
+                            : "Maaf, terjadi gangguan saat menghubungi server. Silakan hubungi Angi via WhatsApp di 6285717616596.";
                         this.messages.push({ role: 'assistant', content: errMsg });
                         this.saveSession();
                     })

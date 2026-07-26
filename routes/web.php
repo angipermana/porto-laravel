@@ -19,10 +19,10 @@ Route::post('/api/chat', function (Request $request) {
     if (Storage::disk('local')->exists($sourcePath)) {
         $context = Storage::disk('local')->get($sourcePath);
     } else {
-        $context = "Name: Angi Permana\nProfession: Web & Digital Marketing Expert\nEmail: admin@buatwebsitepro.id";
+        $context = "Name: Angi Permana\nProfession: Web & Digital Marketing Expert\nWhatsApp: 6285717616596\nEmail: admin@buatwebsitepro.id";
     }
 
-    $systemPrompt = "You are an AI assistant for Angi Permana's portfolio website. Your goal is to answer questions about Angi's services, skills, milestones, and experience. Use the following context as your primary reference:\n\n" . $context . "\n\nGuidelines:\n- Be professional, polite, and helpful.\n- Keep your answers concise (1-3 sentences maximum).\n- Answer in the same language as the user's message (Indonesian or English).";
+    $systemPrompt = "You are an AI assistant for Angi Permana's portfolio website. Your goal is to answer questions about Angi's services, skills, milestones, and experience. Use the following context as your primary reference:\n\n" . $context . "\n\nGuidelines:\n- Be professional, polite, and helpful.\n- Keep your answers concise (1-3 sentences maximum).\n- Answer in the same language as the user's message (Indonesian or English).\n- For contact, pricing, or consultations, direct users to WhatsApp at 6285717616596 (https://wa.me/6285717616596).";
 
     $apiUrl = env('OPENAI_API_URL', 'https://openrouter.ai/api/v1');
     $apiKey = env('OPENAI_API_KEY', env('OPENROUTER_API_KEY', env('NINEROUTER_API_KEY', env('GEMINI_API_KEY', env('GROQ_API_KEY')))));
@@ -61,12 +61,12 @@ Route::post('/api/chat', function (Request $request) {
         }
 
         return response()->json([
-            'reply' => 'Maaf, chatbot sedang offline (API Error: ' . $response->status() . '). Silakan hubungi langsung via email di admin@buatwebsitepro.id.'
+            'reply' => 'Maaf, chatbot sedang offline (API Error: ' . $response->status() . '). Silakan hubungi langsung via WhatsApp di 6285717616596.'
         ], 500);
 
     } catch (\Exception $e) {
         return response()->json([
-            'reply' => 'Maaf, gagal menghubungkan ke chatbot server (9Router). Hubungi Angi di admin@buatwebsitepro.id.'
+            'reply' => 'Maaf, gagal menghubungkan ke chatbot server. Hubungi Angi via WhatsApp di 6285717616596.'
         ], 500);
     }
 });

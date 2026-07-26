@@ -182,6 +182,12 @@
                         <span x-show="lang === 'en'">Contact Me</span>
                         <span x-show="lang === 'id'" x-cloak>Hubungi Saya</span>
                     </a>
+                    <a href="https://www.linkedin.com/in/angi-permana/" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-[#0A66C2]/10 hover:bg-[#0A66C2]/20 text-[#0A66C2] border border-[#0A66C2]/30 px-6 py-4 rounded-full font-semibold transition text-center flex items-center justify-center gap-2 group hover:scale-105">
+                        <svg class="w-5 h-5 fill-current group-hover:scale-110 transition" viewBox="0 0 24 24">
+                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.78a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26Z"/>
+                        </svg>
+                        <span>LinkedIn</span>
+                    </a>
                 </div>
             </div>
             
@@ -297,91 +303,266 @@
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Case Study 1 -->
-                <div data-aos="fade-right" data-aos-delay="100" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:-translate-y-2 transition duration-500 hover:shadow-2xl hover:shadow-indigo-500/20">
-                    <div class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
-                        <div class="absolute inset-0 bg-gradient-to-br from-indigo-600/20 to-slate-900 z-0"></div>
-                        <svg class="w-16 h-16 text-indigo-500/50 relative z-10 group-hover:scale-110 transition duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
-                    </div>
-                    <div class="p-8">
-                        <div class="flex gap-2 mb-4">
-                            <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 text-xs font-bold rounded-full border border-indigo-500/20">Google Ads</span>
-                            <span class="px-3 py-1 bg-purple-500/10 text-purple-400 text-xs font-bold rounded-full border border-purple-500/20">Analytics</span>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Case Study 1: Organic Traffic Growth -->
+                <div data-aos="fade-up" data-aos-delay="100" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:-translate-y-2 transition duration-500 hover:shadow-2xl hover:shadow-indigo-500/20 flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
+                            <div class="absolute inset-0 bg-gradient-to-br from-indigo-600/20 via-slate-900 to-slate-900 z-0"></div>
+                            <svg class="w-14 h-14 text-indigo-400 relative z-10 group-hover:scale-110 transition duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-4">
-                            <span x-show="lang === 'en'">E-Commerce ROAS Optimization</span>
-                            <span x-show="lang === 'id'" x-cloak>Optimasi ROAS E-Commerce</span>
-                        </h3>
-                        <div class="space-y-4 mb-6">
-                            <div class="bg-slate-950 p-4 rounded-lg border border-slate-800 group-hover:border-slate-700 transition">
-                                <span class="text-slate-500 text-xs uppercase tracking-wider font-bold block mb-1">
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 text-xs font-bold rounded-full border border-indigo-500/20">SEO Organic</span>
+                                <span class="px-3 py-1 bg-purple-500/10 text-purple-400 text-xs font-bold rounded-full border border-purple-500/20">Growth</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">
+                                <span x-show="lang === 'en'">Consistent Organic Traffic Scaling</span>
+                                <span x-show="lang === 'id'" x-cloak>Pertumbuhan Trafik Organik Konsisten</span>
+                            </h3>
+                            <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 group-hover:border-slate-700 transition mb-4">
+                                <span class="text-slate-500 text-[11px] uppercase tracking-wider font-bold block mb-1">
                                     <span x-show="lang === 'en'">The Challenge</span>
                                     <span x-show="lang === 'id'" x-cloak>Tantangan</span>
                                 </span>
-                                <span class="text-slate-300 text-sm font-medium">
-                                    <span x-show="lang === 'en'">High CPA ($45) and low conversion tracking accuracy.</span>
-                                    <span x-show="lang === 'id'" x-cloak>CPA tinggi (Biaya per Akuisisi mahal) dan tracking tidak akurat.</span>
+                                <span class="text-slate-300 text-xs font-medium leading-relaxed">
+                                    <span x-show="lang === 'en'">Stagnant organic traffic, low search visibility, and unoptimized keyword structure.</span>
+                                    <span x-show="lang === 'id'" x-cloak>Trafik organik stagnan, jangkauan pencarian rendah, dan struktur kata kunci belum optimal.</span>
                                 </span>
                             </div>
-                            <div class="bg-indigo-950/30 p-4 rounded-lg border border-indigo-500/30 flex justify-between items-center group-hover:bg-indigo-900/40 transition">
-                                <div>
-                                    <span class="text-indigo-400 text-xs uppercase tracking-wider font-bold block mb-1">
-                                        <span x-show="lang === 'en'">The Result</span>
-                                        <span x-show="lang === 'id'" x-cloak>Hasil Akhir</span>
-                                    </span>
-                                    <span class="text-white font-bold text-xl">ROAS +250%</span>
-                                </div>
-                                <div class="text-right">
-                                    <span class="text-indigo-400 text-xs uppercase tracking-wider font-bold block mb-1">CPA</span>
-                                    <span class="text-white font-bold text-xl">
-                                        <span x-show="lang === 'en'">-60%</span>
-                                        <span x-show="lang === 'id'" x-cloak>Turun 60%</span>
-                                    </span>
-                                </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <div class="bg-indigo-950/30 p-4 rounded-xl border border-indigo-500/30 flex justify-between items-center group-hover:bg-indigo-900/40 transition">
+                            <div>
+                                <span class="text-indigo-400 text-[10px] uppercase tracking-wider font-bold block mb-1">
+                                    <span x-show="lang === 'en'">Monthly Growth</span>
+                                    <span x-show="lang === 'id'" x-cloak>Pertumbuhan Bulanan</span>
+                                </span>
+                                <span class="text-white font-extrabold text-xl">+30%/Mo</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-indigo-400 text-[10px] uppercase tracking-wider font-bold block mb-1">Status</span>
+                                <span class="text-emerald-400 font-bold text-sm">
+                                    <span x-show="lang === 'en'">Consistent</span>
+                                    <span x-show="lang === 'id'" x-cloak>Konsisten</span>
+                                </span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Case Study 2 -->
-                <div data-aos="fade-left" data-aos-delay="200" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:-translate-y-2 transition duration-500 hover:shadow-2xl hover:shadow-cyan-500/20">
-                    <div class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
-                        <div class="absolute inset-0 bg-gradient-to-br from-cyan-600/20 to-slate-900 z-0"></div>
-                        <svg class="w-16 h-16 text-cyan-500/50 relative z-10 group-hover:scale-110 transition duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-                    </div>
-                    <div class="p-8">
-                        <div class="flex gap-2 mb-4">
-                            <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 text-xs font-bold rounded-full border border-cyan-500/20">WordPress</span>
-                            <span class="px-3 py-1 bg-green-500/10 text-green-400 text-xs font-bold rounded-full border border-green-500/20">Speed</span>
+                <!-- Case Study 2: Malware Removal & Security -->
+                <div data-aos="fade-up" data-aos-delay="200" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:-translate-y-2 transition duration-500 hover:shadow-2xl hover:shadow-red-500/20 flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
+                            <div class="absolute inset-0 bg-gradient-to-br from-red-600/20 via-slate-900 to-slate-900 z-0"></div>
+                            <svg class="w-14 h-14 text-red-400 relative z-10 group-hover:scale-110 transition duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-4">
-                            <span x-show="lang === 'en'">B2B Landing Page Revamp</span>
-                            <span x-show="lang === 'id'" x-cloak>Perombakan Landing Page B2B</span>
-                        </h3>
-                        <div class="space-y-4 mb-6">
-                            <div class="bg-slate-950 p-4 rounded-lg border border-slate-800 group-hover:border-slate-700 transition">
-                                <span class="text-slate-500 text-xs uppercase tracking-wider font-bold block mb-1">
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-red-500/10 text-red-400 text-xs font-bold rounded-full border border-red-500/20">WordPress</span>
+                                <span class="px-3 py-1 bg-rose-500/10 text-rose-400 text-xs font-bold rounded-full border border-rose-500/20">Security</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">
+                                <span x-show="lang === 'en'">Malware Removal & Security Hardening</span>
+                                <span x-show="lang === 'id'" x-cloak>Pembersihan Malware & Keamanan Web</span>
+                            </h3>
+                            <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 group-hover:border-slate-700 transition mb-4">
+                                <span class="text-slate-500 text-[11px] uppercase tracking-wider font-bold block mb-1">
                                     <span x-show="lang === 'en'">The Challenge</span>
                                     <span x-show="lang === 'id'" x-cloak>Tantangan</span>
                                 </span>
-                                <span class="text-slate-300 text-sm font-medium">
-                                    <span x-show="lang === 'en'">Bloated theme causing 6s load time & high bounce rate.</span>
-                                    <span x-show="lang === 'id'" x-cloak>Theme berat membuat loading 6 detik & bounce rate tinggi.</span>
+                                <span class="text-slate-300 text-xs font-medium leading-relaxed">
+                                    <span x-show="lang === 'en'">Website infected with malicious scripts, blacklisted by search engines & showing warnings.</span>
+                                    <span x-show="lang === 'id'" x-cloak>Website terinfeksi skrip jahat/malware, di-blacklist Google, dan merusak reputasi domain.</span>
                                 </span>
                             </div>
-                            <div class="bg-cyan-950/30 p-4 rounded-lg border border-cyan-500/30 flex justify-between items-center group-hover:bg-cyan-900/40 transition">
-                                <div>
-                                    <span class="text-cyan-400 text-xs uppercase tracking-wider font-bold block mb-1">Load Time</span>
-                                    <span class="text-white font-bold text-xl">1.2s</span>
-                                </div>
-                                <div class="text-right">
-                                    <span class="text-cyan-400 text-xs uppercase tracking-wider font-bold block mb-1">Web Vitals</span>
-                                    <span class="text-white font-bold text-xl">
-                                        <span x-show="lang === 'en'">100% Pass</span>
-                                        <span x-show="lang === 'id'" x-cloak>Lulus 100%</span>
-                                    </span>
-                                </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <div class="bg-red-950/30 p-4 rounded-xl border border-red-500/30 flex justify-between items-center group-hover:bg-red-900/40 transition">
+                            <div>
+                                <span class="text-red-400 text-[10px] uppercase tracking-wider font-bold block mb-1">Malware Cleaned</span>
+                                <span class="text-white font-extrabold text-xl">100% Free</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-red-400 text-[10px] uppercase tracking-wider font-bold block mb-1">Security</span>
+                                <span class="text-emerald-400 font-bold text-sm">
+                                    <span x-show="lang === 'en'">Fully Secured</span>
+                                    <span x-show="lang === 'id'" x-cloak>Aman & Pulih</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 3: Travel High-Ticket Campaign -->
+                <div data-aos="fade-up" data-aos-delay="300" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:-translate-y-2 transition duration-500 hover:shadow-2xl hover:shadow-emerald-500/20 flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
+                            <div class="absolute inset-0 bg-gradient-to-br from-emerald-600/20 via-slate-900 to-slate-900 z-0"></div>
+                            <svg class="w-14 h-14 text-emerald-400 relative z-10 group-hover:scale-110 transition duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 text-xs font-bold rounded-full border border-emerald-500/20">Paid Ads</span>
+                                <span class="px-3 py-1 bg-teal-500/10 text-teal-400 text-xs font-bold rounded-full border border-teal-500/20">High-Ticket Travel</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">
+                                <span x-show="lang === 'en'">High-Ticket Travel Ad Scaling</span>
+                                <span x-show="lang === 'id'" x-cloak>Kampanye Iklan Travel High-Ticket</span>
+                            </h3>
+                            <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 group-hover:border-slate-700 transition mb-4">
+                                <span class="text-slate-500 text-[11px] uppercase tracking-wider font-bold block mb-1">
+                                    <span x-show="lang === 'en'">The Challenge & Strategy</span>
+                                    <span x-show="lang === 'id'" x-cloak>Tantangan & Strategi</span>
+                                </span>
+                                <span class="text-slate-300 text-xs font-medium leading-relaxed">
+                                    <span x-show="lang === 'en'">Rp 26M budget scaling high-ticket seats (Avg Rp 30M/seat) for premium travel packages.</span>
+                                    <span x-show="lang === 'id'" x-cloak>Budget iklan Rp 26jt untuk closing paket travel premium (Rata-rata Rp 30jt per seat).</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <div class="bg-emerald-950/30 p-4 rounded-xl border border-emerald-500/30 flex justify-between items-center group-hover:bg-emerald-900/40 transition">
+                            <div>
+                                <span class="text-emerald-400 text-[10px] uppercase tracking-wider font-bold block mb-1">Total Closing</span>
+                                <span class="text-white font-extrabold text-xl">90 Seats</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-emerald-400 text-[10px] uppercase tracking-wider font-bold block mb-1">Total Revenue</span>
+                                <span class="text-emerald-400 font-bold text-lg">Rp 2.7 Miliar</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 4: SILO Architecture & Broken Links (500+ Pages) -->
+                <div data-aos="fade-up" data-aos-delay="400" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:-translate-y-2 transition duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
+                            <div class="absolute inset-0 bg-gradient-to-br from-cyan-600/20 via-slate-900 to-slate-900 z-0"></div>
+                            <svg class="w-14 h-14 text-cyan-400 relative z-10 group-hover:scale-110 transition duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 text-xs font-bold rounded-full border border-cyan-500/20">Technical SEO</span>
+                                <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs font-bold rounded-full border border-blue-500/20">500+ Pages</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">
+                                <span x-show="lang === 'en'">SILO Architecture & Broken Link Remediation</span>
+                                <span x-show="lang === 'id'" x-cloak>Arsitektur SILO & Perbaikan 500+ Halaman</span>
+                            </h3>
+                            <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 group-hover:border-slate-700 transition mb-4">
+                                <span class="text-slate-500 text-[11px] uppercase tracking-wider font-bold block mb-1">
+                                    <span x-show="lang === 'en'">The Challenge</span>
+                                    <span x-show="lang === 'id'" x-cloak>Tantangan</span>
+                                </span>
+                                <span class="text-slate-300 text-xs font-medium leading-relaxed">
+                                    <span x-show="lang === 'en'">Messy internal linking and numerous broken links across 500+ pages ruining crawl efficiency.</span>
+                                    <span x-show="lang === 'id'" x-cloak>Struktur link internal acak-acakan dan broken link pada web 500+ halaman yang merusak crawl budget.</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <div class="bg-cyan-950/30 p-4 rounded-xl border border-cyan-500/30 flex justify-between items-center group-hover:bg-cyan-900/40 transition">
+                            <div>
+                                <span class="text-cyan-400 text-[10px] uppercase tracking-wider font-bold block mb-1">Broken Links</span>
+                                <span class="text-white font-extrabold text-xl">0 (Fixed)</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-cyan-400 text-[10px] uppercase tracking-wider font-bold block mb-1">Structure</span>
+                                <span class="text-cyan-400 font-bold text-sm">
+                                    <span x-show="lang === 'en'">100% SILO Ready</span>
+                                    <span x-show="lang === 'id'" x-cloak>100% SILO Struktur</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 5: GMB Local SEO Optimization -->
+                <div data-aos="fade-up" data-aos-delay="500" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:-translate-y-2 transition duration-500 hover:shadow-2xl hover:shadow-amber-500/20 flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
+                            <div class="absolute inset-0 bg-gradient-to-br from-amber-600/20 via-slate-900 to-slate-900 z-0"></div>
+                            <svg class="w-14 h-14 text-amber-400 relative z-10 group-hover:scale-110 transition duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-amber-500/10 text-amber-400 text-xs font-bold rounded-full border border-amber-500/20">Local SEO</span>
+                                <span class="px-3 py-1 bg-yellow-500/10 text-yellow-400 text-xs font-bold rounded-full border border-yellow-500/20">Google Business</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">
+                                <span x-show="lang === 'en'">Google My Business & Local SEO Optimization</span>
+                                <span x-show="lang === 'id'" x-cloak>Optimasi GMB & Local SEO Berkualitas</span>
+                            </h3>
+                            <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 group-hover:border-slate-700 transition mb-4">
+                                <span class="text-slate-500 text-[11px] uppercase tracking-wider font-bold block mb-1">
+                                    <span x-show="lang === 'en'">The Challenge</span>
+                                    <span x-show="lang === 'id'" x-cloak>Tantangan</span>
+                                </span>
+                                <span class="text-slate-300 text-xs font-medium leading-relaxed">
+                                    <span x-show="lang === 'en'">Low local map ranking and missing out on high-intent local customer phone calls & visits.</span>
+                                    <span x-show="lang === 'id'" x-cloak>Peringkat Google Maps rendah dan profil GMB belum dioptimasi untuk menjaring pembeli lokal.</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <div class="bg-amber-950/30 p-4 rounded-xl border border-amber-500/30 flex justify-between items-center group-hover:bg-amber-900/40 transition">
+                            <div>
+                                <span class="text-amber-400 text-[10px] uppercase tracking-wider font-bold block mb-1">Local Traffic & Calls</span>
+                                <span class="text-white font-extrabold text-xl">+180% Qualified</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-amber-400 text-[10px] uppercase tracking-wider font-bold block mb-1">Map Ranking</span>
+                                <span class="text-amber-400 font-bold text-sm">Top 3 Map Pack</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 6: CRO & Landing Page Redesign -->
+                <div data-aos="fade-up" data-aos-delay="600" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:-translate-y-2 transition duration-500 hover:shadow-2xl hover:shadow-pink-500/20 flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
+                            <div class="absolute inset-0 bg-gradient-to-br from-pink-600/20 via-slate-900 to-slate-900 z-0"></div>
+                            <svg class="w-14 h-14 text-pink-400 relative z-10 group-hover:scale-110 transition duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-pink-500/10 text-pink-400 text-xs font-bold rounded-full border border-pink-500/20">CRO</span>
+                                <span class="px-3 py-1 bg-violet-500/10 text-violet-400 text-xs font-bold rounded-full border border-violet-500/20">Landing Page</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">
+                                <span x-show="lang === 'en'">Conversion Rate Optimization & Redesign</span>
+                                <span x-show="lang === 'id'" x-cloak>Optimasi Konversi (CRO) & Redesain Landing Page</span>
+                            </h3>
+                            <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 group-hover:border-slate-700 transition mb-4">
+                                <span class="text-slate-500 text-[11px] uppercase tracking-wider font-bold block mb-1">
+                                    <span x-show="lang === 'en'">The Challenge</span>
+                                    <span x-show="lang === 'id'" x-cloak>Tantangan</span>
+                                </span>
+                                <span class="text-slate-300 text-xs font-medium leading-relaxed">
+                                    <span x-show="lang === 'en'">High ad traffic but low conversion rate (&lt;1%) due to friction & unclear CTA hierarchy.</span>
+                                    <span x-show="lang === 'id'" x-cloak>Trafik iklan tinggi namun angka konversi terhambat di bawah 1% akibat hirarki CTA & UX kurang optimal.</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <div class="bg-pink-950/30 p-4 rounded-xl border border-pink-500/30 flex justify-between items-center group-hover:bg-pink-900/40 transition">
+                            <div>
+                                <span class="text-pink-400 text-[10px] uppercase tracking-wider font-bold block mb-1">Conv Rate</span>
+                                <span class="text-white font-extrabold text-xl">+240% (2.7%)</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-pink-400 text-[10px] uppercase tracking-wider font-bold block mb-1">Inquiries</span>
+                                <span class="text-pink-400 font-bold text-sm">2.5x Increase</span>
                             </div>
                         </div>
                     </div>
@@ -504,14 +685,23 @@
                 <span x-show="lang === 'en'">Let's discuss how I can help your team achieve marketing goals through solid web foundations and accurate data.</span>
                 <span x-show="lang === 'id'" x-cloak>Mari berdiskusi tentang bagaimana saya bisa membantu tim Anda mencapai target pemasaran melalui web yang solid dan data yang akurat.</span>
             </p>
-            <a id="email-me-now" href="mailto:admin@buatwebsitepro.id"
-               class="inline-flex items-center gap-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-12 py-5 rounded-full font-bold text-xl shadow-lg hover:shadow-[0_0_35px_rgba(99,102,241,0.6)] transition-all duration-300 hover:-translate-y-1">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                </svg>
-                <span x-show="lang === 'en'">Email Me Now</span>
-                <span x-show="lang === 'id'" x-cloak>Kirim Email Sekarang</span>
-            </a>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a id="email-me-now" href="mailto:admin@buatwebsitepro.id"
+                   class="inline-flex items-center gap-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-10 py-5 rounded-full font-bold text-lg shadow-lg hover:shadow-[0_0_35px_rgba(99,102,241,0.6)] transition-all duration-300 hover:-translate-y-1">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                    <span x-show="lang === 'en'">Email Me Now</span>
+                    <span x-show="lang === 'id'" x-cloak>Kirim Email Sekarang</span>
+                </a>
+                <a href="https://www.linkedin.com/in/angi-permana/" target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center gap-3 bg-[#0A66C2] hover:bg-[#004182] text-white px-10 py-5 rounded-full font-bold text-lg shadow-lg hover:shadow-[0_0_35px_rgba(10,102,194,0.5)] transition-all duration-300 hover:-translate-y-1">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.78a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26Z"/>
+                    </svg>
+                    <span>Connect on LinkedIn</span>
+                </a>
+            </div>
             <div class="mt-20 text-slate-600 text-sm font-medium">
                 &copy; {{ date('Y') }} Angi Permana. Built with Laravel &amp; TailwindCSS.
             </div>

@@ -4,6 +4,7 @@
 - **Name**: Angi Permana
 - **Profession**: Web & Digital Marketing Expert (Google Ads Specialist, WordPress Developer, Web Analyst)
 - **Email**: admin@buatwebsitepro.id
+- **LinkedIn**: https://www.linkedin.com/in/angi-permana/
 - **Website**: https://portofolio-angipermana-6179s-projects.vercel.app/
 
 ## Core Specialties
@@ -20,6 +21,14 @@
 - **2021 (Transisi Karir / Career Transition)**: Transitioned into a full-time blogger, solopreneur, web designer, and began managing advertising campaigns for clients on Google Ads and Meta (Facebook) Ads.
 - **2024 (Pencapaian Penting / Key Milestone)**: Managed multiple clients from various business sectors and government agencies. Handled over 100+ websites concurrently and received a special recognition award from a travel business client.
 - **2026 (Posisi Saat Ini / Current Position)**: Running his own digital marketing agency, developing custom WordPress plugins, and managing AI and automation-driven business systems for clients.
+
+## Featured Case Studies & Proven Results
+1. **Pertumbuhan Trafik Organik Konsisten (+30%/Mo)**: Optimasi SEO Organik & strategi konten yang menghasilkan pertumbuhan trafik naik konsisten +30% setiap bulan.
+2. **Pembersihan Malware & Keamanan Website**: Menghapus 100% malware/skrip jahat dari website WordPress yang terinfeksi & mengamankan kembali dari blacklist Google.
+3. **Kampanye Iklan Travel High-Ticket**: Mengelola budget iklan Rp 26 Juta yang sukses closing **90 seat** paket travel (harga rata-rata Rp 30 Juta/seat, menghasilkan total omset **Rp 2.7 Miliar** dengan ROAS 103x).
+4. **Arsitektur SILO & Fix Broken Links (500+ Halaman)**: Membangun struktur SILO SEO dan memperbaiki seluruh broken link pada website besar berkapasitas 500+ halaman untuk mengoptimalkan crawl budget & peringkat.
+5. **Optimasi GMB & Local SEO**: Peningkatan trafik & leads lokal berkualitas sebesar **+180%** dari optimasi Google My Business dan Google Maps (Top 3 Map Pack).
+6. **Optimasi Konversi (CRO) & Redesain Landing Page**: Meningkatkan Conversion Rate sebesar **+240%** (dari 0.8% ke 2.7%) dan meningkatkan leads 2.5x lipat melalui optimasi UX/UI & A/B testing CTA.
 
 ## Chatbot Guidelines
 - You are Angi Permana's personal AI chatbot assistant.

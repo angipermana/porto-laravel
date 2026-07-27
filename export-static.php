@@ -35,21 +35,42 @@ $app = require_once __DIR__ . '/bootstrap/app.php';
 $kernel = $app->make(Illuminate\Contracts\Console\Kernel::class);
 $kernel->bootstrap();
 
-$html = view('welcome')->render();
+$pages = [
+    'welcome' => 'index.html',
+    'portfolio.seo-bandung' => 'portofolio-jasa-seo-bandung/index.html',
+    'portfolio.hapus-malware' => 'portofolio-jasa-hapus-malware/index.html',
+    'portfolio.iklan-travel' => 'portofolio-kampanye-iklan-travel/index.html',
+    'portfolio.silo-seo' => 'portofolio-arsitektur-silo-seo/index.html',
+    'portfolio.local-seo-gmb' => 'portofolio-jasa-local-seo-gmb/index.html',
+    'portfolio.konversi-cro' => 'portofolio-optimasi-konversi-cro/index.html',
+];
 
-// Remove dev vite scripts
-$html = preg_replace('/<script type="module" src="http:\/\/127\.0\.0\.1:[0-9]+\/@vite\/client"><\/script>/', '', $html);
-$html = preg_replace('/<link rel="stylesheet" href="http:\/\/127\.0\.0\.1:[0-9]+\/resources\/css\/app\.css" \/>/', '', $html);
-$html = preg_replace('/<script type="module" src="http:\/\/127\.0\.0\.1:[0-9]+\/resources\/js\/app\.js"><\/script>/', '', $html);
+foreach ($pages as $viewName => $outRelativePath) {
+    $html = view($viewName)->render();
 
-// Inject static assets
-$cssLink  = '<link rel="stylesheet" href="./' . $cssFile . '">';
-$jsScript = '<script type="module" src="./' . $jsFile . '"></script>';
+    // Remove dev vite scripts
+    $html = preg_replace('/<script type="module" src="http:\/\/127\.0\.0\.1:[0-9]+\/@vite\/client"><\/script>/', '', $html);
+    $html = preg_replace('/<link rel="stylesheet" href="http:\/\/127\.0\.0\.1:[0-9]+\/resources\/css\/app\.css" \/>/', '', $html);
+    $html = preg_replace('/<script type="module" src="http:\/\/127\.0\.0\.1:[0-9]+\/resources\/js\/app\.js"><\/script>/', '', $html);
 
-$html = str_replace('</head>', "    {$cssLink}\n    {$jsScript}\n</head>", $html);
+    // Calculate relative path depth for static assets
+    $depth = substr_count($outRelativePath, '/');
+    $assetPrefix = $depth > 0 ? str_repeat('../', $depth) : './';
 
-// Save to dist/index.html
-file_put_contents($distDir . '/index.html', $html);
+    $cssLink  = '<link rel="stylesheet" href="' . $assetPrefix . $cssFile . '">';
+    $jsScript = '<script type="module" src="' . $assetPrefix . $jsFile . '"></script>';
+
+    $html = str_replace('</head>', "    {$cssLink}\n    {$jsScript}\n</head>", $html);
+
+    $fullOutPath = $distDir . '/' . $outRelativePath;
+    $outDir = dirname($fullOutPath);
+    if (!is_dir($outDir)) {
+        mkdir($outDir, 0755, true);
+    }
+    file_put_contents($fullOutPath, $html);
+    echo "  - Generated: {$outRelativePath}\n";
+}
+
 
 // Copy assets from public/build to dist/build
 function copyDir($src, $dst) {

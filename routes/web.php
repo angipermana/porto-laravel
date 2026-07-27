@@ -9,6 +9,38 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Portfolio Detail Routes
+Route::get('/portofolio-jasa-seo-bandung', function () {
+    return view('portfolio.seo-bandung');
+});
+Route::get('/Portofolio-jasa-seo-bandung', function () {
+    return redirect('/portofolio-jasa-seo-bandung', 301);
+});
+
+Route::get('/portofolio-jasa-hapus-malware', function () {
+    return view('portfolio.hapus-malware');
+});
+Route::get('/portofolio-Jasa-hapus-malware', function () {
+    return redirect('/portofolio-jasa-hapus-malware', 301);
+});
+
+Route::get('/portofolio-kampanye-iklan-travel', function () {
+    return view('portfolio.iklan-travel');
+});
+
+Route::get('/portofolio-arsitektur-silo-seo', function () {
+    return view('portfolio.silo-seo');
+});
+
+Route::get('/portofolio-jasa-local-seo-gmb', function () {
+    return view('portfolio.local-seo-gmb');
+});
+
+Route::get('/portofolio-optimasi-konversi-cro', function () {
+    return view('portfolio.konversi-cro');
+});
+
+
 Route::post('/api/chat', function (Request $request) {
     $message = $request->input('message');
     $history = $request->input('history', []);

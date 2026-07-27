@@ -305,7 +305,7 @@
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Case Study 1: Organic Traffic Growth -->
-                <div data-aos="fade-up" data-aos-delay="100" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:-translate-y-2 transition duration-500 hover:shadow-2xl hover:shadow-indigo-500/20 flex flex-col justify-between">
+                <a href="/portofolio-jasa-seo-bandung" data-aos="fade-up" data-aos-delay="100" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:-translate-y-2 transition duration-500 hover:shadow-2xl hover:shadow-indigo-500/20 flex flex-col justify-between cursor-pointer block">
                     <div>
                         <div class="h-44 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
                             <div class="absolute inset-0 bg-gradient-to-br from-indigo-600/20 via-slate-900 to-slate-900 z-0"></div>
@@ -316,7 +316,7 @@
                                 <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 text-xs font-bold rounded-full border border-indigo-500/20">SEO Organic</span>
                                 <span class="px-3 py-1 bg-purple-500/10 text-purple-400 text-xs font-bold rounded-full border border-purple-500/20">Growth</span>
                             </div>
-                            <h3 class="text-xl font-bold text-white mb-3">
+                            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-indigo-400 transition">
                                 <span x-show="lang === 'en'">Consistent Organic Traffic Scaling</span>
                                 <span x-show="lang === 'id'" x-cloak>Pertumbuhan Trafik Organik Konsisten</span>
                             </h3>
@@ -332,7 +332,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="px-6 pb-6">
+                    <div class="px-6 pb-6 space-y-3">
                         <div class="bg-indigo-950/30 p-4 rounded-xl border border-indigo-500/30 flex justify-between items-center group-hover:bg-indigo-900/40 transition">
                             <div>
                                 <span class="text-indigo-400 text-[10px] uppercase tracking-wider font-bold block mb-1">
@@ -349,11 +349,15 @@
                                 </span>
                             </div>
                         </div>
+                        <div class="text-center text-xs font-bold text-indigo-400 group-hover:text-indigo-300 flex items-center justify-center gap-1 transition pt-1">
+                            <span>Lihat Detail Studi Kasus</span>
+                            <svg class="w-4 h-4 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Case Study 2: Malware Removal & Security -->
-                <div data-aos="fade-up" data-aos-delay="200" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:-translate-y-2 transition duration-500 hover:shadow-2xl hover:shadow-red-500/20 flex flex-col justify-between">
+                <a href="/portofolio-jasa-hapus-malware" data-aos="fade-up" data-aos-delay="200" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:-translate-y-2 transition duration-500 hover:shadow-2xl hover:shadow-red-500/20 flex flex-col justify-between cursor-pointer block">
                     <div>
                         <div class="h-44 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
                             <div class="absolute inset-0 bg-gradient-to-br from-red-600/20 via-slate-900 to-slate-900 z-0"></div>
@@ -364,7 +368,7 @@
                                 <span class="px-3 py-1 bg-red-500/10 text-red-400 text-xs font-bold rounded-full border border-red-500/20">WordPress</span>
                                 <span class="px-3 py-1 bg-rose-500/10 text-rose-400 text-xs font-bold rounded-full border border-rose-500/20">Security</span>
                             </div>
-                            <h3 class="text-xl font-bold text-white mb-3">
+                            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-red-400 transition">
                                 <span x-show="lang === 'en'">Malware Removal & Security Hardening</span>
                                 <span x-show="lang === 'id'" x-cloak>Pembersihan Malware & Keamanan Web</span>
                             </h3>
@@ -380,7 +384,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="px-6 pb-6">
+                    <div class="px-6 pb-6 space-y-3">
                         <div class="bg-red-950/30 p-4 rounded-xl border border-red-500/30 flex justify-between items-center group-hover:bg-red-900/40 transition">
                             <div>
                                 <span class="text-red-400 text-[10px] uppercase tracking-wider font-bold block mb-1">Malware Cleaned</span>
@@ -394,11 +398,15 @@
                                 </span>
                             </div>
                         </div>
+                        <div class="text-center text-xs font-bold text-red-400 group-hover:text-red-300 flex items-center justify-center gap-1 transition pt-1">
+                            <span>Lihat Detail Studi Kasus</span>
+                            <svg class="w-4 h-4 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Case Study 3: Travel High-Ticket Campaign -->
-                <div data-aos="fade-up" data-aos-delay="300" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:-translate-y-2 transition duration-500 hover:shadow-2xl hover:shadow-emerald-500/20 flex flex-col justify-between">
+                <a href="/portofolio-kampanye-iklan-travel" data-aos="fade-up" data-aos-delay="300" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:-translate-y-2 transition duration-500 hover:shadow-2xl hover:shadow-emerald-500/20 flex flex-col justify-between cursor-pointer block">
                     <div>
                         <div class="h-44 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
                             <div class="absolute inset-0 bg-gradient-to-br from-emerald-600/20 via-slate-900 to-slate-900 z-0"></div>
@@ -409,7 +417,7 @@
                                 <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 text-xs font-bold rounded-full border border-emerald-500/20">Paid Ads</span>
                                 <span class="px-3 py-1 bg-teal-500/10 text-teal-400 text-xs font-bold rounded-full border border-teal-500/20">High-Ticket Travel</span>
                             </div>
-                            <h3 class="text-xl font-bold text-white mb-3">
+                            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-emerald-400 transition">
                                 <span x-show="lang === 'en'">High-Ticket Travel Ad Scaling</span>
                                 <span x-show="lang === 'id'" x-cloak>Kampanye Iklan Travel High-Ticket</span>
                             </h3>
@@ -425,7 +433,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="px-6 pb-6">
+                    <div class="px-6 pb-6 space-y-3">
                         <div class="bg-emerald-950/30 p-4 rounded-xl border border-emerald-500/30 flex justify-between items-center group-hover:bg-emerald-900/40 transition">
                             <div>
                                 <span class="text-emerald-400 text-[10px] uppercase tracking-wider font-bold block mb-1">Total Closing</span>
@@ -436,11 +444,15 @@
                                 <span class="text-emerald-400 font-bold text-lg">Rp 2.7 Miliar</span>
                             </div>
                         </div>
+                        <div class="text-center text-xs font-bold text-emerald-400 group-hover:text-emerald-300 flex items-center justify-center gap-1 transition pt-1">
+                            <span>Lihat Detail Studi Kasus</span>
+                            <svg class="w-4 h-4 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Case Study 4: SILO Architecture & Broken Links (500+ Pages) -->
-                <div data-aos="fade-up" data-aos-delay="400" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:-translate-y-2 transition duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 flex flex-col justify-between">
+                <a href="/portofolio-arsitektur-silo-seo" data-aos="fade-up" data-aos-delay="400" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:-translate-y-2 transition duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 flex flex-col justify-between cursor-pointer block">
                     <div>
                         <div class="h-44 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
                             <div class="absolute inset-0 bg-gradient-to-br from-cyan-600/20 via-slate-900 to-slate-900 z-0"></div>
@@ -451,7 +463,7 @@
                                 <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 text-xs font-bold rounded-full border border-cyan-500/20">Technical SEO</span>
                                 <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs font-bold rounded-full border border-blue-500/20">500+ Pages</span>
                             </div>
-                            <h3 class="text-xl font-bold text-white mb-3">
+                            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition">
                                 <span x-show="lang === 'en'">SILO Architecture & Broken Link Remediation</span>
                                 <span x-show="lang === 'id'" x-cloak>Arsitektur SILO & Perbaikan 500+ Halaman</span>
                             </h3>
@@ -467,7 +479,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="px-6 pb-6">
+                    <div class="px-6 pb-6 space-y-3">
                         <div class="bg-cyan-950/30 p-4 rounded-xl border border-cyan-500/30 flex justify-between items-center group-hover:bg-cyan-900/40 transition">
                             <div>
                                 <span class="text-cyan-400 text-[10px] uppercase tracking-wider font-bold block mb-1">Broken Links</span>
@@ -481,11 +493,15 @@
                                 </span>
                             </div>
                         </div>
+                        <div class="text-center text-xs font-bold text-cyan-400 group-hover:text-cyan-300 flex items-center justify-center gap-1 transition pt-1">
+                            <span>Lihat Detail Studi Kasus</span>
+                            <svg class="w-4 h-4 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Case Study 5: GMB Local SEO Optimization -->
-                <div data-aos="fade-up" data-aos-delay="500" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:-translate-y-2 transition duration-500 hover:shadow-2xl hover:shadow-amber-500/20 flex flex-col justify-between">
+                <a href="/portofolio-jasa-local-seo-gmb" data-aos="fade-up" data-aos-delay="500" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:-translate-y-2 transition duration-500 hover:shadow-2xl hover:shadow-amber-500/20 flex flex-col justify-between cursor-pointer block">
                     <div>
                         <div class="h-44 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
                             <div class="absolute inset-0 bg-gradient-to-br from-amber-600/20 via-slate-900 to-slate-900 z-0"></div>
@@ -496,7 +512,7 @@
                                 <span class="px-3 py-1 bg-amber-500/10 text-amber-400 text-xs font-bold rounded-full border border-amber-500/20">Local SEO</span>
                                 <span class="px-3 py-1 bg-yellow-500/10 text-yellow-400 text-xs font-bold rounded-full border border-yellow-500/20">Google Business</span>
                             </div>
-                            <h3 class="text-xl font-bold text-white mb-3">
+                            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-amber-400 transition">
                                 <span x-show="lang === 'en'">Google My Business & Local SEO Optimization</span>
                                 <span x-show="lang === 'id'" x-cloak>Optimasi GMB & Local SEO Berkualitas</span>
                             </h3>
@@ -512,7 +528,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="px-6 pb-6">
+                    <div class="px-6 pb-6 space-y-3">
                         <div class="bg-amber-950/30 p-4 rounded-xl border border-amber-500/30 flex justify-between items-center group-hover:bg-amber-900/40 transition">
                             <div>
                                 <span class="text-amber-400 text-[10px] uppercase tracking-wider font-bold block mb-1">Local Traffic & Calls</span>
@@ -523,11 +539,15 @@
                                 <span class="text-amber-400 font-bold text-sm">Top 3 Map Pack</span>
                             </div>
                         </div>
+                        <div class="text-center text-xs font-bold text-amber-400 group-hover:text-amber-300 flex items-center justify-center gap-1 transition pt-1">
+                            <span>Lihat Detail Studi Kasus</span>
+                            <svg class="w-4 h-4 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Case Study 6: CRO & Landing Page Redesign -->
-                <div data-aos="fade-up" data-aos-delay="600" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:-translate-y-2 transition duration-500 hover:shadow-2xl hover:shadow-pink-500/20 flex flex-col justify-between">
+                <a href="/portofolio-optimasi-konversi-cro" data-aos="fade-up" data-aos-delay="600" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:-translate-y-2 transition duration-500 hover:shadow-2xl hover:shadow-pink-500/20 flex flex-col justify-between cursor-pointer block">
                     <div>
                         <div class="h-44 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
                             <div class="absolute inset-0 bg-gradient-to-br from-pink-600/20 via-slate-900 to-slate-900 z-0"></div>
@@ -538,7 +558,7 @@
                                 <span class="px-3 py-1 bg-pink-500/10 text-pink-400 text-xs font-bold rounded-full border border-pink-500/20">CRO</span>
                                 <span class="px-3 py-1 bg-violet-500/10 text-violet-400 text-xs font-bold rounded-full border border-violet-500/20">Landing Page</span>
                             </div>
-                            <h3 class="text-xl font-bold text-white mb-3">
+                            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-pink-400 transition">
                                 <span x-show="lang === 'en'">Conversion Rate Optimization & Redesign</span>
                                 <span x-show="lang === 'id'" x-cloak>Optimasi Konversi (CRO) & Redesain Landing Page</span>
                             </h3>
@@ -554,7 +574,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="px-6 pb-6">
+                    <div class="px-6 pb-6 space-y-3">
                         <div class="bg-pink-950/30 p-4 rounded-xl border border-pink-500/30 flex justify-between items-center group-hover:bg-pink-900/40 transition">
                             <div>
                                 <span class="text-pink-400 text-[10px] uppercase tracking-wider font-bold block mb-1">Conv Rate</span>
@@ -565,9 +585,14 @@
                                 <span class="text-pink-400 font-bold text-sm">2.5x Increase</span>
                             </div>
                         </div>
+                        <div class="text-center text-xs font-bold text-pink-400 group-hover:text-pink-300 flex items-center justify-center gap-1 transition pt-1">
+                            <span>Lihat Detail Studi Kasus</span>
+                            <svg class="w-4 h-4 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
+
         </div>
     </section>
 
@@ -709,242 +734,7 @@
     </footer>
 
     <!-- Chatbot Widget -->
-    <div x-data="chatbot()" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-        <!-- Chat Window -->
-        <div x-show="open" 
-             x-transition:enter="transition ease-out duration-300 transform"
-             x-transition:enter-start="opacity-0 translate-y-12 scale-95"
-             x-transition:enter-end="opacity-100 translate-y-0 scale-100"
-             x-transition:leave="transition ease-in duration-200 transform"
-             x-transition:leave-start="opacity-100 translate-y-0 scale-100"
-             x-transition:leave-end="opacity-0 translate-y-12 scale-95"
-             class="w-[320px] sm:w-[380px] h-[480px] bg-slate-900/95 backdrop-blur-md border border-slate-800 rounded-2xl shadow-2xl flex flex-col overflow-hidden mb-4"
-             x-cloak>
-            
-            <!-- Header -->
-            <div class="p-4 bg-slate-950/80 border-b border-slate-800 flex items-center justify-between">
-                <div class="flex items-center gap-3">
-                    <div class="relative w-8 h-8 rounded-full bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center">
-                        <svg class="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
-                        </svg>
-                        <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-slate-900 rounded-full"></span>
-                    </div>
-                    <div>
-                        <div class="text-sm font-bold text-white">Angi AI Assistant</div>
-                        <div class="text-[10px] text-slate-500 flex items-center gap-1">
-                            <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
-                            <span x-show="lang === 'en'">Online & Ready</span>
-                            <span x-show="lang === 'id'" x-cloak>Online & Aktif</span>
-                        </div>
-                    </div>
-                </div>
-                <button @click="open = false" class="text-slate-400 hover:text-white transition">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
-            </div>
-
-            <!-- Messages Container -->
-            <div x-ref="msgContainer" class="flex-1 p-4 overflow-y-auto space-y-4">
-                <template x-for="(msg, index) in messages" :key="index">
-                    <div class="flex" :class="msg.role === 'user' ? 'justify-end' : 'justify-start'">
-                        <div class="max-w-[85%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed"
-                             :class="msg.role === 'user' 
-                                ? 'bg-indigo-600 text-white rounded-br-none' 
-                                : 'bg-slate-800 text-slate-200 rounded-bl-none border border-slate-700/50'">
-                            <p x-text="msg.content"></p>
-                        </div>
-                    </div>
-                </template>
-                <!-- Loading Indicator -->
-                <div x-show="loading" class="flex justify-start" x-cloak>
-                    <div class="bg-slate-800 text-slate-400 rounded-2xl rounded-bl-none px-4 py-2.5 border border-slate-700/50 flex items-center gap-1.5">
-                        <span class="w-1.5 h-1.5 bg-indigo-400 rounded-full animate-bounce" style="animation-delay: 0ms"></span>
-                        <span class="w-1.5 h-1.5 bg-indigo-400 rounded-full animate-bounce" style="animation-delay: 150ms"></span>
-                        <span class="w-1.5 h-1.5 bg-indigo-400 rounded-full animate-bounce" style="animation-delay: 300ms"></span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Input Box -->
-            <form @submit.prevent="sendMessage()" class="p-3 bg-slate-950/80 border-t border-slate-800 flex gap-2">
-                <input type="text" 
-                       x-model="input" 
-                       :placeholder="lang === 'en' ? 'Ask a question...' : 'Tanyakan sesuatu...'"
-                       class="flex-1 bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-indigo-500 placeholder-slate-500 transition"
-                       :disabled="loading">
-                <button type="submit" 
-                        class="bg-indigo-600 hover:bg-indigo-500 text-white p-2.5 rounded-xl transition flex items-center justify-center disabled:opacity-50"
-                        :disabled="!input.trim() || loading">
-                    <svg class="w-5 h-5 transform rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
-                    </svg>
-                </button>
-            </form>
-        </div>
-
-        <!-- Chat Toggle Button -->
-        <button @click="toggleChat()" 
-                class="w-14 h-14 bg-indigo-600 hover:bg-indigo-500 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-indigo-500/30 transition duration-300 hover:scale-105 relative group">
-            <!-- Ripple Effect -->
-            <span class="absolute inset-0 rounded-full bg-indigo-600/30 animate-ping group-hover:hidden"></span>
-            
-            <!-- Chat Icon (Visible when closed) -->
-            <svg x-show="!open" class="w-6 h-6 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
-            </svg>
-            <!-- Close Icon (Visible when open) -->
-            <svg x-show="open" class="w-6 h-6 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" x-cloak>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-        </button>
-    </div>
-
-    <script>
-        const CHAT_STORAGE_KEY = 'angi_chat_session';
-        const CHAT_EXPIRY_MS   = 30 * 60 * 1000; // 30 minutes
-
-        function chatbot() {
-            return {
-                open: false,
-                messages: [],
-                input: '',
-                loading: false,
-                initialized: false,
-
-                toggleChat() {
-                    this.open = !this.open;
-                    if (this.open && !this.initialized) {
-                        this.initChat();
-                    }
-                },
-
-                initChat() {
-                    this.initialized = true;
-
-                    // Try to restore session from localStorage
-                    const saved = this.loadSession();
-                    if (saved && saved.messages && saved.messages.length > 0) {
-                        this.messages = saved.messages;
-                        this.$nextTick(() => this.scrollToBottom());
-                        return;
-                    }
-
-                    // No saved session → show welcome message
-                    const welcomeMsg = this.lang === 'en'
-                        ? "Hello! I am Angi's AI assistant. Ask me anything about his skills, projects, or work history!"
-                        : "Halo! Saya asisten AI Angi. Tanyakan apa saja mengenai keahlian, proyek, atau histori karirnya!";
-
-                    this.messages.push({ role: 'assistant', content: welcomeMsg });
-                    this.saveSession();
-                },
-
-                saveSession() {
-                    try {
-                        localStorage.setItem(CHAT_STORAGE_KEY, JSON.stringify({
-                            messages:  this.messages,
-                            expiresAt: Date.now() + CHAT_EXPIRY_MS
-                        }));
-                    } catch(e) {}
-                },
-
-                loadSession() {
-                    try {
-                        const raw = localStorage.getItem(CHAT_STORAGE_KEY);
-                        if (!raw) return null;
-                        const data = JSON.parse(raw);
-                        if (!data.expiresAt || Date.now() > data.expiresAt) {
-                            localStorage.removeItem(CHAT_STORAGE_KEY);
-                            return null;
-                        }
-                        return data;
-                    } catch(e) {
-                        return null;
-                    }
-                },
-
-                sendMessage() {
-                    if (!this.input.trim() || this.loading) return;
-
-                    const userText = this.input.trim();
-                    this.messages.push({ role: 'user', content: userText });
-                    this.input   = '';
-                    this.loading = true;
-                    this.saveSession();
-                    this.scrollToBottom();
-
-                    // Send full history (excluding the greeting)
-                    const historyData = this.messages.slice(1, -1);
-
-                    const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || '';
-                    fetch('/api/chat', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'X-CSRF-TOKEN': csrfToken
-                        },
-                        body: JSON.stringify({ message: userText, history: historyData })
-                    })
-                    .then(async response => {
-                        const text = await response.text();
-                        try {
-                            const data = JSON.parse(text);
-                            if (!response.ok) throw new Error(data.reply || 'Server error');
-                            return data;
-                        } catch(e) {
-                            throw new Error('Fallback to client static AI');
-                        }
-                    })
-                    .catch(async () => {
-                        // Static HTML Hosting Fallback (Hostinger / Static Export)
-                        try {
-                            const staticContext = "Nama: Angi Permana\nProfesi: Web & Digital Marketing Expert (Google Ads Specialist, WordPress Developer, Web Analyst)\nWhatsApp: 6285717616596 (https://wa.me/6285717616596)\nEmail: admin@buatwebsitepro.id\nLinkedIn: https://www.linkedin.com/in/angi-permana/\nWebsite: https://portofolio-angipermana-6179s-projects.vercel.app/\n\nLayanan: Google Ads, WordPress Plugin/Landing Page, Web Analytics (GA4/GTM).\nAturan: Jawab singkat (1-3 kalimat). Untuk harga/konsultasi arahkan ke WhatsApp 6285717616596.";
-                            const openRouterKey = 'sk-or-v1-' + '9aaf195a3dbfc94af90804d72b60314e6888505dcfdc8b0d14cbdf036b3a1640';
-                            const openRouterResp = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-                                method: 'POST',
-                                headers: {
-                                    'Authorization': 'Bearer ' + openRouterKey,
-                                    'Content-Type': 'application/json',
-                                    'HTTP-Referer': window.location.href,
-                                    'X-Title': 'Angi Permana Portfolio'
-                                },
-                                body: JSON.stringify({
-                                    model: 'google/gemma-4-26b-a4b-it:free',
-                                    messages: [
-                                        { role: 'system', content: 'You are Angi Permana\'s AI assistant. Answer based on:\n' + staticContext },
-                                        ...historyData,
-                                        { role: 'user', content: userText }
-                                    ]
-                                })
-                            });
-                            const orData = await openRouterResp.json();
-                            const replyText = orData.choices?.[0]?.message?.content || 'Terima kasih! Silakan hubungi Angi via WhatsApp di 6285717616596.';
-                            return { reply: replyText };
-                        } catch(err) {
-                            return { reply: 'Silakan hubungi Angi langsung via WhatsApp di 6285717616596 (https://wa.me/6285717616596).' };
-                        }
-                    })
-                    .then(data => {
-                        this.messages.push({ role: 'assistant', content: data.reply });
-                        this.saveSession();
-                    })
-                    .finally(() => {
-                        this.loading = false;
-                        this.scrollToBottom();
-                    });
-                },
-
-                scrollToBottom() {
-                    this.$nextTick(() => {
-                        const container = this.$refs.msgContainer;
-                        if (container) container.scrollTop = container.scrollHeight;
-                    });
-                }
-            }
-        }
-    </script>
+    @include('partials.chatbot')
 
     <!-- Initialize AOS Animation -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -956,3 +746,4 @@
     </script>
 </body>
 </html>
+

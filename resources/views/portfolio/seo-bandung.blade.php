@@ -9,7 +9,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <!-- Alpine.js -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- AOS Animation CSS -->
@@ -73,7 +73,7 @@
     </style>
 </head>
 <body class="bg-slate-950 text-slate-100 antialiased selection:bg-indigo-500 selection:text-white"
-    x-data="{ lang: localStorage.getItem('portfolio-lang') || 'id', theme: localStorage.getItem('portfolio-theme') || 'light' }"
+    x-data="{ lang: localStorage.getItem('portfolio-lang') || 'id', theme: localStorage.getItem('portfolio-theme') || 'light', activeTab: 'after' }"
     x-init="$watch('theme', val => {
         document.documentElement.classList.toggle('light', val === 'light');
         localStorage.setItem('portfolio-theme', val);
@@ -135,28 +135,115 @@
             </div>
 
             <!-- Impact Metric Highlight Cards -->
-            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-12" data-aos="fade-up" data-aos-delay="100">
-                <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl">
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-10" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl relative overflow-hidden group hover:border-indigo-500/50 transition-all">
+                    <div class="absolute -right-4 -top-4 w-16 h-16 bg-indigo-500/10 rounded-full blur-xl group-hover:bg-indigo-500/20 transition-all"></div>
                     <span class="text-slate-400 text-xs font-bold block mb-1">Pertumbuhan Bulanan</span>
-                    <span class="text-2xl sm:text-3xl font-extrabold text-indigo-400">+30% / Mo</span>
+                    <span class="text-2xl sm:text-4xl font-extrabold text-indigo-400">+30% / Mo</span>
+                    <span class="text-[11px] text-emerald-400 mt-1 flex items-center font-medium">↑ Compound growth rate</span>
                 </div>
-                <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl">
-                    <span class="text-slate-400 text-xs font-bold block mb-1">Status Kenaikan</span>
-                    <span class="text-2xl sm:text-3xl font-extrabold text-emerald-400">Konsisten</span>
+                <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl relative overflow-hidden group hover:border-emerald-500/50 transition-all">
+                    <div class="absolute -right-4 -top-4 w-16 h-16 bg-emerald-500/10 rounded-full blur-xl group-hover:bg-emerald-500/20 transition-all"></div>
+                    <span class="text-slate-400 text-xs font-bold block mb-1">Total Organic Clicks</span>
+                    <span class="text-2xl sm:text-4xl font-extrabold text-emerald-400">8.6K <span class="text-sm font-semibold text-slate-400">/mo</span></span>
+                    <span class="text-[11px] text-slate-400 mt-1 block">Dari 1.2K per bulan</span>
                 </div>
-                <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl col-span-2 sm:col-span-1">
+                <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl col-span-2 sm:col-span-1 relative overflow-hidden group hover:border-purple-500/50 transition-all">
+                    <div class="absolute -right-4 -top-4 w-16 h-16 bg-purple-500/10 rounded-full blur-xl group-hover:bg-purple-500/20 transition-all"></div>
                     <span class="text-slate-400 text-xs font-bold block mb-1">Target Keyword</span>
-                    <span class="text-2xl sm:text-3xl font-extrabold text-purple-400">Halaman #1</span>
+                    <span class="text-2xl sm:text-4xl font-extrabold text-purple-400">Top #1</span>
+                    <span class="text-[11px] text-purple-300 mt-1 block">48 Kata Kunci Halaman #1</span>
+                </div>
+            </div>
+
+            <!-- Before vs After Interactive Comparison Card -->
+            <div class="bg-slate-900 border border-slate-800 p-6 sm:p-8 rounded-3xl mb-12" data-aos="fade-up" data-aos-delay="180">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
+                    <div>
+                        <h3 class="text-xl font-bold text-white">Perbandingan Performa: Sebelum vs Sesudah Optimasi</h3>
+                        <p class="text-xs text-slate-400">Klik tab untuk melihat perubahan metrik utama secara langsung</p>
+                    </div>
+                    <!-- Toggle Switch -->
+                    <div class="flex bg-slate-950 p-1 rounded-xl border border-slate-800 text-xs font-bold">
+                        <button @click="activeTab = 'before'" :class="activeTab === 'before' ? 'bg-red-500/20 text-red-400 border border-red-500/30' : 'text-slate-400 hover:text-white'" class="px-4 py-2 rounded-lg transition-all">
+                            🔴 Sebelum Optimasi
+                        </button>
+                        <button @click="activeTab = 'after'" :class="activeTab === 'after' ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'text-slate-400 hover:text-white'" class="px-4 py-2 rounded-lg transition-all">
+                            🟢 Setelah Optimasi
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tab Contents -->
+                <div x-show="activeTab === 'before'" x-cloak class="grid sm:grid-cols-3 gap-4">
+                    <div class="p-4 bg-slate-950/60 rounded-xl border border-red-500/20">
+                        <span class="text-xs text-slate-400 font-bold block mb-1">Average Position</span>
+                        <span class="text-2xl font-extrabold text-red-400">Posisi #42.5</span>
+                        <span class="text-[11px] text-slate-500 mt-1 block">Tenggelam di halaman 4-5</span>
+                    </div>
+                    <div class="p-4 bg-slate-950/60 rounded-xl border border-red-500/20">
+                        <span class="text-xs text-slate-400 font-bold block mb-1">Monthly Organic Clicks</span>
+                        <span class="text-2xl font-extrabold text-red-400">1,200 <span class="text-xs">klik/bln</span></span>
+                        <span class="text-[11px] text-slate-500 mt-1 block">Trafik stagnan > 6 bulan</span>
+                    </div>
+                    <div class="p-4 bg-slate-950/60 rounded-xl border border-red-500/20">
+                        <span class="text-xs text-slate-400 font-bold block mb-1">Keyword Top 10</span>
+                        <span class="text-2xl font-extrabold text-red-400">3 Kata Kunci</span>
+                        <span class="text-[11px] text-slate-500 mt-1 block">Kanibalisasi keyword tinggi</span>
+                    </div>
+                </div>
+
+                <div x-show="activeTab === 'after'" class="grid sm:grid-cols-3 gap-4">
+                    <div class="p-4 bg-slate-950/60 rounded-xl border border-emerald-500/30">
+                        <span class="text-xs text-slate-400 font-bold block mb-1">Average Position</span>
+                        <span class="text-2xl font-extrabold text-emerald-400">Posisi #3.2 🚀</span>
+                        <span class="text-[11px] text-emerald-400 mt-1 block">Mendominasi Halaman #1</span>
+                    </div>
+                    <div class="p-4 bg-slate-950/60 rounded-xl border border-emerald-500/30">
+                        <span class="text-xs text-slate-400 font-bold block mb-1">Monthly Organic Clicks</span>
+                        <span class="text-2xl font-extrabold text-emerald-400">8,600 <span class="text-xs">+616%</span></span>
+                        <span class="text-[11px] text-emerald-400 mt-1 block">Pertumbuhan konsisten</span>
+                    </div>
+                    <div class="p-4 bg-slate-950/60 rounded-xl border border-emerald-500/30">
+                        <span class="text-xs text-slate-400 font-bold block mb-1">Keyword Top 10</span>
+                        <span class="text-2xl font-extrabold text-emerald-400">48 Kata Kunci</span>
+                        <span class="text-[11px] text-emerald-400 mt-1 block">Struktur SILO optimal</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tech Stack & SEO Tools Used Section -->
+            <div class="mb-12" data-aos="fade-up" data-aos-delay="200">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Tech Stack & Tools SEO yang Digunakan dalam Proyek Ini:</h4>
+                <div class="flex flex-wrap gap-2.5">
+                    <span class="px-3 py-1.5 bg-slate-900 border border-slate-800 rounded-xl text-xs font-semibold text-slate-300 flex items-center gap-2">
+                        🔍 Google Search Console
+                    </span>
+                    <span class="px-3 py-1.5 bg-slate-900 border border-slate-800 rounded-xl text-xs font-semibold text-slate-300 flex items-center gap-2">
+                        📊 Google Analytics 4 (GA4)
+                    </span>
+                    <span class="px-3 py-1.5 bg-slate-900 border border-slate-800 rounded-xl text-xs font-semibold text-slate-300 flex items-center gap-2">
+                        🧡 Ubersuggest MCP
+                    </span>
+                    <span class="px-3 py-1.5 bg-slate-900 border border-slate-800 rounded-xl text-xs font-semibold text-slate-300 flex items-center gap-2">
+                        🐸 Screaming Frog Technical Audit
+                    </span>
+                    <span class="px-3 py-1.5 bg-slate-900 border border-slate-800 rounded-xl text-xs font-semibold text-slate-300 flex items-center gap-2">
+                        🏛️ SILO Architecture Strategy
+                    </span>
+                    <span class="px-3 py-1.5 bg-slate-900 border border-slate-800 rounded-xl text-xs font-semibold text-slate-300 flex items-center gap-2">
+                        🏷️ Schema Structured Data
+                    </span>
                 </div>
             </div>
 
             <!-- Detail Breakdown Sections -->
-            <div class="space-y-10 text-slate-300 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+            <div class="space-y-10 text-slate-300 leading-relaxed" data-aos="fade-up" data-aos-delay="220">
                 
                 <!-- Section 1: Challenge -->
                 <section class="bg-slate-900/60 border border-slate-800 p-8 rounded-2xl">
                     <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                        <span class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 inline-flex items-center justify-center mr-3 text-sm">01</span>
+                        <span class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 inline-flex items-center justify-center mr-3 text-sm font-extrabold">01</span>
                         Tantangan Utama (The Challenge)
                     </h2>
                     <p class="mb-4">
@@ -172,21 +259,21 @@
                 <!-- Section 2: Strategy -->
                 <section class="bg-slate-900/60 border border-slate-800 p-8 rounded-2xl">
                     <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                        <span class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 inline-flex items-center justify-center mr-3 text-sm">02</span>
+                        <span class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 inline-flex items-center justify-center mr-3 text-sm font-extrabold">02</span>
                         Solusi & Eksekusi Strategi SEO
                     </h2>
                     <div class="space-y-4">
-                        <div>
+                        <div class="p-4 bg-slate-950/40 rounded-xl border border-slate-800/80">
                             <h3 class="text-lg font-bold text-white mb-1">1. Keyword Research & Intent Mapping</h3>
-                            <p class="text-sm">Riset kata kunci berbasis *search intent* tinggi (High Commercial & Transactional Intent) khususnya target wilayah Bandung dan nasional untuk menarik calon konsumen yang siap bertransaksi.</p>
+                            <p class="text-sm text-slate-300">Riset kata kunci berbasis *search intent* tinggi (High Commercial & Transactional Intent) khususnya target wilayah Bandung dan nasional untuk menarik calon konsumen yang siap bertransaksi.</p>
                         </div>
-                        <div>
+                        <div class="p-4 bg-slate-950/40 rounded-xl border border-slate-800/80">
                             <h3 class="text-lg font-bold text-white mb-1">2. On-Page & Content Optimization</h3>
-                            <p class="text-sm">Pembaruan meta title, heading tag (H1, H2, H3), optimasi atribut gambar, serta restrukturisasi isi konten agar menjawab pertanyaan pencari secara tuntas dan informatif.</p>
+                            <p class="text-sm text-slate-300">Pembaruan meta title, heading tag (H1, H2, H3), optimasi atribut gambar, serta restrukturisasi isi konten agar menjawab pertanyaan pencari secara tuntas dan informatif.</p>
                         </div>
-                        <div>
+                        <div class="p-4 bg-slate-950/40 rounded-xl border border-slate-800/80">
                             <h3 class="text-lg font-bold text-white mb-1">3. Penguatan Internal Linking (SILO Structure)</h3>
-                            <p class="text-sm">Membangun arus tautan internal yang logis dari artikel pendukung ke halaman produk/jasa utama guna menyalurkan *link equity* secara maksimal.</p>
+                            <p class="text-sm text-slate-300">Membangun arus tautan internal yang logis dari artikel pendukung ke halaman produk/jasa utama guna menyalurkan *link equity* secara maksimal.</p>
                         </div>
                     </div>
                 </section>
@@ -194,20 +281,20 @@
                 <!-- Section 3: Results -->
                 <section class="bg-slate-900/60 border border-slate-800 p-8 rounded-2xl">
                     <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                        <span class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 inline-flex items-center justify-center mr-3 text-sm">03</span>
+                        <span class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 inline-flex items-center justify-center mr-3 text-sm font-extrabold">03</span>
                         Hasil & Dampak Bisnis
                     </h2>
                     <p class="mb-4">
                         Dalam jangka waktu 3 hingga 6 bulan penerapan strategi SEO ini, hasil yang didapatkan mencakup:
                     </p>
                     <div class="grid sm:grid-cols-2 gap-4">
-                        <div class="p-4 bg-slate-950 rounded-xl border border-slate-800">
-                            <span class="text-emerald-400 font-bold text-lg block">📈 +30% Pertumbuhan Bulanan</span>
-                            <span class="text-xs text-slate-400">Peningkatan grafik impressions dan clicks secara bertahap di Google Search Console.</span>
+                        <div class="p-5 bg-slate-950 rounded-xl border border-slate-800">
+                            <span class="text-emerald-400 font-bold text-lg block mb-1">📈 +30% Pertumbuhan Bulanan</span>
+                            <span class="text-xs text-slate-400 leading-relaxed">Peningkatan grafik impressions dan clicks secara bertahap di Google Search Console hingga mencapai 8.6K klik/bulan.</span>
                         </div>
-                        <div class="p-4 bg-slate-950 rounded-xl border border-slate-800">
-                            <span class="text-indigo-400 font-bold text-lg block">🎯 Peringkat Top 3 Google</span>
-                            <span class="text-xs text-slate-400">Kata kunci utama berhasil mendominasi halaman pertama mesin pencari.</span>
+                        <div class="p-5 bg-slate-950 rounded-xl border border-slate-800">
+                            <span class="text-indigo-400 font-bold text-lg block mb-1">🎯 Peringkat Top 3 Google</span>
+                            <span class="text-xs text-slate-400 leading-relaxed">48 kata kunci utama berhasil mendominasi halaman pertama mesin pencari.</span>
                         </div>
                     </div>
                 </section>

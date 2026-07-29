@@ -180,7 +180,7 @@
                 Angi<span class="text-indigo-500">Permana.</span>
             </div>
             
-            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+            <div class="hidden md:flex space-x-8 text-base font-medium text-slate-300">
                 <a href="#services" class="hover:text-white transition">
                     <span x-show="lang === 'en'">Specialties</span>
                     <span x-show="lang === 'id'" x-cloak>Spesialisasi</span>
@@ -315,11 +315,11 @@
                         <svg class="w-7 h-7 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Google Ads Management</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                    <p class="text-slate-400 text-base leading-relaxed mb-4">
                         <span x-show="lang === 'en'">Managing advertising campaigns (Search, Display, Video) with efficient budgeting. Focus on decreasing CPA and increasing ROAS.</span>
                         <span x-show="lang === 'id'" x-cloak>Mengelola kampanye periklanan (Search, Display, Video) dengan budget efisien. Fokus pada penurunan CPA dan peningkatan ROAS.</span>
                     </p>
-                    <ul class="text-sm text-slate-500 space-y-2">
+                    <ul class="text-base text-slate-500 space-y-2">
                         <li class="flex items-center gap-2"><svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Keyword Research & Bidding</li>
                         <li class="flex items-center gap-2"><svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> A/B Testing Ad Copy</li>
                         <li class="flex items-center gap-2"><svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Campaign Optimization</li>
@@ -387,19 +387,19 @@
                         </div>
                         <div class="p-6">
                             <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 text-xs font-bold rounded-full border border-indigo-500/20">SEO Organic</span>
-                                <span class="px-3 py-1 bg-purple-500/10 text-purple-400 text-xs font-bold rounded-full border border-purple-500/20">Growth</span>
+                                <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 text-sm font-semibold rounded-full border border-indigo-500/20">SEO Organic</span>
+                                <span class="px-3 py-1 bg-purple-500/10 text-purple-400 text-sm font-semibold rounded-full border border-purple-500/20">Growth</span>
                             </div>
                             <h3 class="text-xl font-bold text-white mb-3 group-hover:text-indigo-400 transition">
                                 <span x-show="lang === 'en'">Consistent Organic Traffic Scaling</span>
                                 <span x-show="lang === 'id'" x-cloak>Pertumbuhan Trafik Organik Konsisten</span>
                             </h3>
                             <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 group-hover:border-slate-700 transition mb-4">
-                                <span class="text-slate-500 text-[11px] uppercase tracking-wider font-bold block mb-1">
+                                <span class="text-slate-500 text-xs uppercase tracking-wider font-bold block mb-1">
                                     <span x-show="lang === 'en'">The Challenge</span>
                                     <span x-show="lang === 'id'" x-cloak>Tantangan</span>
                                 </span>
-                                <span class="text-slate-300 text-xs font-medium leading-relaxed">
+                                <span class="text-slate-300 text-sm font-medium leading-relaxed">
                                     <span x-show="lang === 'en'">Stagnant organic traffic, low search visibility, and unoptimized keyword structure.</span>
                                     <span x-show="lang === 'id'" x-cloak>Trafik organik stagnan, jangkauan pencarian rendah, dan struktur kata kunci belum optimal.</span>
                                 </span>
@@ -409,21 +409,21 @@
                     <div class="px-6 pb-6 space-y-3">
                         <div class="bg-indigo-950/30 p-4 rounded-xl border border-indigo-500/30 flex justify-between items-center group-hover:bg-indigo-900/40 transition">
                             <div>
-                                <span class="text-indigo-400 text-[10px] uppercase tracking-wider font-bold block mb-1">
+                                <span class="text-indigo-400 text-xs uppercase tracking-wider font-bold block mb-1">
                                     <span x-show="lang === 'en'">Monthly Growth</span>
                                     <span x-show="lang === 'id'" x-cloak>Pertumbuhan Bulanan</span>
                                 </span>
                                 <span class="text-white font-extrabold text-xl">+30%/Mo</span>
                             </div>
                             <div class="text-right">
-                                <span class="text-indigo-400 text-[10px] uppercase tracking-wider font-bold block mb-1">Status</span>
-                                <span class="text-emerald-400 font-bold text-sm">
+                                <span class="text-indigo-400 text-xs uppercase tracking-wider font-bold block mb-1">Status</span>
+                                <span class="text-emerald-400 font-bold text-base">
                                     <span x-show="lang === 'en'">Consistent</span>
                                     <span x-show="lang === 'id'" x-cloak>Konsisten</span>
                                 </span>
                             </div>
                         </div>
-                        <div class="text-center text-xs font-bold text-indigo-400 group-hover:text-indigo-300 flex items-center justify-center gap-1 transition pt-1">
+                        <div class="text-center text-sm font-bold text-indigo-400 group-hover:text-indigo-300 flex items-center justify-center gap-1 transition pt-1">
                             <span>Lihat Detail Studi Kasus</span>
                             <svg class="w-4 h-4 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                         </div>

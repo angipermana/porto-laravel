@@ -6,6 +6,22 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Studi Kasus: Optimasi Tingkat Konversi (CRO) | Angi Permana</title>
     <meta name="description" content="Studi kasus optimasi tingkat konversi (CRO) dan peningkatan angka leads oleh Angi Permana.">
+
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://porto.angipermana.top/portofolio-optimasi-konversi-cro/">
+    <meta property="og:title" content="Studi Kasus: Optimasi Tingkat Konversi (CRO) | Angi Permana">
+    <meta property="og:description" content="Studi kasus optimasi tingkat konversi (CRO) dan peningkatan angka leads oleh Angi Permana.">
+    <meta property="og:image" content="https://porto.angipermana.top/images/og-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://porto.angipermana.top/portofolio-optimasi-konversi-cro/">
+    <meta name="twitter:title" content="Studi Kasus: Optimasi Tingkat Konversi (CRO) | Angi Permana">
+    <meta name="twitter:description" content="Studi kasus optimasi tingkat konversi (CRO) dan peningkatan angka leads oleh Angi Permana.">
+    <meta name="twitter:image" content="https://porto.angipermana.top/images/og-preview.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -32,11 +48,56 @@
         html.light .bg-slate-900\/60 { background-color: rgba(255,255,255,0.9) !important; }
         html.light .text-white      { color: #0F172A !important; }
         html.light .text-slate-300  { color: #334155 !important; }
-        html.light .text-slate-400  { color: #64748B !important; }
-        html.light .border-slate-800 { border-color: #E2E8F0 !important; }
         html.light header { background-color: rgba(241,245,249,0.92) !important; border-color: #E2E8F0 !important; }
         html.light .rounded-2xl, html.light .rounded-xl { box-shadow: 0 1px 8px rgba(0,0,0,0.06); }
     </style>
+
+    <!-- JSON-LD Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@@context": "https://schema.org",
+      "@@graph": [
+        {
+          "@@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@@type": "ListItem",
+              "position": 1,
+              "name": "Beranda",
+              "item": "https://buatwebsitepro.id/"
+            },
+            {
+              "@@type": "ListItem",
+              "position": 2,
+              "name": "Portofolio",
+              "item": "https://buatwebsitepro.id/#portfolio"
+            },
+            {
+              "@@type": "ListItem",
+              "position": 3,
+              "name": "Studi Kasus Optimasi Konversi (CRO)",
+              "item": "https://buatwebsitepro.id/portofolio-optimasi-konversi-cro"
+            }
+          ]
+        },
+        {
+          "@@type": "TechArticle",
+          "headline": "Studi Kasus: Conversion Rate Optimization (CRO) & Funnel Growth (+140% Lead Conversion)",
+          "description": "Studi kasus optimasi tingkat konversi (CRO), kecepatan landing page, dan UX redesign oleh Angi Permana.",
+          "author": {
+            "@@type": "Person",
+            "name": "Angi Permana",
+            "url": "https://buatwebsitepro.id"
+          },
+          "publisher": {
+            "@@type": "Person",
+            "name": "Angi Permana"
+          },
+          "mainEntityOfPage": "https://buatwebsitepro.id/portofolio-optimasi-konversi-cro"
+        }
+      ]
+    }
+    </script>
 </head>
 <body class="bg-slate-950 text-slate-100 antialiased selection:bg-emerald-500 selection:text-white"
     x-data="{ lang: localStorage.getItem('portfolio-lang') || 'id', theme: localStorage.getItem('portfolio-theme') || 'light', activeTab: 'after' }"
@@ -68,7 +129,8 @@
                     <span x-text="lang === 'en' ? '🇮🇩 ID' : '🇬🇧 EN'"></span>
                 </button>
                 <a href="https://wa.me/6285717616596?text=Halo%20Angi,%20saya%20tertarik%20dengan%20jasa%20CRO%20Optimization" target="_blank" class="hidden sm:inline-flex items-center px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl shadow-lg shadow-emerald-600/30 transition">
-                    Konsultasi CRO
+                    <span x-show="lang === 'en'">CRO Consultation</span>
+                    <span x-show="lang === 'id'" x-cloak>Konsultasi CRO</span>
                 </a>
             </div>
         </div>
@@ -103,37 +165,50 @@
                     <div class="absolute -right-4 -top-4 w-16 h-16 bg-emerald-500/10 rounded-full blur-xl"></div>
                     <span class="text-slate-400 text-xs font-bold block mb-1">Conversion Rate</span>
                     <span class="text-2xl sm:text-4xl font-extrabold text-emerald-400">+140%</span>
-                    <span class="text-[11px] text-emerald-300 mt-1 block">Dari 1.2% menjadi 2.88%</span>
+                    <span class="text-[11px] text-emerald-300 mt-1 block">
+                        <span x-show="lang === 'en'">From 1.2% to 2.88%</span>
+                        <span x-show="lang === 'id'" x-cloak>Dari 1.2% menjadi 2.88%</span>
+                    </span>
                 </div>
                 <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl relative overflow-hidden group hover:border-teal-500/50 transition-all">
                     <div class="absolute -right-4 -top-4 w-16 h-16 bg-teal-500/10 rounded-full blur-xl"></div>
                     <span class="text-slate-400 text-xs font-bold block mb-1">Bounce Rate</span>
                     <span class="text-2xl sm:text-4xl font-extrabold text-teal-400">-35%</span>
-                    <span class="text-[11px] text-teal-300 mt-1 block">Pengunjung lebih betah</span>
+                    <span class="text-[11px] text-teal-300 mt-1 block">
+                        <span x-show="lang === 'en'">Longer user engagement</span>
+                        <span x-show="lang === 'id'" x-cloak>Pengunjung lebih betah</span>
+                    </span>
                 </div>
                 <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl col-span-2 sm:col-span-1 relative overflow-hidden group hover:border-indigo-500/50 transition-all">
                     <div class="absolute -right-4 -top-4 w-16 h-16 bg-indigo-500/10 rounded-full blur-xl"></div>
                     <span class="text-slate-400 text-xs font-bold block mb-1">ROI Leads Sales</span>
                     <span class="text-2xl sm:text-4xl font-extrabold text-indigo-400">3.8x</span>
-                    <span class="text-[11px] text-indigo-300 mt-1 block">Omset naik tanpa tambah adspend</span>
+                    <span class="text-[11px] text-indigo-300 mt-1 block">
+                        <span x-show="lang === 'en'">Higher revenue, same ad spend</span>
+                        <span x-show="lang === 'id'" x-cloak>Omset naik tanpa tambah adspend</span>
+                    </span>
                 </div>
             </div>
-
-
 
             <!-- Before vs After Interactive Comparison -->
             <div class="bg-slate-900 border border-slate-800 p-6 sm:p-8 rounded-3xl mb-12" data-aos="fade-up" data-aos-delay="180">
                 <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
                     <div>
-                        <h3 class="text-xl font-bold text-white">Perbandingan Performa Landing Page: Sebelum vs Sesudah CRO</h3>
-                        <p class="text-xs text-slate-400">Klik tab untuk melihat perubahan metrik konversi landing page</p>
+                        <h3 class="text-xl font-bold text-white">
+                            <span x-show="lang === 'en'">Landing Page Performance: Before vs After CRO</span>
+                            <span x-show="lang === 'id'" x-cloak>Perbandingan Performa Landing Page: Sebelum vs Sesudah CRO</span>
+                        </h3>
+                        <p class="text-xs text-slate-400">
+                            <span x-show="lang === 'en'">Click tabs to compare landing page conversion metrics live</span>
+                            <span x-show="lang === 'id'" x-cloak>Klik tab untuk melihat perubahan metrik konversi landing page</span>
+                        </p>
                     </div>
                     <div class="flex bg-slate-950 p-1 rounded-xl border border-slate-800 text-xs font-bold">
                         <button @click="activeTab = 'before'" :class="activeTab === 'before' ? 'bg-red-500/20 text-red-400 border border-red-500/30' : 'text-slate-400 hover:text-white'" class="px-4 py-2 rounded-lg transition-all">
-                            🔴 Sebelum CRO
+                            🔴 <span x-show="lang === 'en'">Before CRO</span><span x-show="lang === 'id'" x-cloak>Sebelum CRO</span>
                         </button>
                         <button @click="activeTab = 'after'" :class="activeTab === 'after' ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'text-slate-400 hover:text-white'" class="px-4 py-2 rounded-lg transition-all">
-                            🟢 Setelah CRO
+                            🟢 <span x-show="lang === 'en'">After CRO</span><span x-show="lang === 'id'" x-cloak>Setelah CRO</span>
                         </button>
                     </div>
                 </div>
@@ -142,17 +217,26 @@
                     <div class="p-4 bg-slate-950/60 rounded-xl border border-red-500/20">
                         <span class="text-xs text-slate-400 font-bold block mb-1">Conversion Rate</span>
                         <span class="text-2xl font-extrabold text-red-400">1.20%</span>
-                        <span class="text-[11px] text-slate-500 mt-1 block">Banyak pengunjung kabur</span>
+                        <span class="text-[11px] text-slate-500 mt-1 block">
+                            <span x-show="lang === 'en'">High visitor drop-off</span>
+                            <span x-show="lang === 'id'" x-cloak>Banyak pengunjung kabur</span>
+                        </span>
                     </div>
                     <div class="p-4 bg-slate-950/60 rounded-xl border border-red-500/20">
                         <span class="text-xs text-slate-400 font-bold block mb-1">Page Speed Load</span>
-                        <span class="text-2xl font-extrabold text-red-400">4.2 Detik</span>
-                        <span class="text-[11px] text-slate-500 mt-1 block">Lambat di perangkat HP</span>
+                        <span class="text-2xl font-extrabold text-red-400">4.2 <span x-show="lang === 'en'">Sec</span><span x-show="lang === 'id'" x-cloak>Detik</span></span>
+                        <span class="text-[11px] text-slate-500 mt-1 block">
+                            <span x-show="lang === 'en'">Slow on mobile devices</span>
+                            <span x-show="lang === 'id'" x-cloak>Lambat di perangkat HP</span>
+                        </span>
                     </div>
                     <div class="p-4 bg-slate-950/60 rounded-xl border border-red-500/20">
                         <span class="text-xs text-slate-400 font-bold block mb-1">Bounce Rate</span>
                         <span class="text-2xl font-extrabold text-red-400">68%</span>
-                        <span class="text-[11px] text-slate-500 mt-1 block">Form terlalu panjang & rumit</span>
+                        <span class="text-[11px] text-slate-500 mt-1 block">
+                            <span x-show="lang === 'en'">Overly long & complex forms</span>
+                            <span x-show="lang === 'id'" x-cloak>Form terlalu panjang & rumit</span>
+                        </span>
                     </div>
                 </div>
 
@@ -160,24 +244,36 @@
                     <div class="p-4 bg-slate-950/60 rounded-xl border border-emerald-500/30">
                         <span class="text-xs text-slate-400 font-bold block mb-1">Conversion Rate</span>
                         <span class="text-2xl font-extrabold text-emerald-400">2.88% 🚀</span>
-                        <span class="text-[11px] text-emerald-400 mt-1 block">Leads melonjak 2.4x lipat</span>
+                        <span class="text-[11px] text-emerald-400 mt-1 block">
+                            <span x-show="lang === 'en'">Leads surged 2.4x</span>
+                            <span x-show="lang === 'id'" x-cloak>Leads melonjak 2.4x lipat</span>
+                        </span>
                     </div>
                     <div class="p-4 bg-slate-950/60 rounded-xl border border-emerald-500/30">
                         <span class="text-xs text-slate-400 font-bold block mb-1">Page Speed Load</span>
-                        <span class="text-2xl font-extrabold text-emerald-400">1.1 Detik ⚡</span>
-                        <span class="text-[11px] text-emerald-400 mt-1 block">Super cepat di mobile</span>
+                        <span class="text-2xl font-extrabold text-emerald-400">1.1 <span x-show="lang === 'en'">Sec</span><span x-show="lang === 'id'" x-cloak>Detik</span> ⚡</span>
+                        <span class="text-[11px] text-emerald-400 mt-1 block">
+                            <span x-show="lang === 'en'">Lightning fast mobile load</span>
+                            <span x-show="lang === 'id'" x-cloak>Super cepat di mobile</span>
+                        </span>
                     </div>
                     <div class="p-4 bg-slate-950/60 rounded-xl border border-emerald-500/30">
                         <span class="text-xs text-slate-400 font-bold block mb-1">Bounce Rate</span>
                         <span class="text-2xl font-extrabold text-emerald-400">44% 🔥</span>
-                        <span class="text-[11px] text-emerald-400 mt-1 block">Micro-copy CTA sangat memikat</span>
+                        <span class="text-[11px] text-emerald-400 mt-1 block">
+                            <span x-show="lang === 'en'">Highly persuasive CTA micro-copy</span>
+                            <span x-show="lang === 'id'" x-cloak>Micro-copy CTA sangat memikat</span>
+                        </span>
                     </div>
                 </div>
             </div>
 
             <!-- Tech Stack Badges -->
             <div class="mb-12" data-aos="fade-up" data-aos-delay="200">
-                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Tech Stack & Tools CRO yang Digunakan:</h4>
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">
+                    <span x-show="lang === 'en'">Tech Stack & CRO Tools Used:</span>
+                    <span x-show="lang === 'id'" x-cloak>Tech Stack & Tools CRO yang Digunakan:</span>
+                </h4>
                 <div class="flex flex-wrap gap-2.5">
                     <span class="px-3 py-1.5 bg-slate-900 border border-slate-800 rounded-xl text-xs font-semibold text-slate-300 flex items-center gap-2">
                         🔥 Hotjar Heatmap & Click Tracking
@@ -199,20 +295,29 @@
                 <section class="bg-slate-900/60 border border-slate-800 p-8 rounded-2xl">
                     <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
                         <span class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 inline-flex items-center justify-center mr-3 text-sm font-extrabold">01</span>
-                        Tantangan Friksi Konversi
+                        <span x-show="lang === 'en'">Conversion Friction Challenge</span>
+                        <span x-show="lang === 'id'" x-cloak>Tantangan Friksi Konversi</span>
                     </h2>
                     <p class="mb-4">
-                        Banyak bisnis mengalirkan ribuan trafik iklan maupun SEO ke landing page, namun tingkat konversi sangat rendah akibat tata letak formulir yang membingungkan dan waktu loading yang lambat.
+                        <span x-show="lang === 'en'">Many businesses drive thousands of ad or SEO visitors to landing pages, yet experience poor conversion rates due to confusing form layouts and sluggish load speeds.</span>
+                        <span x-show="lang === 'id'" x-cloak>Banyak bisnis mengalirkan ribuan trafik iklan maupun SEO ke landing page, namun tingkat konversi sangat rendah akibat tata letak formulir yang membingungkan dan waktu loading yang lambat.</span>
                     </p>
                 </section>
             </div>
 
             <!-- CTA Callout -->
             <div class="mt-16 bg-gradient-to-r from-emerald-900/40 via-teal-900/40 to-slate-900 border border-emerald-500/30 p-8 rounded-3xl text-center" data-aos="zoom-in">
-                <h3 class="text-2xl font-bold text-white mb-3">Ingin Melipatgandakan Leads dari Trafik Website Anda?</h3>
-                <p class="text-slate-300 text-sm max-w-xl mx-auto mb-6">Konsultasikan optimasi CRO & UX landing page Anda bersama Angi Permana.</p>
+                <h3 class="text-2xl font-bold text-white mb-3">
+                    <span x-show="lang === 'en'">Want to Multiply Leads From Your Website Traffic?</span>
+                    <span x-show="lang === 'id'" x-cloak>Ingin Melipatgandakan Leads dari Trafik Website Anda?</span>
+                </h3>
+                <p class="text-slate-300 text-sm max-w-xl mx-auto mb-6">
+                    <span x-show="lang === 'en'">Consult landing page CRO & UX optimization directly with Angi Permana.</span>
+                    <span x-show="lang === 'id'" x-cloak>Konsultasikan optimasi CRO & UX landing page Anda bersama Angi Permana.</span>
+                </p>
                 <a href="https://wa.me/6285717616596?text=Halo%20Angi,%20saya%20tertarik%20dengan%20jasa%20CRO%20Optimization" target="_blank" class="inline-flex items-center px-6 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl shadow-lg shadow-emerald-600/40 transition hover:scale-105">
-                    Hubungi via WhatsApp (+62 857-1761-6596)
+                    <span x-show="lang === 'en'">Contact via WhatsApp (+62 857-1761-6596)</span>
+                    <span x-show="lang === 'id'" x-cloak>Hubungi via WhatsApp (+62 857-1761-6596)</span>
                 </a>
             </div>
 

@@ -6,6 +6,22 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Angi Permana | Web & Digital Marketing Expert</title>
     <meta name="description" content="Portfolio of Angi Permana - Google Ads Manager, WordPress Developer, and Conversion-focused Web Analyst.">
+
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://porto.angipermana.top/">
+    <meta property="og:title" content="Angi Permana | Web & Digital Marketing Expert">
+    <meta property="og:description" content="Portfolio of Angi Permana - Google Ads Manager, WordPress Developer, and Conversion-focused Web Analyst.">
+    <meta property="og:image" content="https://porto.angipermana.top/images/og-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://porto.angipermana.top/">
+    <meta name="twitter:title" content="Angi Permana | Web & Digital Marketing Expert">
+    <meta name="twitter:description" content="Portfolio of Angi Permana - Google Ads Manager, WordPress Developer, and Conversion-focused Web Analyst.">
+    <meta name="twitter:image" content="https://porto.angipermana.top/images/og-preview.png">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -89,8 +105,66 @@
         /* Scrollbar */
         html.light ::-webkit-scrollbar-track { background: #F1F5F9; }
         html.light ::-webkit-scrollbar-thumb { background: #CBD5E1; }
-        /* ====================================================== */
     </style>
+
+    <!-- JSON-LD Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@@context": "https://schema.org",
+      "@@graph": [
+        {
+          "@@type": "Person",
+          "@@id": "https://buatwebsitepro.id/#person",
+          "name": "Angi Permana",
+          "jobTitle": "SEO Specialist & Senior Web Developer",
+          "description": "Spesialis SEO Organic, Google & Meta Ads, Arsitektur SILO, Pembersihan Malware, dan Web Development berkinerja tinggi.",
+          "telephone": "+6285717616596",
+          "email": "admin@buatwebsitepro.id",
+          "url": "https://buatwebsitepro.id",
+          "sameAs": [
+            "https://wa.me/6285717616596"
+          ],
+          "knowsAbout": [
+            "Search Engine Optimization (SEO)",
+            "SILO Architecture",
+            "Google Ads & Performance Max",
+            "Meta Ads & Advantage+",
+            "Website Security & Malware Removal",
+            "Conversion Rate Optimization (CRO)",
+            "Web Development & Laravel"
+          ]
+        },
+        {
+          "@@type": "ProfessionalService",
+          "@@id": "https://buatwebsitepro.id/#service",
+          "name": "Jasa SEO & Web Development Angi Permana",
+          "url": "https://buatwebsitepro.id",
+          "telephone": "+6285717616596",
+          "priceRange": "$$",
+          "provider": {
+            "@@id": "https://buatwebsitepro.id/#person"
+          },
+          "areaServed": "ID",
+          "serviceType": [
+            "SEO Optimization",
+            "Web Development",
+            "Paid Ads Management",
+            "Malware Cleanup",
+            "Conversion Rate Optimization"
+          ]
+        },
+        {
+          "@@type": "WebSite",
+          "@@id": "https://buatwebsitepro.id/#website",
+          "url": "https://buatwebsitepro.id",
+          "name": "Angi Permana Portfolio & Digital Marketing Specialist",
+          "publisher": {
+            "@@id": "https://buatwebsitepro.id/#person"
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body class="bg-slate-950 text-slate-200 antialiased selection:bg-indigo-500 selection:text-white"
     x-data="{ lang: localStorage.getItem('portfolio-lang') || 'id', theme: localStorage.getItem('portfolio-theme') || 'light' }"
@@ -141,9 +215,9 @@
                     <div class="px-3 py-1.5 relative z-10 transition-colors" :class="lang === 'en' ? 'text-white' : 'text-slate-400'">EN</div>
                     <div class="px-3 py-1.5 relative z-10 transition-colors" :class="lang === 'id' ? 'text-white' : 'text-slate-400'">ID</div>
                 </div>
-                <a href="#email-me-now" class="hidden sm:inline-block bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition shadow-lg shadow-indigo-500/30">
-                    <span x-show="lang === 'en'">Hire Me</span>
-                    <span x-show="lang === 'id'" x-cloak>Rekrut Saya</span>
+                <a href="https://wa.me/6285717616596?text=Halo%20Angi,%20saya%20ingin%20berkonsultasi" target="_blank" class="hidden sm:inline-block bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition shadow-lg shadow-indigo-500/30">
+                    <span x-show="lang === 'en'">Contact Me</span>
+                    <span x-show="lang === 'id'" x-cloak>Kontak Saya</span>
                 </a>
             </div>
         </div>

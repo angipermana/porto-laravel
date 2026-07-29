@@ -6,6 +6,22 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Studi Kasus: Kampanye Iklan Travel & Tour | Angi Permana</title>
     <meta name="description" content="Studi kasus optimasi kampanye paid ads (Google Ads & Meta Ads) untuk industri travel & tour oleh Angi Permana.">
+
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://porto.angipermana.top/portofolio-kampanye-iklan-travel/">
+    <meta property="og:title" content="Studi Kasus: Kampanye Iklan Travel & Tour | Angi Permana">
+    <meta property="og:description" content="Studi kasus optimasi kampanye paid ads (Google Ads & Meta Ads) untuk industri travel & tour oleh Angi Permana.">
+    <meta property="og:image" content="https://porto.angipermana.top/images/og-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://porto.angipermana.top/portofolio-kampanye-iklan-travel/">
+    <meta name="twitter:title" content="Studi Kasus: Kampanye Iklan Travel & Tour | Angi Permana">
+    <meta name="twitter:description" content="Studi kasus optimasi kampanye paid ads (Google Ads & Meta Ads) untuk industri travel & tour oleh Angi Permana.">
+    <meta name="twitter:image" content="https://porto.angipermana.top/images/og-preview.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -32,11 +48,56 @@
         html.light .bg-slate-900\/60 { background-color: rgba(255,255,255,0.9) !important; }
         html.light .text-white      { color: #0F172A !important; }
         html.light .text-slate-300  { color: #334155 !important; }
-        html.light .text-slate-400  { color: #64748B !important; }
-        html.light .border-slate-800 { border-color: #E2E8F0 !important; }
         html.light header { background-color: rgba(241,245,249,0.92) !important; border-color: #E2E8F0 !important; }
         html.light .rounded-2xl, html.light .rounded-xl { box-shadow: 0 1px 8px rgba(0,0,0,0.06); }
     </style>
+
+    <!-- JSON-LD Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@@context": "https://schema.org",
+      "@@graph": [
+        {
+          "@@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@@type": "ListItem",
+              "position": 1,
+              "name": "Beranda",
+              "item": "https://buatwebsitepro.id/"
+            },
+            {
+              "@@type": "ListItem",
+              "position": 2,
+              "name": "Portofolio",
+              "item": "https://buatwebsitepro.id/#portfolio"
+            },
+            {
+              "@@type": "ListItem",
+              "position": 3,
+              "name": "Studi Kasus Kampanye Iklan Travel",
+              "item": "https://buatwebsitepro.id/portofolio-kampanye-iklan-travel"
+            }
+          ]
+        },
+        {
+          "@@type": "TechArticle",
+          "headline": "Studi Kasus: Optimasi Kampanye Google Ads & Meta Ads Industri Travel & Tour",
+          "description": "Studi kasus optimasi iklan Google & Meta Ads travel tour dengan pencapaian ROAS 4.5x oleh Angi Permana.",
+          "author": {
+            "@@type": "Person",
+            "name": "Angi Permana",
+            "url": "https://buatwebsitepro.id"
+          },
+          "publisher": {
+            "@@type": "Person",
+            "name": "Angi Permana"
+          },
+          "mainEntityOfPage": "https://buatwebsitepro.id/portofolio-kampanye-iklan-travel"
+        }
+      ]
+    }
+    </script>
 </head>
 <body class="bg-slate-950 text-slate-100 antialiased selection:bg-sky-500 selection:text-white"
     x-data="{ lang: localStorage.getItem('portfolio-lang') || 'id', theme: localStorage.getItem('portfolio-theme') || 'light', activeTab: 'after' }"
@@ -68,7 +129,8 @@
                     <span x-text="lang === 'en' ? '🇮🇩 ID' : '🇬🇧 EN'"></span>
                 </button>
                 <a href="https://wa.me/6285717616596?text=Halo%20Angi,%20saya%20tertarik%20dengan%20jasa%20Iklan%20Travel" target="_blank" class="hidden sm:inline-flex items-center px-4 py-2 bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs rounded-xl shadow-lg shadow-sky-600/30 transition">
-                    Konsultasi Paid Ads
+                    <span x-show="lang === 'en'">Paid Ads Consultation</span>
+                    <span x-show="lang === 'id'" x-cloak>Konsultasi Paid Ads</span>
                 </a>
             </div>
         </div>
@@ -103,37 +165,50 @@
                     <div class="absolute -right-4 -top-4 w-16 h-16 bg-sky-500/10 rounded-full blur-xl"></div>
                     <span class="text-slate-400 text-xs font-bold block mb-1">Return On Ad Spend</span>
                     <span class="text-2xl sm:text-4xl font-extrabold text-sky-400">4.5x ROAS</span>
-                    <span class="text-[11px] text-sky-300 mt-1 block">Dari ROAS awal 1.8x</span>
+                    <span class="text-[11px] text-sky-300 mt-1 block">
+                        <span x-show="lang === 'en'">From initial 1.8x ROAS</span>
+                        <span x-show="lang === 'id'" x-cloak>Dari ROAS awal 1.8x</span>
+                    </span>
                 </div>
                 <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl relative overflow-hidden group hover:border-emerald-500/50 transition-all">
                     <div class="absolute -right-4 -top-4 w-16 h-16 bg-emerald-500/10 rounded-full blur-xl"></div>
                     <span class="text-slate-400 text-xs font-bold block mb-1">Cost Per Acquisition</span>
                     <span class="text-2xl sm:text-4xl font-extrabold text-emerald-400">-42% CPA</span>
-                    <span class="text-[11px] text-emerald-300 mt-1 block">Biaya per booking hemat</span>
+                    <span class="text-[11px] text-emerald-300 mt-1 block">
+                        <span x-show="lang === 'en'">Reduced acquisition cost</span>
+                        <span x-show="lang === 'id'" x-cloak>Biaya per booking hemat</span>
+                    </span>
                 </div>
                 <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl col-span-2 sm:col-span-1 relative overflow-hidden group hover:border-blue-500/50 transition-all">
                     <div class="absolute -right-4 -top-4 w-16 h-16 bg-blue-500/10 rounded-full blur-xl"></div>
                     <span class="text-slate-400 text-xs font-bold block mb-1">Total Booking Leads</span>
                     <span class="text-2xl sm:text-4xl font-extrabold text-blue-400">1,450+</span>
-                    <span class="text-[11px] text-blue-300 mt-1 block">Booking terverifikasi</span>
+                    <span class="text-[11px] text-blue-300 mt-1 block">
+                        <span x-show="lang === 'en'">Verified booking leads</span>
+                        <span x-show="lang === 'id'" x-cloak>Booking terverifikasi</span>
+                    </span>
                 </div>
             </div>
-
-
 
             <!-- Before vs After Interactive Comparison -->
             <div class="bg-slate-900 border border-slate-800 p-6 sm:p-8 rounded-3xl mb-12" data-aos="fade-up" data-aos-delay="180">
                 <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
                     <div>
-                        <h3 class="text-xl font-bold text-white">Perbandingan Performa Iklan: Sebelum vs Sesudah Optimasi</h3>
-                        <p class="text-xs text-slate-400">Klik tab untuk melihat perubahan metrik kampanye iklan</p>
+                        <h3 class="text-xl font-bold text-white">
+                            <span x-show="lang === 'en'">Ad Performance Comparison: Before vs After Optimization</span>
+                            <span x-show="lang === 'id'" x-cloak>Perbandingan Performa Iklan: Sebelum vs Sesudah Optimasi</span>
+                        </h3>
+                        <p class="text-xs text-slate-400">
+                            <span x-show="lang === 'en'">Click tabs to compare campaign performance metrics live</span>
+                            <span x-show="lang === 'id'" x-cloak>Klik tab untuk melihat perubahan metrik kampanye iklan</span>
+                        </p>
                     </div>
                     <div class="flex bg-slate-950 p-1 rounded-xl border border-slate-800 text-xs font-bold">
                         <button @click="activeTab = 'before'" :class="activeTab === 'before' ? 'bg-red-500/20 text-red-400 border border-red-500/30' : 'text-slate-400 hover:text-white'" class="px-4 py-2 rounded-lg transition-all">
-                            🔴 Sebelum Optimasi
+                            🔴 <span x-show="lang === 'en'">Before Optimization</span><span x-show="lang === 'id'" x-cloak>Sebelum Optimasi</span>
                         </button>
                         <button @click="activeTab = 'after'" :class="activeTab === 'after' ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'text-slate-400 hover:text-white'" class="px-4 py-2 rounded-lg transition-all">
-                            🟢 Setelah Optimasi
+                            🟢 <span x-show="lang === 'en'">After Optimization</span><span x-show="lang === 'id'" x-cloak>Setelah Optimasi</span>
                         </button>
                     </div>
                 </div>
@@ -142,17 +217,26 @@
                     <div class="p-4 bg-slate-950/60 rounded-xl border border-red-500/20">
                         <span class="text-xs text-slate-400 font-bold block mb-1">Return On Ad Spend</span>
                         <span class="text-2xl font-extrabold text-red-400">1.8x ROAS</span>
-                        <span class="text-[11px] text-slate-500 mt-1 block">Hampir impas adspend</span>
+                        <span class="text-[11px] text-slate-500 mt-1 block">
+                            <span x-show="lang === 'en'">Barely breaking even on ad spend</span>
+                            <span x-show="lang === 'id'" x-cloak>Hampir impas adspend</span>
+                        </span>
                     </div>
                     <div class="p-4 bg-slate-950/60 rounded-xl border border-red-500/20">
                         <span class="text-xs text-slate-400 font-bold block mb-1">Cost Per Acquisition (CPA)</span>
                         <span class="text-2xl font-extrabold text-red-400">Rp 145.000</span>
-                        <span class="text-[11px] text-slate-500 mt-1 block">Tinggi akibat broad targeting</span>
+                        <span class="text-[11px] text-slate-500 mt-1 block">
+                            <span x-show="lang === 'en'">High CPA due to broad targeting</span>
+                            <span x-show="lang === 'id'" x-cloak>Tinggi akibat broad targeting</span>
+                        </span>
                     </div>
                     <div class="p-4 bg-slate-950/60 rounded-xl border border-red-500/20">
                         <span class="text-xs text-slate-400 font-bold block mb-1">Landing Page Conversion</span>
                         <span class="text-2xl font-extrabold text-red-400">1.5%</span>
-                        <span class="text-[11px] text-slate-500 mt-1 block">Visual pesan tidak sesuai</span>
+                        <span class="text-[11px] text-slate-500 mt-1 block">
+                            <span x-show="lang === 'en'">Poor ad-to-page message match</span>
+                            <span x-show="lang === 'id'" x-cloak>Visual pesan tidak sesuai</span>
+                        </span>
                     </div>
                 </div>
 
@@ -160,24 +244,36 @@
                     <div class="p-4 bg-slate-950/60 rounded-xl border border-emerald-500/30">
                         <span class="text-xs text-slate-400 font-bold block mb-1">Return On Ad Spend</span>
                         <span class="text-2xl font-extrabold text-emerald-400">4.5x ROAS 🚀</span>
-                        <span class="text-[11px] text-emerald-400 mt-1 block">Keuntungan iklan berlipat</span>
+                        <span class="text-[11px] text-emerald-400 mt-1 block">
+                            <span x-show="lang === 'en'">Highly profitable ad returns</span>
+                            <span x-show="lang === 'id'" x-cloak>Keuntungan iklan berlipat</span>
+                        </span>
                     </div>
                     <div class="p-4 bg-slate-950/60 rounded-xl border border-emerald-500/30">
                         <span class="text-xs text-slate-400 font-bold block mb-1">Cost Per Acquisition (CPA)</span>
                         <span class="text-2xl font-extrabold text-emerald-400">Rp 84.000 <span class="text-xs">-42%</span></span>
-                        <span class="text-[11px] text-emerald-400 mt-1 block">Biaya booking jauh lebih murah</span>
+                        <span class="text-[11px] text-emerald-400 mt-1 block">
+                            <span x-show="lang === 'en'">Significantly lower booking cost</span>
+                            <span x-show="lang === 'id'" x-cloak>Biaya booking jauh lebih murah</span>
+                        </span>
                     </div>
                     <div class="p-4 bg-slate-950/60 rounded-xl border border-emerald-500/30">
                         <span class="text-xs text-slate-400 font-bold block mb-1">Landing Page Conversion</span>
                         <span class="text-2xl font-extrabold text-emerald-400">4.1% 🔥</span>
-                        <span class="text-[11px] text-emerald-400 mt-1 block">Message match sempurna</span>
+                        <span class="text-[11px] text-emerald-400 mt-1 block">
+                            <span x-show="lang === 'en'">Perfect message match</span>
+                            <span x-show="lang === 'id'" x-cloak>Message match sempurna</span>
+                        </span>
                     </div>
                 </div>
             </div>
 
             <!-- Tech Stack Badges -->
             <div class="mb-12" data-aos="fade-up" data-aos-delay="200">
-                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Tech Stack & Platform Ads yang Digunakan:</h4>
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">
+                    <span x-show="lang === 'en'">Tech Stack & Ads Platforms Used:</span>
+                    <span x-show="lang === 'id'" x-cloak>Tech Stack & Platform Ads yang Digunakan:</span>
+                </h4>
                 <div class="flex flex-wrap gap-2.5">
                     <span class="px-3 py-1.5 bg-slate-900 border border-slate-800 rounded-xl text-xs font-semibold text-slate-300 flex items-center gap-2">
                         🎯 Google Ads Search & Performance Max (PMax)
@@ -199,20 +295,29 @@
                 <section class="bg-slate-900/60 border border-slate-800 p-8 rounded-2xl">
                     <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
                         <span class="w-8 h-8 rounded-lg bg-sky-500/20 text-sky-400 inline-flex items-center justify-center mr-3 text-sm font-extrabold">01</span>
-                        Tantangan Kampanye Travel
+                        <span x-show="lang === 'en'">Travel Campaign Challenge</span>
+                        <span x-show="lang === 'id'" x-cloak>Tantangan Kampanye Travel</span>
                     </h2>
                     <p class="mb-4">
-                        Persaingan ketat di paket tour travel mengakibatkan tingginya Cost Per Click (CPC) pada Google Ads dan tingginya ad fatigue pada materi iklan visual media sosial.
+                        <span x-show="lang === 'en'">Fierce competition in tour & travel packages leads to skyrocketing Cost Per Click (CPC) on Google Ads and severe creative ad fatigue on social media channels.</span>
+                        <span x-show="lang === 'id'" x-cloak>Persaingan ketat di paket tour travel mengakibatkan tingginya Cost Per Click (CPC) pada Google Ads dan tingginya ad fatigue pada materi iklan visual media sosial.</span>
                     </p>
                 </section>
             </div>
 
             <!-- CTA Callout -->
             <div class="mt-16 bg-gradient-to-r from-sky-900/40 via-blue-900/40 to-slate-900 border border-sky-500/30 p-8 rounded-3xl text-center" data-aos="zoom-in">
-                <h3 class="text-2xl font-bold text-white mb-3">Ingin Menggandakan Omset Iklan Bisnis Anda?</h3>
-                <p class="text-slate-300 text-sm max-w-xl mx-auto mb-6">Konsultasikan strategi Google Ads & Meta Ads bisnis Anda bersama Angi Permana.</p>
+                <h3 class="text-2xl font-bold text-white mb-3">
+                    <span x-show="lang === 'en'">Want to Double Your Business Ad Revenue?</span>
+                    <span x-show="lang === 'id'" x-cloak>Ingin Menggandakan Omset Iklan Bisnis Anda?</span>
+                </h3>
+                <p class="text-slate-300 text-sm max-w-xl mx-auto mb-6">
+                    <span x-show="lang === 'en'">Consult your Google Ads & Meta Ads strategy directly with Angi Permana.</span>
+                    <span x-show="lang === 'id'" x-cloak>Konsultasikan strategi Google Ads & Meta Ads bisnis Anda bersama Angi Permana.</span>
+                </p>
                 <a href="https://wa.me/6285717616596?text=Halo%20Angi,%20saya%20tertarik%20dengan%20jasa%20Iklan%20Travel" target="_blank" class="inline-flex items-center px-6 py-3.5 bg-sky-600 hover:bg-sky-500 text-white font-bold rounded-xl shadow-lg shadow-sky-600/40 transition hover:scale-105">
-                    Hubungi via WhatsApp (+62 857-1761-6596)
+                    <span x-show="lang === 'en'">Contact via WhatsApp (+62 857-1761-6596)</span>
+                    <span x-show="lang === 'id'" x-cloak>Hubungi via WhatsApp (+62 857-1761-6596)</span>
                 </a>
             </div>
 

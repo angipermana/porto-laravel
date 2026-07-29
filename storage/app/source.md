@@ -6,7 +6,9 @@
 - **WhatsApp**: 6285717616596 (https://wa.me/6285717616596)
 - **Email**: admin@buatwebsitepro.id
 - **LinkedIn**: https://www.linkedin.com/in/angi-permana/
-- **Website**: https://portofolio-angipermana-6179s-projects.vercel.app/
+- **potofolio**: https://porto.angipermana.top
+- **contoh website**: https://buatwebsitepro.id
+
 
 ## Core Specialties
 1. **Google Ads Manager**

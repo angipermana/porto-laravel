@@ -6,6 +6,22 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Studi Kasus: Optimasi GMB & Local SEO Top 3 Google Maps | Angi Permana</title>
     <meta name="description" content="Studi kasus optimasi Google Business Profile dan Local SEO untuk peringkat Top 3 Google Maps oleh Angi Permana.">
+
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://porto.angipermana.top/portofolio-jasa-local-seo-gmb/">
+    <meta property="og:title" content="Studi Kasus: Optimasi GMB & Local SEO Top 3 Google Maps | Angi Permana">
+    <meta property="og:description" content="Studi kasus optimasi Google Business Profile dan Local SEO untuk peringkat Top 3 Google Maps oleh Angi Permana.">
+    <meta property="og:image" content="https://porto.angipermana.top/images/og-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://porto.angipermana.top/portofolio-jasa-local-seo-gmb/">
+    <meta name="twitter:title" content="Studi Kasus: Optimasi GMB & Local SEO Top 3 Google Maps | Angi Permana">
+    <meta name="twitter:description" content="Studi kasus optimasi Google Business Profile dan Local SEO untuk peringkat Top 3 Google Maps oleh Angi Permana.">
+    <meta name="twitter:image" content="https://porto.angipermana.top/images/og-preview.png">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,10 +67,55 @@
             background-color: rgba(241,245,249,0.92) !important;
             border-color: #E2E8F0 !important;
         }
-        html.light .rounded-2xl, html.light .rounded-xl {
-            box-shadow: 0 1px 8px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-        }
+        html.light .rounded-2xl, html.light .rounded-xl { box-shadow: 0 1px 8px rgba(0,0,0,0.06); }
     </style>
+
+    <!-- JSON-LD Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@@context": "https://schema.org",
+      "@@graph": [
+        {
+          "@@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@@type": "ListItem",
+              "position": 1,
+              "name": "Beranda",
+              "item": "https://buatwebsitepro.id/"
+            },
+            {
+              "@@type": "ListItem",
+              "position": 2,
+              "name": "Portofolio",
+              "item": "https://buatwebsitepro.id/#portfolio"
+            },
+            {
+              "@@type": "ListItem",
+              "position": 3,
+              "name": "Studi Kasus Local SEO & GMB",
+              "item": "https://buatwebsitepro.id/portofolio-jasa-local-seo-gmb"
+            }
+          ]
+        },
+        {
+          "@@type": "TechArticle",
+          "headline": "Studi Kasus: Domination Top 3 Google Maps & Optimasi Google My Business (GMB)",
+          "description": "Studi kasus optimasi GMB, Geo-Tagging, dan Local SEO Top 3 Google Maps oleh Angi Permana.",
+          "author": {
+            "@@type": "Person",
+            "name": "Angi Permana",
+            "url": "https://buatwebsitepro.id"
+          },
+          "publisher": {
+            "@@type": "Person",
+            "name": "Angi Permana"
+          },
+          "mainEntityOfPage": "https://buatwebsitepro.id/portofolio-jasa-local-seo-gmb"
+        }
+      ]
+    }
+    </script>
 </head>
 <body class="bg-slate-950 text-slate-100 antialiased selection:bg-amber-500 selection:text-white"
     x-data="{ lang: localStorage.getItem('portfolio-lang') || 'id', theme: localStorage.getItem('portfolio-theme') || 'light', activeTab: 'after' }"
@@ -86,7 +147,8 @@
                     <span x-text="lang === 'en' ? '🇮🇩 ID' : '🇬🇧 EN'"></span>
                 </button>
                 <a href="https://wa.me/6285717616596?text=Halo%20Angi,%20saya%20tertarik%20dengan%20jasa%20Local%20SEO" target="_blank" class="hidden sm:inline-flex items-center px-4 py-2 bg-amber-600 hover:bg-amber-500 text-white font-bold text-xs rounded-xl shadow-lg shadow-amber-600/30 transition">
-                    Konsultasi Local SEO
+                    <span x-show="lang === 'en'">Local SEO Consultation</span>
+                    <span x-show="lang === 'id'" x-cloak>Konsultasi Local SEO</span>
                 </a>
             </div>
         </div>
@@ -119,83 +181,138 @@
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-10" data-aos="fade-up" data-aos-delay="100">
                 <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl relative overflow-hidden group hover:border-amber-500/50 transition-all">
                     <div class="absolute -right-4 -top-4 w-16 h-16 bg-amber-500/10 rounded-full blur-xl group-hover:bg-amber-500/20 transition-all"></div>
-                    <span class="text-slate-400 text-xs font-bold block mb-1">Panggilan & Trafik Lokal</span>
+                    <span class="text-slate-400 text-xs font-bold block mb-1">
+                        <span x-show="lang === 'en'">Calls & Local Traffic</span>
+                        <span x-show="lang === 'id'" x-cloak>Panggilan & Trafik Lokal</span>
+                    </span>
                     <span class="text-2xl sm:text-4xl font-extrabold text-amber-400">+180%</span>
-                    <span class="text-[11px] text-amber-300 mt-1 block">Trafik konsumen radius lokal</span>
+                    <span class="text-[11px] text-amber-300 mt-1 block">
+                        <span x-show="lang === 'en'">Local radius customer intent</span>
+                        <span x-show="lang === 'id'" x-cloak>Trafik konsumen radius lokal</span>
+                    </span>
                 </div>
                 <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl relative overflow-hidden group hover:border-emerald-500/50 transition-all">
                     <div class="absolute -right-4 -top-4 w-16 h-16 bg-emerald-500/10 rounded-full blur-xl group-hover:bg-emerald-500/20 transition-all"></div>
-                    <span class="text-slate-400 text-xs font-bold block mb-1">Peringkat Google Maps</span>
+                    <span class="text-slate-400 text-xs font-bold block mb-1">
+                        <span x-show="lang === 'en'">Google Maps Rank</span>
+                        <span x-show="lang === 'id'" x-cloak>Peringkat Google Maps</span>
+                    </span>
                     <span class="text-2xl sm:text-4xl font-extrabold text-emerald-400">Top #3</span>
-                    <span class="text-[11px] text-emerald-400 mt-1 block">Dominasi 3-Pack Maps</span>
+                    <span class="text-[11px] text-emerald-400 mt-1 block">
+                        <span x-show="lang === 'en'">Dominating 3-Pack Maps</span>
+                        <span x-show="lang === 'id'" x-cloak>Dominasi 3-Pack Maps</span>
+                    </span>
                 </div>
                 <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl col-span-2 sm:col-span-1 relative overflow-hidden group hover:border-yellow-500/50 transition-all">
                     <div class="absolute -right-4 -top-4 w-16 h-16 bg-yellow-500/10 rounded-full blur-xl group-hover:bg-yellow-500/20 transition-all"></div>
-                    <span class="text-slate-400 text-xs font-bold block mb-1">Kualitas Leads</span>
+                    <span class="text-slate-400 text-xs font-bold block mb-1">
+                        <span x-show="lang === 'en'">Lead Quality</span>
+                        <span x-show="lang === 'id'" x-cloak>Kualitas Leads</span>
+                    </span>
                     <span class="text-2xl sm:text-4xl font-extrabold text-yellow-400">High-Intent</span>
-                    <span class="text-[11px] text-yellow-300 mt-1 block">Siap transaksi & berkunjung</span>
+                    <span class="text-[11px] text-yellow-300 mt-1 block">
+                        <span x-show="lang === 'en'">Ready to buy & visit store</span>
+                        <span x-show="lang === 'id'" x-cloak>Siap transaksi & berkunjung</span>
+                    </span>
                 </div>
             </div>
-
-
 
             <!-- Before vs After Interactive Comparison -->
             <div class="bg-slate-900 border border-slate-800 p-6 sm:p-8 rounded-3xl mb-12" data-aos="fade-up" data-aos-delay="180">
                 <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
                     <div>
-                        <h3 class="text-xl font-bold text-white">Perbandingan Performa: Sebelum vs Sesudah Optimasi GMB</h3>
-                        <p class="text-xs text-slate-400">Klik tab untuk melihat perubahan peringkat Maps dan konversi lokal</p>
+                        <h3 class="text-xl font-bold text-white">
+                            <span x-show="lang === 'en'">Performance Comparison: Before vs After GMB Optimization</span>
+                            <span x-show="lang === 'id'" x-cloak>Perbandingan Performa: Sebelum vs Sesudah Optimasi GMB</span>
+                        </h3>
+                        <p class="text-xs text-slate-400">
+                            <span x-show="lang === 'en'">Click tabs to compare Maps ranking and local conversions live</span>
+                            <span x-show="lang === 'id'" x-cloak>Klik tab untuk melihat perubahan peringkat Maps dan konversi lokal</span>
+                        </p>
                     </div>
                     <div class="flex bg-slate-950 p-1 rounded-xl border border-slate-800 text-xs font-bold">
                         <button @click="activeTab = 'before'" :class="activeTab === 'before' ? 'bg-red-500/20 text-red-400 border border-red-500/30' : 'text-slate-400 hover:text-white'" class="px-4 py-2 rounded-lg transition-all">
-                            🔴 Sebelum Optimasi
+                            🔴 <span x-show="lang === 'en'">Before Optimization</span><span x-show="lang === 'id'" x-cloak>Sebelum Optimasi</span>
                         </button>
                         <button @click="activeTab = 'after'" :class="activeTab === 'after' ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'text-slate-400 hover:text-white'" class="px-4 py-2 rounded-lg transition-all">
-                            🟢 Setelah Optimasi
+                            🟢 <span x-show="lang === 'en'">After Optimization</span><span x-show="lang === 'id'" x-cloak>Setelah Optimasi</span>
                         </button>
                     </div>
                 </div>
 
                 <div x-show="activeTab === 'before'" x-cloak class="grid sm:grid-cols-3 gap-4">
                     <div class="p-4 bg-slate-950/60 rounded-xl border border-red-500/20">
-                        <span class="text-xs text-slate-400 font-bold block mb-1">Peringkat Google Maps</span>
-                        <span class="text-2xl font-extrabold text-red-400">Posisi #18.4</span>
-                        <span class="text-[11px] text-slate-500 mt-1 block">Tidak masuk 3-Pack Maps</span>
+                        <span class="text-xs text-slate-400 font-bold block mb-1">
+                            <span x-show="lang === 'en'">Google Maps Rank</span>
+                            <span x-show="lang === 'id'" x-cloak>Peringkat Google Maps</span>
+                        </span>
+                        <span class="text-2xl font-extrabold text-red-400">
+                            <span x-show="lang === 'en'">Position #18.4</span>
+                            <span x-show="lang === 'id'" x-cloak>Posisi #18.4</span>
+                        </span>
+                        <span class="text-[11px] text-slate-500 mt-1 block">
+                            <span x-show="lang === 'en'">Outside 3-Pack Maps</span>
+                            <span x-show="lang === 'id'" x-cloak>Tidak masuk 3-Pack Maps</span>
+                        </span>
                     </div>
                     <div class="p-4 bg-slate-950/60 rounded-xl border border-red-500/20">
                         <span class="text-xs text-slate-400 font-bold block mb-1">Direction Requests</span>
-                        <span class="text-2xl font-extrabold text-red-400">45 <span class="text-xs">rute/bln</span></span>
-                        <span class="text-[11px] text-slate-500 mt-1 block">Kedatangan toko sangat rendah</span>
+                        <span class="text-2xl font-extrabold text-red-400">45 <span class="text-xs"><span x-show="lang === 'en'">routes/mo</span><span x-show="lang === 'id'" x-cloak>rute/bln</span></span></span>
+                        <span class="text-[11px] text-slate-500 mt-1 block">
+                            <span x-show="lang === 'en'">Very low store walk-ins</span>
+                            <span x-show="lang === 'id'" x-cloak>Kedatangan toko sangat rendah</span>
+                        </span>
                     </div>
                     <div class="p-4 bg-slate-950/60 rounded-xl border border-red-500/20">
                         <span class="text-xs text-slate-400 font-bold block mb-1">GMB Profile Views</span>
-                        <span class="text-2xl font-extrabold text-red-400">1,800 <span class="text-xs">views/bln</span></span>
-                        <span class="text-[11px] text-slate-500 mt-1 block">Foto & ulasan tidak optimal</span>
+                        <span class="text-2xl font-extrabold text-red-400">1,800 <span class="text-xs">views/mo</span></span>
+                        <span class="text-[11px] text-slate-500 mt-1 block">
+                            <span x-show="lang === 'en'">Unoptimized photos & reviews</span>
+                            <span x-show="lang === 'id'" x-cloak>Foto & ulasan tidak optimal</span>
+                        </span>
                     </div>
                 </div>
 
                 <div x-show="activeTab === 'after'" class="grid sm:grid-cols-3 gap-4">
                     <div class="p-4 bg-slate-950/60 rounded-xl border border-emerald-500/30">
-                        <span class="text-xs text-slate-400 font-bold block mb-1">Peringkat Google Maps</span>
-                        <span class="text-2xl font-extrabold text-emerald-400">Posisi #2.1 🚀</span>
-                        <span class="text-[11px] text-emerald-400 mt-1 block">Top 3 Map Pack Konsisten</span>
+                        <span class="text-xs text-slate-400 font-bold block mb-1">
+                            <span x-show="lang === 'en'">Google Maps Rank</span>
+                            <span x-show="lang === 'id'" x-cloak>Peringkat Google Maps</span>
+                        </span>
+                        <span class="text-2xl font-extrabold text-emerald-400">
+                            <span x-show="lang === 'en'">Position #2.1 🚀</span>
+                            <span x-show="lang === 'id'" x-cloak>Posisi #2.1 🚀</span>
+                        </span>
+                        <span class="text-[11px] text-emerald-400 mt-1 block">
+                            <span x-show="lang === 'en'">Consistent Top 3 Map Pack</span>
+                            <span x-show="lang === 'id'" x-cloak>Top 3 Map Pack Konsisten</span>
+                        </span>
                     </div>
                     <div class="p-4 bg-slate-950/60 rounded-xl border border-emerald-500/30">
                         <span class="text-xs text-slate-400 font-bold block mb-1">Direction Requests</span>
                         <span class="text-2xl font-extrabold text-emerald-400">195 <span class="text-xs">+333%</span></span>
-                        <span class="text-[11px] text-emerald-400 mt-1 block">Kedatangan fisik melonjak</span>
+                        <span class="text-[11px] text-emerald-400 mt-1 block">
+                            <span x-show="lang === 'en'">Physical foot traffic surge</span>
+                            <span x-show="lang === 'id'" x-cloak>Kedatangan fisik melonjak</span>
+                        </span>
                     </div>
                     <div class="p-4 bg-slate-950/60 rounded-xl border border-emerald-500/30">
                         <span class="text-xs text-slate-400 font-bold block mb-1">GMB Profile Views</span>
-                        <span class="text-2xl font-extrabold text-emerald-400">8,400 <span class="text-xs">views/bln</span></span>
-                        <span class="text-[11px] text-emerald-400 mt-1 block">Ulasan Bintang 5 bertambah</span>
+                        <span class="text-2xl font-extrabold text-emerald-400">8,400 <span class="text-xs">views/mo</span></span>
+                        <span class="text-[11px] text-emerald-400 mt-1 block">
+                            <span x-show="lang === 'en'">5-Star reviews growing</span>
+                            <span x-show="lang === 'id'" x-cloak>Ulasan Bintang 5 bertambah</span>
+                        </span>
                     </div>
                 </div>
             </div>
 
             <!-- Tech Stack & Tools Badges -->
             <div class="mb-12" data-aos="fade-up" data-aos-delay="200">
-                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Tech Stack & Tools Local SEO yang Digunakan:</h4>
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">
+                    <span x-show="lang === 'en'">Tech Stack & Local SEO Tools Used:</span>
+                    <span x-show="lang === 'id'" x-cloak>Tech Stack & Tools Local SEO yang Digunakan:</span>
+                </h4>
                 <div class="flex flex-wrap gap-2.5">
                     <span class="px-3 py-1.5 bg-slate-900 border border-slate-800 rounded-xl text-xs font-semibold text-slate-300 flex items-center gap-2">
                         📍 Google Business Profile (GMB)
@@ -220,30 +337,51 @@
                 <section class="bg-slate-900/60 border border-slate-800 p-8 rounded-2xl">
                     <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
                         <span class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 inline-flex items-center justify-center mr-3 text-sm font-extrabold">01</span>
-                        Tantangan Pencarian Lokal
+                        <span x-show="lang === 'en'">Local Search Challenge</span>
+                        <span x-show="lang === 'id'" x-cloak>Tantangan Pencarian Lokal</span>
                     </h2>
                     <p class="mb-4">
-                        Bisnis lokal menghadapi kendala utama dimana pelanggan potensial di sekitar lokasi tidak dapat menemukan lokasi fisik maupun nomor kontak bisnis saat mencari di Google Maps:
+                        <span x-show="lang === 'en'">Local businesses face the bottleneck where potential nearby customers fail to find physical locations or contact details when searching on Google Maps:</span>
+                        <span x-show="lang === 'id'" x-cloak>Bisnis lokal menghadapi kendala utama dimana pelanggan potensial di sekitar lokasi tidak dapat menemukan lokasi fisik maupun nomor kontak bisnis saat mencari di Google Maps:</span>
                     </p>
                     <ul class="list-disc list-inside space-y-2 text-slate-300">
-                        <li><strong>Profil GMB Tidak Ter-Verifikasi Optimal:</strong> Informasi lokasi, jam buka, dan kategori bisnis tidak konsisten.</li>
-                        <li><strong>Kalah Bersaing di 3-Pack Maps:</strong> Lokasi kalah bersaing dengan kompetitor terdekat yang memiliki ulasan dan rute lebih aktif.</li>
+                        <li>
+                            <span x-show="lang === 'en'"><strong>Unoptimized GMB Profile:</strong> Inconsistent business location info, opening hours, and primary categories.</span>
+                            <span x-show="lang === 'id'" x-cloak><strong>Profil GMB Tidak Ter-Verifikasi Optimal:</strong> Informasi lokasi, jam buka, dan kategori bisnis tidak konsisten.</span>
+                        </li>
+                        <li>
+                            <span x-show="lang === 'en'"><strong>Outranked in 3-Pack Maps:</strong> Falling behind local competitors with active reviews and frequent direction requests.</span>
+                            <span x-show="lang === 'id'" x-cloak><strong>Kalah Bersaing di 3-Pack Maps:</strong> Lokasi kalah bersaing dengan kompetitor terdekat yang memiliki ulasan dan rute lebih aktif.</span>
+                        </li>
                     </ul>
                 </section>
 
                 <section class="bg-slate-900/60 border border-slate-800 p-8 rounded-2xl">
                     <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
                         <span class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 inline-flex items-center justify-center mr-3 text-sm font-extrabold">02</span>
-                        Solusi & Eksekusi Local SEO
+                        <span x-show="lang === 'en'">Local SEO Solution & Execution</span>
+                        <span x-show="lang === 'id'" x-cloak>Solusi & Eksekusi Local SEO</span>
                     </h2>
                     <div class="space-y-4">
                         <div class="p-4 bg-slate-950/40 rounded-xl border border-slate-800/80">
-                            <h3 class="text-lg font-bold text-white mb-1">1. Optimasi Kategori & NAP Consistency</h3>
-                            <p class="text-sm text-slate-300">Menyeragamkan Name, Address, Phone (NAP) di seluruh direktori lokal dan memilih primary & secondary category yang paling akurat.</p>
+                            <h3 class="text-lg font-bold text-white mb-1">
+                                <span x-show="lang === 'en'">1. Category Optimization & NAP Consistency</span>
+                                <span x-show="lang === 'id'" x-cloak>1. Optimasi Kategori & NAP Consistency</span>
+                            </h3>
+                            <p class="text-sm text-slate-300">
+                                <span x-show="lang === 'en'">Standardized Name, Address, Phone (NAP) across local citations and selected precise primary & secondary GMB categories.</span>
+                                <span x-show="lang === 'id'" x-cloak>Menyeragamkan Name, Address, Phone (NAP) di seluruh direktori lokal dan memilih primary & secondary category yang paling akurat.</span>
+                            </p>
                         </div>
                         <div class="p-4 bg-slate-950/40 rounded-xl border border-slate-800/80">
-                            <h3 class="text-lg font-bold text-white mb-1">2. Strategi Ulasan & Photo Upload</h3>
-                            <p class="text-sm text-slate-300">Mendorong ulasan bintang 5 organik ber-kata kunci lokal dari pelanggan puas serta mengunggah foto geotagged secara berkala.</p>
+                            <h3 class="text-lg font-bold text-white mb-1">
+                                <span x-show="lang === 'en'">2. Review Generation & Geotagged Photo Uploads</span>
+                                <span x-show="lang === 'id'" x-cloak>2. Strategi Ulasan & Photo Upload</span>
+                            </h3>
+                            <p class="text-sm text-slate-300">
+                                <span x-show="lang === 'en'">Driven organic 5-star reviews with local keywords from satisfied customers and routinely published geotagged photos.</span>
+                                <span x-show="lang === 'id'" x-cloak>Mendorong ulasan bintang 5 organik ber-kata kunci lokal dari pelanggan puas serta mengunggah foto geotagged secara berkala.</span>
+                            </p>
                         </div>
                     </div>
                 </section>
@@ -251,16 +389,29 @@
                 <section class="bg-slate-900/60 border border-slate-800 p-8 rounded-2xl">
                     <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
                         <span class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 inline-flex items-center justify-center mr-3 text-sm font-extrabold">03</span>
-                        Hasil & Dampak Bisnis
+                        <span x-show="lang === 'en'">Results & Business Impact</span>
+                        <span x-show="lang === 'id'" x-cloak>Hasil & Dampak Bisnis</span>
                     </h2>
                     <div class="grid sm:grid-cols-2 gap-4">
                         <div class="p-5 bg-slate-950 rounded-xl border border-slate-800">
-                            <span class="text-amber-400 font-bold text-lg block mb-1">📈 +180% Panggilan Telepon</span>
-                            <span class="text-xs text-slate-400">Peningkatan signifikan langsung dari tombol 'Call' di Google Maps.</span>
+                            <span class="text-amber-400 font-bold text-lg block mb-1">
+                                📈 <span x-show="lang === 'en'">+180% Phone Calls</span>
+                                <span x-show="lang === 'id'" x-cloak>+180% Panggilan Telepon</span>
+                            </span>
+                            <span class="text-xs text-slate-400">
+                                <span x-show="lang === 'en'">Direct increase in incoming customer phone inquiries straight from Google Maps.</span>
+                                <span x-show="lang === 'id'" x-cloak>Peningkatan signifikan langsung dari tombol 'Call' di Google Maps.</span>
+                            </span>
                         </div>
                         <div class="p-5 bg-slate-950 rounded-xl border border-slate-800">
-                            <span class="text-emerald-400 font-bold text-lg block mb-1">📍 Top 3 Map Pack</span>
-                            <span class="text-xs text-slate-400">Mendominasi 3 posisi teratas pencarian lokal di area target.</span>
+                            <span class="text-emerald-400 font-bold text-lg block mb-1">
+                                📍 <span x-show="lang === 'en'">Top 3 Map Pack</span>
+                                <span x-show="lang === 'id'" x-cloak>Top 3 Map Pack</span>
+                            </span>
+                            <span class="text-xs text-slate-400">
+                                <span x-show="lang === 'en'">Dominating the top 3 spots in target local area search queries.</span>
+                                <span x-show="lang === 'id'" x-cloak>Mendominasi 3 posisi teratas pencarian lokal di area target.</span>
+                            </span>
                         </div>
                     </div>
                 </section>
@@ -268,10 +419,17 @@
 
             <!-- CTA Callout -->
             <div class="mt-16 bg-gradient-to-r from-amber-900/40 via-yellow-900/40 to-slate-900 border border-amber-500/30 p-8 rounded-3xl text-center" data-aos="zoom-in">
-                <h3 class="text-2xl font-bold text-white mb-3">Ingin Bisnis Lokal Anda Mendominasi Google Maps?</h3>
-                <p class="text-slate-300 text-sm max-w-xl mx-auto mb-6">Konsultasikan optimasi Google Business Profile Anda bersama Angi Permana untuk mendatangkan lebih banyak pembeli lokal.</p>
+                <h3 class="text-2xl font-bold text-white mb-3">
+                    <span x-show="lang === 'en'">Want Your Local Business to Dominate Google Maps?</span>
+                    <span x-show="lang === 'id'" x-cloak>Ingin Bisnis Lokal Anda Mendominasi Google Maps?</span>
+                </h3>
+                <p class="text-slate-300 text-sm max-w-xl mx-auto mb-6">
+                    <span x-show="lang === 'en'">Consult your Google Business Profile optimization directly with Angi Permana to attract more local buyers.</span>
+                    <span x-show="lang === 'id'" x-cloak>Konsultasikan optimasi Google Business Profile Anda bersama Angi Permana untuk mendatangkan lebih banyak pembeli lokal.</span>
+                </p>
                 <a href="https://wa.me/6285717616596?text=Halo%20Angi,%20saya%20tertarik%20dengan%20jasa%20Local%20SEO" target="_blank" class="inline-flex items-center px-6 py-3.5 bg-amber-600 hover:bg-amber-500 text-white font-bold rounded-xl shadow-lg shadow-amber-600/40 transition hover:scale-105">
-                    Hubungi via WhatsApp (+62 857-1761-6596)
+                    <span x-show="lang === 'en'">Contact via WhatsApp (+62 857-1761-6596)</span>
+                    <span x-show="lang === 'id'" x-cloak>Hubungi via WhatsApp (+62 857-1761-6596)</span>
                 </a>
             </div>
 

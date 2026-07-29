@@ -89,6 +89,9 @@ function copyDir($src, $dst) {
 }
 
 copyDir(__DIR__ . '/public/build', $distDir . '/build');
+if (is_dir(__DIR__ . '/public/images')) {
+    copyDir(__DIR__ . '/public/images', $distDir . '/images');
+}
 if (file_exists(__DIR__ . '/public/favicon.ico')) {
     copy(__DIR__ . '/public/favicon.ico', $distDir . '/favicon.ico');
 }

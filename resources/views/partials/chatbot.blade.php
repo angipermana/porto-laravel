@@ -21,8 +21,8 @@
                     <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-slate-900 rounded-full"></span>
                 </div>
                 <div>
-                    <div class="text-sm font-bold text-white">Angi AI Assistant</div>
-                    <div class="text-[10px] text-slate-500 flex items-center gap-1">
+                    <div class="text-base font-bold text-white">Angi AI Assistant</div>
+                    <div class="text-xs text-slate-400 flex items-center gap-1">
                         <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
                         <span x-show="lang === 'en'">Online & Ready</span>
                         <span x-show="lang === 'id'" x-cloak>Online & Aktif</span>
@@ -40,7 +40,7 @@
         <div x-ref="msgContainer" class="flex-1 p-4 overflow-y-auto space-y-4">
             <template x-for="(msg, index) in messages" :key="index">
                 <div class="flex" :class="msg.role === 'user' ? 'justify-end' : 'justify-start'">
-                    <div class="max-w-[85%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed"
+                    <div class="max-w-[85%] rounded-2xl px-4 py-2.5 text-base leading-relaxed"
                          :class="msg.role === 'user' 
                             ? 'bg-indigo-600 text-white rounded-br-none' 
                             : 'bg-slate-800 text-slate-200 rounded-bl-none border border-slate-700/50'">
@@ -63,7 +63,7 @@
             <input type="text" 
                    x-model="input" 
                    :placeholder="lang === 'en' ? 'Ask a question...' : 'Tanyakan sesuatu...'"
-                   class="flex-1 bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-indigo-500 placeholder-slate-500 transition"
+                   class="flex-1 bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-base text-white focus:outline-none focus:border-indigo-500 placeholder-slate-500 transition"
                    :disabled="loading">
             <button type="submit" 
                     class="bg-indigo-600 hover:bg-indigo-500 text-white p-2.5 rounded-xl transition flex items-center justify-center disabled:opacity-50"

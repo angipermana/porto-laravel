@@ -74,10 +74,13 @@ $modelsToTry = array_values(array_unique(array_filter([
     'google/gemma-4-31b-it:free'
 ])));
 
-// Override if Vercel env contains old OpenAI sk-proj- key or openai.com URL
+$defaultKey = 'sk-or-v1-' . '9aaf195a3dbfc94af90804d72b60314e6888505dcfdc8b0d14cbdf036b3a1640';
+$apiKey = getenv('OPENAI_API_KEY') ?: (getenv('OPENROUTER_API_KEY') ?: $defaultKey);
+$baseUrl = getenv('OPENAI_API_URL') ?: 'https://openrouter.ai/api/v1';
+
 if (empty($apiKey) || str_starts_with($apiKey, 'sk-proj-') || empty($baseUrl) || str_contains($baseUrl, 'openai.com')) {
     $orKey   = getenv('OPENROUTER_API_KEY');
-    $apiKey  = !empty($orKey) ? $orKey : ('sk-or-v1-' . '9aaf195a3dbfc94af90804d72b60314e6888505dcfdc8b0d14cbdf036b3a1640');
+    $apiKey  = !empty($orKey) ? $orKey : $defaultKey;
     $baseUrl = 'https://openrouter.ai/api/v1';
 }
 

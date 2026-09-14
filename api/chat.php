@@ -66,19 +66,22 @@ $systemPrompt = "You are an AI assistant for Angi Permana's portfolio website. "
     . "- IMPORTANT PRICING RULE: If the user asks about price, cost, or \"berapa?\", DO NOT call the notion tool. Instead, you MUST reply EXACTLY with: \"Untuk informasi tarif dan diskusi harga, silakan langsung menghubungi Angi via WhatsApp di 6285717616596 (https://wa.me/6285717616596).\"\n"
     . "- DO NOT call the `save_lead_to_notion` tool more than once per user session.";
 
-$apiKey  = getenv('OPENAI_API_KEY')  ?: ($_SERVER['OPENAI_API_KEY']  ?? '');
-$baseUrl = getenv('OPENAI_API_URL')  ?: ($_SERVER['OPENAI_API_URL']  ?? '');
-$model   = getenv('OPENAI_MODEL')    ?: ($_SERVER['OPENAI_MODEL']    ?? '');
+$configuredModel = getenv('OPENAI_MODEL') ?: ($_SERVER['OPENAI_MODEL'] ?? '');
+$modelsToTry = array_values(array_unique(array_filter([
+    $configuredModel,
+    'nex-agi/nex-n2.5-mini:free',
+    'liquid/lfm-2.5-2.6b:free',
+    'google/gemma-4-31b-it:free'
+])));
 
 // Override if Vercel env contains old OpenAI sk-proj- key or openai.com URL
 if (empty($apiKey) || str_starts_with($apiKey, 'sk-proj-') || empty($baseUrl) || str_contains($baseUrl, 'openai.com')) {
     $orKey   = getenv('OPENROUTER_API_KEY');
     $apiKey  = !empty($orKey) ? $orKey : ('sk-or-v1-' . '9aaf195a3dbfc94af90804d72b60314e6888505dcfdc8b0d14cbdf036b3a1640');
     $baseUrl = 'https://openrouter.ai/api/v1';
-    $model   = 'google/gemma-4-26b-a4b-it:free';
 }
 
-$apiUrl  = rtrim($baseUrl, '/') . '/chat/completions';
+$apiUrl = rtrim($baseUrl, '/') . '/chat/completions';
 
 $messages = [['role' => 'system', 'content' => $systemPrompt]];
 foreach ($history as $chat) {
@@ -91,65 +94,79 @@ $messages[] = ['role' => 'user', 'content' => $message];
 $notionApiKey = getenv('NOTION_API_KEY') ?: ($_SERVER['NOTION_API_KEY'] ?? '');
 $notionDbId   = getenv('NOTION_DATABASE_ID') ?: ($_SERVER['NOTION_DATABASE_ID'] ?? '');
 
-$payloadData = [
-    'model'       => $model,
-    'messages'    => $messages,
-    'temperature' => 0.7,
-];
-
-// Add tool only if Notion is configured
+$toolsConfig = [];
 if (!empty($notionApiKey) && !empty($notionDbId)) {
-    $payloadData['tools'] = [
-        [
-            'type' => 'function',
-            'function' => [
-                'name' => 'save_lead_to_notion',
-                'description' => 'Save lead information to Notion CRM. Call this ONLY ONCE per session when user has explicitly provided at least their name and WhatsApp number. DO NOT call this if they are just asking for pricing.',
-                'parameters' => [
-                    'type' => 'object',
-                    'properties' => [
-                        'name' => ['type' => 'string', 'description' => 'The name of the lead.'],
-                        'email' => ['type' => 'string', 'description' => 'The email address of the lead (optional).'],
-                        'whatsapp' => ['type' => 'string', 'description' => 'The WhatsApp number of the lead.'],
-                        'message' => ['type' => 'string', 'description' => 'Short summary of what the lead is interested in.']
-                    ],
-                    'required' => ['name', 'whatsapp', 'message']
+    $toolsConfig = [
+        'tools' => [
+            [
+                'type' => 'function',
+                'function' => [
+                    'name' => 'save_lead_to_notion',
+                    'description' => 'Save lead information to Notion CRM. Call this ONLY ONCE per session when user has explicitly provided at least their name and WhatsApp number. DO NOT call this if they are just asking for pricing.',
+                    'parameters' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'name' => ['type' => 'string', 'description' => 'The name of the lead.'],
+                            'email' => ['type' => 'string', 'description' => 'The email address of the lead (optional).'],
+                            'whatsapp' => ['type' => 'string', 'description' => 'The WhatsApp number of the lead.'],
+                            'message' => ['type' => 'string', 'description' => 'Short summary of what the lead is interested in.']
+                        ],
+                        'required' => ['name', 'whatsapp', 'message']
+                    ]
                 ]
             ]
-        ]
+        ],
+        'tool_choice' => 'auto'
     ];
-    $payloadData['tool_choice'] = 'auto';
 }
 
-$payload = json_encode($payloadData);
+$response = false;
+$httpCode = 0;
+$lastErrorMsg = '';
 
-$ch = curl_init($apiUrl);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
-curl_setopt($ch, CURLOPT_HTTPHEADER, [
-    'Content-Type: application/json',
-    'Authorization: Bearer ' . $apiKey,
-    'HTTP-Referer: https://portofolio-angipermana-6179s-projects.vercel.app/',
-    'X-Title: Angi Permana Portfolio',
-]);
-curl_setopt($ch, CURLOPT_TIMEOUT, 50);
+foreach ($modelsToTry as $selectedModel) {
+    $payloadData = array_merge([
+        'model'       => $selectedModel,
+        'messages'    => $messages,
+        'temperature' => 0.7,
+    ], $toolsConfig);
 
-$response = curl_exec($ch);
-$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-$curlError = curl_error($ch);
+    $payload = json_encode($payloadData);
 
-if ($response === false) {
-    http_response_code(500);
-    echo json_encode(['reply' => 'Gagal menghubungi server AI. Error: ' . $curlError]);
-    exit;
+    $ch = curl_init($apiUrl);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, [
+        'Content-Type: application/json',
+        'Authorization: Bearer ' . $apiKey,
+        'HTTP-Referer: https://portofolio-angipermana-6179s-projects.vercel.app/',
+        'X-Title: Angi Permana Portfolio',
+    ]);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 25);
+
+    $resp = curl_exec($ch);
+    $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    $curlError = curl_error($ch);
+    curl_close($ch);
+
+    if ($resp !== false && $code === 200) {
+        $response = $resp;
+        $httpCode = $code;
+        break;
+    }
+
+    if ($resp !== false) {
+        $errorData = json_decode($resp, true);
+        $lastErrorMsg = $errorData['error']['message'] ?? substr($resp, 0, 200);
+    } else {
+        $lastErrorMsg = $curlError;
+    }
 }
 
-if ($httpCode !== 200) {
+if ($response === false || $httpCode !== 200) {
     http_response_code(500);
-    $errorData = json_decode($response, true);
-    $errorMsg = $errorData['error']['message'] ?? substr($response, 0, 200);
-    echo json_encode(['reply' => 'API Error ' . $httpCode . ': ' . $errorMsg]);
+    echo json_encode(['reply' => 'Maaf, chatbot sedang offline (API Error: ' . ($lastErrorMsg ?: 'Gagal menghubungi server AI') . '). Silakan hubungi langsung via WhatsApp di 6285717616596.']);
     exit;
 }
 

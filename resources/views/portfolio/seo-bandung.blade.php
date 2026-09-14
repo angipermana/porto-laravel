@@ -232,6 +232,13 @@
                 </div>
             </div>
 
+            <!-- GSC Performance Chart Image -->
+            <div class="mb-12 group rounded-2xl overflow-hidden shadow-md transition-all duration-500 hover:scale-[1.01]" data-aos="fade-up" data-aos-delay="150">
+                <img src="{{ asset('images/gsc-performance-seo-bandung.png') }}"
+                     alt="Grafik Google Search Console Performa Jasa SEO Bandung"
+                     class="w-full h-auto object-cover rounded-2xl" loading="lazy">
+            </div>
+
             <!-- Before vs After Interactive Comparison Card -->
             <div class="bg-slate-900 border border-slate-800 p-6 sm:p-8 rounded-3xl mb-12" data-aos="fade-up" data-aos-delay="180">
                 <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">

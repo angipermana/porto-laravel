@@ -44,7 +44,7 @@
                          :class="msg.role === 'user' 
                             ? 'bg-indigo-600 text-white rounded-br-none' 
                             : 'bg-slate-800 text-slate-200 rounded-bl-none border border-slate-700/50'">
-                        <p x-text="msg.content"></p>
+                        <div class="whitespace-pre-line" x-text="msg.content"></div>
                     </div>
                 </div>
             </template>
@@ -199,7 +199,7 @@
                                 'X-Title': 'Angi Permana Portfolio'
                             },
                             body: JSON.stringify({
-                                model: 'google/gemma-4-26b-a4b-it:free',
+                                model: 'nex-agi/nex-n2.5-mini:free',
                                 messages: [
                                     { role: 'system', content: 'You are Angi Permana\'s AI assistant. Answer based on:\n' + staticContext },
                                     ...historyData,

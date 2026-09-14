@@ -27,4 +27,5 @@ Homestead.yaml
 Thumbs.db
 .vercel
 .env*.local
+.env*.bak
 /dist
